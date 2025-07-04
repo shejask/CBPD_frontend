@@ -1,0 +1,123 @@
+.verificationContainer {
+    max-width: 800px;
+    margin: 40px auto;
+    padding: 20px;
+}
+
+.verificationContainer h1 {
+    text-align: center;
+    color: #333;
+    margin-bottom: 30px;
+}
+
+.formContainer {
+    background: white;
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+.formGroup {
+    margin-bottom: 20px;
+}
+
+.formGroup label {
+    display: block;
+    margin-bottom: 8px;
+    color: #333;
+    font-weight: 500;
+}
+
+.formGroup input,
+.formGroup select {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    font-size: 16px;
+}
+
+.formFields {
+    margin-top: 20px;
+    padding: 20px;
+    background: #f8f9fa;
+    border-radius: 5px;
+    border: 1px solid #e9ecef;
+}
+
+.verifyButton {
+    background: hwb(109 0% 23%);
+    color: white;
+    border: none;
+    padding: 12px 24px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    margin-top: 20px;
+    transition: background 0.3s ease;
+}
+
+.verifyButton:hover {
+    background: #1d9f00;
+}
+
+.verified {
+    margin-top: 30px;
+    padding: 20px;
+    background: #e6ffe6;
+    border: 2px solid #28a745;
+    border-radius: 5px;
+    color: #155724;
+}
+
+.verified h3 {
+    margin: 10px 0 20px;
+    color: #155724;
+}
+
+.verificationTable {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 15px;
+    background-color: white;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+    overflow: hidden;
+}
+
+.verificationTable thead {
+    background-color: #1d375c;
+    color: white;
+}
+
+.verificationTable th,
+.verificationTable td {
+    padding: 15px;
+    text-align: center;
+    border: 1px solid #e9ecef;
+}
+
+.verificationTable th {
+    font-weight: 600;
+    text-transform: uppercase;
+    font-size: 14px;
+    letter-spacing: 0.5px;
+}
+
+.verificationTable td {
+    background-color: white;
+    color: #333;
+}
+
+.verificationTable tbody tr:hover {
+    background-color: #f8f9fa;
+}
+
+.greenTick {
+    font-size: 24px;
+    color: #28a745;
+    margin-bottom: 15px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
