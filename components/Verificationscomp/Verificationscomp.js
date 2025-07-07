@@ -43,7 +43,8 @@ const Verificationscomp = () => {
 
     const verifyMember = () => {
         const { memberName, memberNumber } = formData;
-        if (memberName.toLowerCase() === 'najeeb' && memberNumber === 'CBPD001KL10') {
+        if ((memberName.toLowerCase() === 'najeeb' && memberNumber === 'CBPD001KL10') ||
+            (memberName.toLowerCase() === 'shameer alikkal' && memberNumber === 'LAISH00125')) {
             setMemberResult(true);
         } else {
             setMemberResult(false);
@@ -203,11 +204,22 @@ const Verificationscomp = () => {
                         <div className={styles.greenTick}>✅ Membership Verified</div>
                         <h3>Membership Details</h3>
                         <ul>
-                            <li>Membership Name: Najeeb</li>
-                            <li>Membership Number: CBPD 001KL10</li>
-                            <li>Membership Type: Channel Partner</li>
-                            <li>Membership Status: Active</li>
-                            <li>Validity Period: 31-Dec-2030</li>
+                            {formData.memberName.toLowerCase() === 'najeeb' ? (
+                                <>
+                                    <li>Membership Name: Najeeb</li>
+                                    <li>Membership Number: CBPD 001KL10</li>
+                                    <li>Membership Type: Channel Partner</li>
+                                    <li>Membership Status: Active</li>
+                                    <li>Validity Period: 31-Dec-2030</li>
+                                </>
+                            ) : (
+                                <>
+                                    <li>Membership Name: Shameer Alikkal</li>
+                                    <li>Membership Number: LAISH00125</li>
+                                    <li>Membership Status: Active</li>
+                                    <li>Validity Period: 7-July-2027</li>
+                                </>
+                            )}
                         </ul>
                     </div>
                 )}                {centreResult && (
