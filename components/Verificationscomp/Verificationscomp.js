@@ -10,7 +10,7 @@ const Verificationscomp = () => {
         regNumber: '',
         certNumber: '',
         learnerNumber: '',
-        studentName: '',  // Added student name
+        studentName: '',
         memberName: '',
         memberNumber: '',
         centreName: '',
@@ -32,9 +32,24 @@ const Verificationscomp = () => {
         setCentreResult(false);
     };
 
+    // Helper function to normalize strings for comparison
+    const normalizeString = (str) => {
+        return str.trim().toLowerCase();
+    };
+
     const verifyStudent = () => {
         const { regNumber, certNumber, learnerNumber, studentName } = formData;
-        if (regNumber === 'ARCG1021' && certNumber === '3261' && learnerNumber === '68' && studentName.toLowerCase() === 'john doe') {
+        
+        // Normalize all inputs before comparison
+        const normalizedRegNumber = normalizeString(regNumber);
+        const normalizedCertNumber = normalizeString(certNumber);
+        const normalizedLearnerNumber = normalizeString(learnerNumber);
+        const normalizedStudentName = normalizeString(studentName);
+        
+        if (normalizedRegNumber === 'arcg1021' && 
+            normalizedCertNumber === '3261' && 
+            normalizedLearnerNumber === '68' && 
+            normalizedStudentName === 'john doe') {
             setStudentResult(true);
         } else {
             setStudentResult(false);
@@ -43,8 +58,13 @@ const Verificationscomp = () => {
 
     const verifyMember = () => {
         const { memberName, memberNumber } = formData;
-        if ((memberName.toLowerCase() === 'najeeb' && memberNumber === 'CBPD001KL10') ||
-            (memberName.toLowerCase() === 'shameer alikkal' && memberNumber === 'LAISH00125')) {
+        
+        // Normalize inputs before comparison
+        const normalizedMemberName = normalizeString(memberName);
+        const normalizedMemberNumber = normalizeString(memberNumber);
+        
+        if ((normalizedMemberName === 'najeeb' && normalizedMemberNumber === 'cbpd001kl10') ||
+            (normalizedMemberName === 'shameer alikkal' && normalizedMemberNumber === 'laish00125')) {
             setMemberResult(true);
         } else {
             setMemberResult(false);
@@ -53,7 +73,12 @@ const Verificationscomp = () => {
 
     const verifyCentre = () => {
         const { centreName, centreCode } = formData;
-        if (centreName.toLowerCase() === 'create plus' && centreCode === 'KL/101421/25') {
+        
+        // Normalize inputs before comparison
+        const normalizedCentreName = normalizeString(centreName);
+        const normalizedCentreCode = normalizeString(centreCode);
+        
+        if (normalizedCentreName === 'create plus' && normalizedCentreCode === 'kl/101421/25') {
             setCentreResult(true);
         } else {
             setCentreResult(false);
@@ -204,7 +229,7 @@ const Verificationscomp = () => {
                         <div className={styles.greenTick}>✅ Membership Verified</div>
                         <h3>Membership Details</h3>
                         <ul>
-                            {formData.memberName.toLowerCase() === 'najeeb' ? (
+                            {normalizeString(formData.memberName) === 'najeeb' ? (
                                 <>
                                     <li>Membership Name: Najeeb</li>
                                     <li>Membership Number: CBPD 001KL10</li>
@@ -222,7 +247,9 @@ const Verificationscomp = () => {
                             )}
                         </ul>
                     </div>
-                )}                {centreResult && (
+                )}
+
+                {centreResult && (
                     <div className={styles.verified}>
                         <div className={styles.greenTick}>✅ Centre Verified</div>
                         <h3>Approved Centre Details</h3>
