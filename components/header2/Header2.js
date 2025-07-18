@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import Link from "next/link";
 import logo from "/public/images/logo.svg";
-import logo2 from "/public/images/logo-4.png";
+import logo2 from "/public/CBPD_LOGO.png";
 import MobileMenu from "../MobileMenu/MobileMenu";
 import HeaderTopbar from "../HeaderTopbar/HeaderTopbar";
 import Image from "next/image";
@@ -35,10 +35,7 @@ const Header2 = (props) => {
               <div className="col-xl-2 col-lg-3 col-md-7 col-5">
                 <div className="logo">
                   <Link className="logo" onClick={ClickHandler} href="/">
-                    <Image src={logo2} alt="logo" />
-                  </Link>
-                  <Link className="logo-2" onClick={ClickHandler} href="/">
-                    <Image src={logo2} alt="logo" />
+                    <Image width={200} src={logo2} alt="logo" />
                   </Link>
                 </div>
               </div>
@@ -62,7 +59,7 @@ const Header2 = (props) => {
                         <Link onClick={ClickHandler} href="/programs">
                           Programs
                         </Link>
-                        <ul className={`sub-menu ${styles["sub-menu"]}`}>
+                        <ul className={`sub-menu ${styles["sub-menu"]} text-left`}>
                           <li className="has-submenu">
                             <Link onClick={ClickHandler} href="/programs">
                               Business and Management
@@ -319,7 +316,7 @@ const Header2 = (props) => {
               </div>
               <div className="col-xl-3 col-lg-3 col-md-4 col-5 text-left">
                 <div className="header-area-right">
-                  <ul className=" flex items-center gap-5">
+                  <ul className=" flex items-center gap-3">
                     {/* <li><button className="search-toggle-btn"><i className="icon-23" onClick={() => setMenuState(!menuActive)}></i></button></li> */}
                     <li className="header-right-btn">
                       <Link
@@ -330,8 +327,8 @@ const Header2 = (props) => {
                         Verifications
                       </Link>
                     </li>
-                    <li className="">
-                      <Link href="/login" className="btn-style-2">
+                    <li className=" header-right-btn">
+                      <Link href="/login" className="btn-style-1 bg-blue-950 border-blue-950">
                         Login
                       </Link>
                     </li>
