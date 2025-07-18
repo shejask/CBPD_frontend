@@ -27,7 +27,7 @@ const Scrollbar = dynamic(() => import("../components/scrollbar/scrollbar"));
 const HomePage = () => {
   return (
     <Fragment>
-      <div className="page-wrapper">
+      <div className="">
         <Navbar2 hclass={"header-style-2"} />
         <Hero2 />
         <About2 />

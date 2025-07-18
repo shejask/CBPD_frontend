@@ -109,13 +109,13 @@ const PartnerSection = (props) => {
                     <div className="col-lg-6">
                         <div className="partner-wrap">
                             {currentPartners.map((partner, pitem) => (
-                                <div className="partner-item" key={`${currentIndex}-${pitem}`}>
+                                <div className="partner-item flex items-center justify-center" key={`${currentIndex}-${pitem}`}>
                                     <i><Image 
                                         src={partner.pImg} 
                                         alt="" 
                                         width={150}
                                         height={150}
-                                        className={styles.partnerImage}
+                                        className=""
                                     /></i>
                                 </div>
                             ))}

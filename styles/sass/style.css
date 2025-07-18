@@ -5125,7 +5125,7 @@ body.dark-page .mouse-circle-follow {
   }
 }
 .about-section-s2 .about-bottom-wrap .about-bottom-left-text h2 {
-  font-family: "Cormorant";
+  /* font-family: "Cormorant"; */
   font-size: 30px;
   font-style: normal;
   font-weight: 700;
@@ -5142,7 +5142,7 @@ body.dark-page .mouse-circle-follow {
   margin-bottom: 20px;
 }
 .about-section-s2 .about-bottom-wrap .about-bottom-left-text ul li {
-  font-family: "Cormorant";
+  font-family: "Poppins";
   font-size: 24px;
   font-style: normal;
   font-weight: 700;
@@ -5220,7 +5220,7 @@ body.dark-page .mouse-circle-follow {
   right: 0;
   top: -2px;
   content: "\e912";
-  font-family: "icomoon" !important;
+  /* font-family: "icomoon" !important; */
   transform: rotate(-45deg);
   transition: all 0.3s;
 }
