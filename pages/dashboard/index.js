@@ -138,7 +138,7 @@ function Dashboard() {
         <div className="flex flex-col gap-2">
           <div className="flex items-center justify-between w-full">
             <div className="flex items-center gap-4">
-              <Image src="/logo.png" width={100} height={100} alt="logo" />
+              <Image src="/CBPD_LOGO.png" width={100} height={100} alt="logo" />
               {/* <h1 className="text-2xl font-medium">Welcome Laisha Academy!</h1> */}
             </div>
             <div className="flex items-center gap-4">
@@ -147,13 +147,13 @@ function Dashboard() {
           </div>
           <hr />
         </div>
-        
+
         <Tabs
           activeKey={activeTab}
           onChange={handleTabChange}
           items={tabItems}
         />
-        
+
         {renderTabContent()}
       </div>
 

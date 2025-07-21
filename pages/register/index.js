@@ -83,7 +83,7 @@ function RegisterPageContent() {
       <div className="flex flex-col h-full w-full items-center">
         <div className="flex items-start w-full justify-between">
           <Image
-            src="/logo.png"
+            src="/CBPD_LOGO.png"
             className=""
             width={150}
             height={150}

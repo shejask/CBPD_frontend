@@ -76,7 +76,7 @@ const About2 = (props) => {
                   </p>
                 </div>
                 <div className="row mb-5 md:mb-0">
-                  <div className="  font-semibold text-xl ">
+                  <div className="   text-xl ">
                     {/* <p>The Central Board of Professional Development(CBPD) is a professional association dedicated to awarding certification based on the practical application of knowledge in real-world settings. 
                                                 We believe academic courses must hold social relevance, and our programs are carefully designed to deliver in-depth subject mastery within a short time frame. CBPD is guided by 
                                                 five golden principles that define the essence of true professional qualifications. </p> */}
