@@ -1,5 +1,6 @@
 import { Button, Input, Modal, Form, Select, DatePicker } from "antd";
 import Image from "next/image";
+import logo2 from "/public/CBPD_LOGO.png";
 
 import {
   ImportOutlined,
@@ -138,7 +139,7 @@ function Dashboard() {
         <div className="flex flex-col gap-2">
           <div className="flex items-center justify-between w-full">
             <div className="flex items-center gap-4">
-              <Image src="/CBPD_LOGO.png" width={100} height={100} alt="logo" />
+              <Image src={logo2} width={100} height={100} alt="logo" />
               {/* <h1 className="text-2xl font-medium">Welcome Laisha Academy!</h1> */}
             </div>
             <div className="flex items-center gap-4">
