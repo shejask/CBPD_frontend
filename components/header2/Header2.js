@@ -328,8 +328,8 @@ const Header2 = (props) => {
                       </Link>
                     </li>
                     <li className=" header-right-btn">
-                      <Link href="/login" className="btn-style-1 bg-blue-950 border-blue-950">
-                        Login
+                      <Link href="/login" className="btn-style-1 flex items-center gap-2 bg-blue-950 border-blue-950">
+                        Register/Login
                       </Link>
                     </li>
                   </ul>
