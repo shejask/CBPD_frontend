@@ -1,7 +1,12 @@
 import React, { useState, useEffect } from "react";
 import Select from "react-select";
 
-function CountryInput({ value, onChange, label = "Country", required = false }) {
+function CountryInput({
+  value,
+  onChange,
+  label = "Country",
+  required = false,
+}) {
   const customStyles = {
     control: (provided, state) => ({
       ...provided,
@@ -55,9 +60,9 @@ function CountryInput({ value, onChange, label = "Country", required = false }) 
       flag: "https://flagcdn.com/24x18/us.png",
       phoneCode: "+1",
     },
-    { 
-      value: "CA", 
-      label: "Canada", 
+    {
+      value: "CA",
+      label: "Canada",
       flag: "https://flagcdn.com/24x18/ca.png",
       phoneCode: "+1",
     },
@@ -73,57 +78,57 @@ function CountryInput({ value, onChange, label = "Country", required = false }) 
       flag: "https://flagcdn.com/24x18/au.png",
       phoneCode: "+61",
     },
-    { 
-      value: "DE", 
-      label: "Germany", 
+    {
+      value: "DE",
+      label: "Germany",
       flag: "https://flagcdn.com/24x18/de.png",
       phoneCode: "+49",
     },
-    { 
-      value: "FR", 
-      label: "France", 
+    {
+      value: "FR",
+      label: "France",
       flag: "https://flagcdn.com/24x18/fr.png",
       phoneCode: "+33",
     },
-    { 
-      value: "JP", 
-      label: "Japan", 
+    {
+      value: "JP",
+      label: "Japan",
       flag: "https://flagcdn.com/24x18/jp.png",
       phoneCode: "+81",
     },
-    { 
-      value: "CN", 
-      label: "China", 
+    {
+      value: "CN",
+      label: "China",
       flag: "https://flagcdn.com/24x18/cn.png",
       phoneCode: "+86",
     },
-    { 
-      value: "BR", 
-      label: "Brazil", 
+    {
+      value: "BR",
+      label: "Brazil",
       flag: "https://flagcdn.com/24x18/br.png",
       phoneCode: "+55",
     },
-    { 
-      value: "RU", 
-      label: "Russia", 
+    {
+      value: "RU",
+      label: "Russia",
       flag: "https://flagcdn.com/24x18/ru.png",
       phoneCode: "+7",
     },
-    { 
-      value: "IT", 
-      label: "Italy", 
+    {
+      value: "IT",
+      label: "Italy",
       flag: "https://flagcdn.com/24x18/it.png",
       phoneCode: "+39",
     },
-    { 
-      value: "ES", 
-      label: "Spain", 
+    {
+      value: "ES",
+      label: "Spain",
       flag: "https://flagcdn.com/24x18/es.png",
       phoneCode: "+34",
     },
-    { 
-      value: "MX", 
-      label: "Mexico", 
+    {
+      value: "MX",
+      label: "Mexico",
       flag: "https://flagcdn.com/24x18/mx.png",
       phoneCode: "+52",
     },
@@ -145,15 +150,15 @@ function CountryInput({ value, onChange, label = "Country", required = false }) 
       flag: "https://flagcdn.com/24x18/nl.png",
       phoneCode: "+31",
     },
-    { 
-      value: "SE", 
-      label: "Sweden", 
+    {
+      value: "SE",
+      label: "Sweden",
       flag: "https://flagcdn.com/24x18/se.png",
       phoneCode: "+46",
     },
-    { 
-      value: "NO", 
-      label: "Norway", 
+    {
+      value: "NO",
+      label: "Norway",
       flag: "https://flagcdn.com/24x18/no.png",
       phoneCode: "+47",
     },
@@ -175,20 +180,46 @@ function CountryInput({ value, onChange, label = "Country", required = false }) 
       flag: "https://flagcdn.com/24x18/sa.png",
       phoneCode: "+966",
     },
+    {
+      value: "BD",
+      label: "Bangladesh",
+      flag: "https://flagcdn.com/24x18/bd.png",
+      phoneCode: "+880",
+    },
+    {
+      value: "NP",
+      label: "Nepal",
+      flag: "https://flagcdn.com/24x18/np.png",
+      phoneCode: "+977",
+    },
+    {
+      value: "KE",
+      label: "Kenya",
+      flag: "https://flagcdn.com/24x18/ke.png",
+      phoneCode: "+254",
+    },
+    {
+      value: "ZA",
+      label: "South Africa",
+      flag: "https://flagcdn.com/24x18/za.png",
+      phoneCode: "+27",
+    },
   ];
 
   // Set default to India if no value provided
   useEffect(() => {
     if (!value && !selectedCountry) {
-      const defaultCountry = countryOptions.find(country => country.value === "IN");
+      const defaultCountry = countryOptions.find(
+        (country) => country.value === "IN"
+      );
       setSelectedCountry(defaultCountry);
       if (onChange) {
         onChange(defaultCountry);
       }
-    } else if (value && typeof value === 'string') {
-      const country = countryOptions.find(country => country.value === value);
+    } else if (value && typeof value === "string") {
+      const country = countryOptions.find((country) => country.value === value);
       setSelectedCountry(country);
-    } else if (value && typeof value === 'object') {
+    } else if (value && typeof value === "object") {
       setSelectedCountry(value);
     }
   }, [value]);

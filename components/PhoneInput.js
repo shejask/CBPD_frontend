@@ -2,13 +2,13 @@ import React, { useState, useEffect } from "react";
 import { Input } from "antd";
 import Select from "react-select";
 
-function PhoneInput({ 
-  value, 
-  onChange, 
-  label = "Phone Number", 
+function PhoneInput({
+  value,
+  onChange,
+  label = "Phone Number",
   placeholder = "Enter phone number",
   required = false,
-  defaultCountryCode = "+91"
+  defaultCountryCode = "+91",
 }) {
   const [phoneNumber, setPhoneNumber] = useState("");
   const [selectedCountryCode, setSelectedCountryCode] = useState(null);
@@ -35,6 +35,10 @@ function PhoneInput({
     { value: "+41", label: "+41", country: "Switzerland", flag: "🇨🇭" },
     { value: "+971", label: "+971", country: "UAE", flag: "🇦🇪" },
     { value: "+966", label: "+966", country: "Saudi Arabia", flag: "🇸🇦" },
+    { value: "+880", label: "+880", country: "Bangladesh", flag: "🇧🇩" },
+    { value: "+977", label: "+977", country: "Nepal", flag: "🇳🇵" },
+    { value: "+254", label: "+254", country: "Kenya", flag: "🇰🇪" },
+    { value: "+27", label: "+27", country: "South Africa", flag: "🇿🇦" },
   ];
 
   const customSelectStyles = {
@@ -80,16 +84,20 @@ function PhoneInput({
   // Initialize with default country code
   useEffect(() => {
     if (!selectedCountryCode) {
-      const defaultOption = countryCodeOptions.find(option => option.value === defaultCountryCode);
+      const defaultOption = countryCodeOptions.find(
+        (option) => option.value === defaultCountryCode
+      );
       setSelectedCountryCode(defaultOption);
     }
   }, [defaultCountryCode]);
 
   // Parse existing value
   useEffect(() => {
-    if (value && typeof value === 'string') {
+    if (value && typeof value === "string") {
       // Try to extract country code and phone number
-      const countryCode = countryCodeOptions.find(option => value.startsWith(option.value));
+      const countryCode = countryCodeOptions.find((option) =>
+        value.startsWith(option.value)
+      );
       if (countryCode) {
         setSelectedCountryCode(countryCode);
         setPhoneNumber(value.substring(countryCode.value.length));
@@ -105,13 +113,16 @@ function PhoneInput({
   };
 
   const handlePhoneNumberChange = (e) => {
-    const number = e.target.value.replace(/[^\d]/g, ''); // Only allow digits
+    const number = e.target.value.replace(/[^\d]/g, ""); // Only allow digits
     setPhoneNumber(number);
-    updateFullPhoneNumber(selectedCountryCode?.value || defaultCountryCode, number);
+    updateFullPhoneNumber(
+      selectedCountryCode?.value || defaultCountryCode,
+      number
+    );
   };
 
   const updateFullPhoneNumber = (countryCode, number) => {
-    const fullNumber = number ? `${countryCode}${number}` : '';
+    const fullNumber = number ? `${countryCode}${number}` : "";
     if (onChange) {
       onChange(fullNumber);
     }
@@ -173,7 +184,8 @@ function PhoneInput({
       </div>
       {phoneNumber && selectedCountryCode && (
         <div className="text-xs text-gray-500 mt-1">
-          Full number: {selectedCountryCode.value}{phoneNumber}
+          Full number: {selectedCountryCode.value}
+          {phoneNumber}
         </div>
       )}
     </div>

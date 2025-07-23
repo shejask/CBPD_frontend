@@ -67,7 +67,7 @@ function OrgDetails() {
     },
     {
       label: "Website",
-      placeholder: "Enter Website URL (e.g., https://example.com)",
+      placeholder: "Enter Website URL (e.g., https://www.example.com)",
       type: "url",
       id: "website",
       icon: <GlobalOutlined />,

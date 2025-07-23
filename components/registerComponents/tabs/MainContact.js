@@ -8,6 +8,8 @@ function MainContact() {
   const { formData, updateFormData } = useRegistrationContext();
 
   const jobTitleOptions = [
+    "Founder",
+    "Co Founder",
     "CEO",
     "President", 
     "Director",
