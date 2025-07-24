@@ -1,5 +1,6 @@
 import React, { Fragment } from "react";
 import dynamic from "next/dynamic";
+import Recognition from "@/components/recognition/Recognition";
 
 const Navbar2 = dynamic(() => import("../components/Navbar2/Navbar2"));
 const Hero2 = dynamic(() => import("../components/hero2/Hero2"));
@@ -30,6 +31,7 @@ const HomePage = () => {
       <div className="">
         <Navbar2 hclass={"header-style-2"} />
         <Hero2 />
+        <Recognition />
         <About2 />
         <PartnerSection />
         <About9 />
