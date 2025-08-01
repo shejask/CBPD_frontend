@@ -62,8 +62,6 @@ function Index() {
         "joiningDate",
         "state",
         "district",
-        "county",
-        "country",
         "currentCourse",
         "department",
         "semester",
