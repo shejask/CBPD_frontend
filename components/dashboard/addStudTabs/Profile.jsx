@@ -51,6 +51,7 @@ function Profile({ formData, setFormData }) {
       type: "text",
       required: true,
     },
+
   ];
 
   const handleInputChange = (field, value) => {
@@ -63,7 +64,7 @@ function Profile({ formData, setFormData }) {
   const handleCountryChange = (country) => {
     setFormData((prev) => ({
       ...prev,
-      country: country,
+      country: country?.value || country,
     }));
   };
 
@@ -130,11 +131,6 @@ function Profile({ formData, setFormData }) {
               </div>
             );
           })}
-          <CountryInput
-            value={formData.county}
-            onChange={handleCountryChange}
-            required={true}
-          />
           {/* Phone Number with Country Code */}
           <PhoneInput
             value={formData.phoneNumber || ""}
@@ -145,6 +141,11 @@ function Profile({ formData, setFormData }) {
           />
 
           {/* Country Selection */}
+          <CountryInput
+            value={formData.county}
+            onChange={handleCountryChange}
+            required={true}
+          />
         </div>
       </div>
     </div>

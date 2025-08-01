@@ -261,7 +261,7 @@ function CountryInput({
             {required && <span className="text-red-500 ml-1">*</span>}
           </label>
           <Select
-            id="county"
+            id="country"
             options={countryOptions}
             value={selectedCountry}
             onChange={handleCountryChange}

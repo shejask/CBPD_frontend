@@ -63,6 +63,7 @@ function Index() {
         "state",
         "district",
         "county",
+        "country",
         "currentCourse",
         "department",
         "semester",
@@ -99,11 +100,14 @@ function Index() {
       }
 
       // Submit to API
-      const response = await fetch(`https://admin.cbpd.co.uk/api/institution/${id}/students`, {
-        method: "POST",
-        body: submitData,
-        credentials: "include", // Include cookies if using authentication
-      });
+      const response = await fetch(
+        `https://admin.cbpd.co.uk/api/institution/${id}/students`,
+        {
+          method: "POST",
+          body: submitData,
+          credentials: "include", // Include cookies if using authentication
+        }
+      );
 
       const result = await response.json();
 
