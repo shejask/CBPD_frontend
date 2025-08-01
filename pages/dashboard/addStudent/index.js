@@ -102,6 +102,7 @@ function Index() {
       const response = await fetch(`/api/institution/${id}/students`, {
         method: "POST",
         body: submitData,
+        credentials: "include", // Include cookies if using authentication
       });
 
       const result = await response.json();
