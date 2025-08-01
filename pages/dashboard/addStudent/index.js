@@ -99,7 +99,7 @@ function Index() {
       }
 
       // Submit to API
-      const response = await fetch(`/api/institution/${id}/students`, {
+      const response = await fetch(`https://admin.cbpd.co.uk/api/institution/${id}/students`, {
         method: "POST",
         body: submitData,
         credentials: "include", // Include cookies if using authentication
