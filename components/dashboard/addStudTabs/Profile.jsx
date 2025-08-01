@@ -131,7 +131,7 @@ function Profile({ formData, setFormData }) {
             );
           })}
           <CountryInput
-            value={formData.country}
+            value={formData.county}
             onChange={handleCountryChange}
             required={true}
           />

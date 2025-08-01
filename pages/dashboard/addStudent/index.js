@@ -53,6 +53,32 @@ function Index() {
   const handleSubmit = async () => {
     setLoading(true);
     try {
+      // Validate required fields
+      const requiredFields = [
+        "fullName",
+        "gender",
+        "phoneNumber",
+        "dateOfBirth",
+        "joiningDate",
+        "state",
+        "district",
+        "county",
+        "currentCourse",
+        "department",
+        "semester",
+        "admissionNumber",
+      ];
+
+      const missingFields = requiredFields.filter((field) => !formData[field]);
+
+      if (missingFields.length > 0) {
+        message.error(
+          `Please fill in all required fields: ${missingFields.join(", ")}`
+        );
+        setLoading(false);
+        return;
+      }
+
       // Create FormData for file upload
       const submitData = new FormData();
 

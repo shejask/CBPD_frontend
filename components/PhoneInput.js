@@ -180,6 +180,7 @@ function PhoneInput({
             height: "40px",
           }}
           maxLength={15}
+          id="phoneNumber"
         />
       </div>
       {phoneNumber && selectedCountryCode && (

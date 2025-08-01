@@ -5,6 +5,7 @@ function CountryInput({
   value,
   onChange,
   label = "Country",
+  
   required = false,
 }) {
   const customStyles = {
@@ -260,7 +261,7 @@ function CountryInput({
             {required && <span className="text-red-500 ml-1">*</span>}
           </label>
           <Select
-            id="country"
+            id="county"
             options={countryOptions}
             value={selectedCountry}
             onChange={handleCountryChange}
