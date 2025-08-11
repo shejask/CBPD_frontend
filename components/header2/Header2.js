@@ -20,9 +20,11 @@ const Header2 = (props) => {
   useEffect(() => {
     const fetchCourses = async () => {
       try {
-        const response = await fetch('https://admin.cbpd.co.uk/api/admin/courses/all');
+        const response = await fetch(
+          "https://admin.cbpd.co.uk/api/admin/courses/all"
+        );
         const courses = await response.json();
-        
+
         // Group courses by category
         const groupedPrograms = courses.reduce((acc, course) => {
           const categoryName = course.categoryId.name;
@@ -31,15 +33,15 @@ const Header2 = (props) => {
           }
           acc[categoryName].push({
             title: course.title,
-            id: course._id
+            id: course._id,
           });
           return acc;
         }, {});
-        
+
         setPrograms(groupedPrograms);
         setLoading(false);
       } catch (error) {
-        console.error('Error fetching courses:', error);
+        console.error("Error fetching courses:", error);
         setLoading(false);
       }
     };
@@ -90,26 +92,33 @@ const Header2 = (props) => {
                         <Link onClick={ClickHandler} href="/programs">
                           Programs
                         </Link>
-                        <ul className={`sub-menu ${styles["sub-menu"]} text-left`}>
+                        <ul
+                          className={`sub-menu ${styles["sub-menu"]} text-left`}
+                        >
                           {loading ? (
                             <li>Loading programs...</li>
                           ) : (
-                            Object.entries(programs).map(([categoryName, courses]) => (
-                              <li key={categoryName} className="has-submenu">
-                                <span className="cursor-pointer mb-5 font-semibold text-black text-md ">
-                                  {categoryName}
-                                </span>
-                                <ul className={`sub-menu ${styles["sub-menu"]}`}>
-                                  {courses.map((course) => (
-                                    <li key={course.id}>
-                                      <span className="cursor-pointer mb-5 font-semibold text-black text-md">
-                                        {course.title}
-                                      </span>
-                                    </li>
-                                  ))}
-                                </ul>
-                              </li>
-                            ))
+                            Object.entries(programs).map(
+                              ([categoryName, courses]) => (
+                                <li key={categoryName} className="has-submenu mb-5">
+                                  
+                                  <span className="cursor-pointer  font-semibold text-black text-md ">
+                                    {categoryName}
+                                  </span>
+                                  <ul
+                                    className={`sub-menu ${styles["sub-menu"]}`}
+                                  >
+                                    {courses.map((course) => (
+                                      <li key={course.id} className="mb-5">
+                                        <span className="cursor-pointer  font-semibold text-black text-md">
+                                          {course.title}
+                                        </span>
+                                      </li>
+                                    ))}
+                                  </ul>
+                                </li>
+                              )
+                            )
                           )}
                         </ul>
                       </li>
