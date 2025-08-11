@@ -96,13 +96,13 @@ const Header2 = (props) => {
                           ) : (
                             Object.entries(programs).map(([categoryName, courses]) => (
                               <li key={categoryName} className="has-submenu">
-                                <span className="cursor-pointer py-1 font-semibold">
+                                <span className="cursor-pointer py-4 font-semibold text-black ">
                                   {categoryName}
                                 </span>
                                 <ul className={`sub-menu ${styles["sub-menu"]}`}>
                                   {courses.map((course) => (
                                     <li key={course.id}>
-                                      <span className="cursor-pointer py-1 font-semibold">
+                                      <span className="cursor-pointer py-4 font-semibold text-black">
                                         {course.title}
                                       </span>
                                     </li>
