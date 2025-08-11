@@ -100,7 +100,7 @@ const Header2 = (props) => {
                           ) : (
                             Object.entries(programs).map(
                               ([categoryName, courses]) => (
-                                <li key={categoryName} className="has-submenu mb-5">
+                                <li key={categoryName} className="has-submenu mb-2">
                                   
                                   <span className="cursor-pointer  font-semibold text-black text-md ">
                                     {categoryName}
@@ -109,7 +109,7 @@ const Header2 = (props) => {
                                     className={`sub-menu ${styles["sub-menu"]}`}
                                   >
                                     {courses.map((course) => (
-                                      <li key={course.id} className="mb-5">
+                                      <li key={course.id} className="mb-2">
                                         <span className="cursor-pointer  font-semibold text-black text-md">
                                           {course.title}
                                         </span>
