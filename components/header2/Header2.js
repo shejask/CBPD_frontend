@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import Link from "next/link";
 import logo from "/public/images/logo.svg";
 import logo2 from "/public/CBPD_LOGO.png";
@@ -11,8 +11,41 @@ import { useRouter } from "next/router";
 const Header2 = (props) => {
   const [menuActive, setMenuState] = useState(false);
   const [searchTerm, setSearchTerm] = useState("");
+  const [programs, setPrograms] = useState({});
+  const [loading, setLoading] = useState(true);
 
   const router = useRouter();
+
+  // Fetch courses from API
+  useEffect(() => {
+    const fetchCourses = async () => {
+      try {
+        const response = await fetch('https://admin.cbpd.co.uk/api/admin/courses/all');
+        const courses = await response.json();
+        
+        // Group courses by category
+        const groupedPrograms = courses.reduce((acc, course) => {
+          const categoryName = course.categoryId.name;
+          if (!acc[categoryName]) {
+            acc[categoryName] = [];
+          }
+          acc[categoryName].push({
+            title: course.title,
+            id: course._id
+          });
+          return acc;
+        }, {});
+        
+        setPrograms(groupedPrograms);
+        setLoading(false);
+      } catch (error) {
+        console.error('Error fetching courses:', error);
+        setLoading(false);
+      }
+    };
+
+    fetchCourses();
+  }, []);
 
   const ClickHandler = () => {
     window.scrollTo(10, 0);
@@ -43,7 +76,6 @@ const Header2 = (props) => {
                 <div className="main-menu">
                   <nav id="mobile-menu">
                     <ul className="nav">
-                      {" "}
                       <li>
                         <Link onClick={ClickHandler} href="/">
                           Home
@@ -53,251 +85,35 @@ const Header2 = (props) => {
                         <Link onClick={ClickHandler} href="/about">
                           About us
                         </Link>
-                      </li>{" "}
+                      </li>
                       <li className="has-submenu">
-                        {" "}
                         <Link onClick={ClickHandler} href="/programs">
                           Programs
                         </Link>
                         <ul className={`sub-menu ${styles["sub-menu"]} text-left`}>
-                          <li className="has-submenu">
-                            <Link onClick={ClickHandler} href="/programs">
-                              Business and Management
-                            </Link>
-                            <ul className={`sub-menu ${styles["sub-menu"]}`}>
-                              <li>
+                          {loading ? (
+                            <li>Loading programs...</li>
+                          ) : (
+                            Object.entries(programs).map(([categoryName, courses]) => (
+                              <li key={categoryName} className="has-submenu">
                                 <Link onClick={ClickHandler} href="/programs">
-                                  International Diploma in Hospital
-                                  Administration
+                                  {categoryName}
                                 </Link>
+                                <ul className={`sub-menu ${styles["sub-menu"]}`}>
+                                  {courses.map((course) => (
+                                    <li key={course.id}>
+                                      <Link 
+                                        onClick={ClickHandler} 
+                                        href={`/programs/${course.id}`}
+                                      >
+                                        {course.title}
+                                      </Link>
+                                    </li>
+                                  ))}
+                                </ul>
                               </li>
-                              <li>
-                                <Link onClick={ClickHandler} href="/programs">
-                                  International Diploma in Hotel Management
-                                </Link>
-                              </li>
-                              <li>
-                                <Link onClick={ClickHandler} href="/programs">
-                                  International Diploma in Corporate Accounts
-                                  Training
-                                </Link>
-                              </li>
-                              <li>
-                                <Link onClick={ClickHandler} href="/programs">
-                                  International Diploma in Logistics and Supply
-                                  Chain Management
-                                </Link>
-                              </li>
-                              <li>
-                                <Link onClick={ClickHandler} href="/programs">
-                                  International Diploma in Office Administration
-                                </Link>
-                              </li>
-                              <li>
-                                <Link onClick={ClickHandler} href="/programs">
-                                  International Diploma in Hospital Front Office
-                                  Administration
-                                </Link>
-                              </li>
-                              <li>
-                                <Link onClick={ClickHandler} href="/programs">
-                                  Hospitality and Tourism Management
-                                </Link>
-                              </li>
-                              <li>
-                                <Link onClick={ClickHandler} href="/programs">
-                                  International Diploma in Human Resource
-                                  Management
-                                </Link>
-                              </li>
-                              <li>
-                                <Link onClick={ClickHandler} href="/programs">
-                                  Accounting and Finance
-                                </Link>
-                              </li>
-                              <li>
-                                <Link onClick={ClickHandler} href="/programs">
-                                  Project Management
-                                </Link>
-                              </li>
-                              <li>
-                                <Link onClick={ClickHandler} href="/programs ">
-                                  Procurement and Material Management
-                                </Link>
-                              </li>
-                            </ul>
-                          </li>{" "}
-                          <li className="has-submenu">
-                            {" "}
-                            <Link onClick={ClickHandler} href="/programs">
-                              Technology and Data
-                            </Link>
-                            <ul className={`sub-menu ${styles["sub-menu"]}`}>
-                              <li>
-                                <Link onClick={ClickHandler} href="/programs">
-                                  Data Science
-                                </Link>
-                              </li>
-                              <li>
-                                <Link onClick={ClickHandler} href="/programs">
-                                  Artificial Intelligence
-                                </Link>
-                              </li>
-                              <li>
-                                <Link onClick={ClickHandler} href="/programs">
-                                  Cyber Security
-                                </Link>
-                              </li>
-                              <li>
-                                <Link onClick={ClickHandler} href="/programs">
-                                  Digital Marketing
-                                </Link>
-                              </li>
-                              <li>
-                                <Link onClick={ClickHandler} href="/programs">
-                                  Diploma in Mobile Phone Technician
-                                </Link>
-                              </li>
-                              <li>
-                                <Link onClick={ClickHandler} href="/programs">
-                                  Diploma in AC/Fridge Technician
-                                </Link>
-                              </li>
-                            </ul>
-                          </li>
-                          <li className="has-submenu">
-                            {" "}
-                            <Link onClick={ClickHandler} href="/programs">
-                              Education and Training
-                            </Link>
-                            <ul className={`sub-menu ${styles["sub-menu"]}`}>
-                              <li>
-                                <Link onClick={ClickHandler} href="/programs">
-                                  International Montessori Teacher Training
-                                </Link>
-                              </li>
-                              <li>
-                                <Link onClick={ClickHandler} href="/programs">
-                                  Early Childhood Care and Education
-                                </Link>
-                              </li>
-                              <li>
-                                <Link onClick={ClickHandler} href="/programs">
-                                  Computer Teacher Training Course
-                                </Link>
-                              </li>
-                              <li>
-                                <Link onClick={ClickHandler} href="/programs">
-                                  Abacus Teacher Training Course
-                                </Link>
-                              </li>
-                              <li>
-                                <Link onClick={ClickHandler} href="/programs">
-                                  Fashion Designing Course
-                                </Link>
-                              </li>
-                              <li>
-                                <Link onClick={ClickHandler} href="/programs">
-                                  Bridal Makeup Course
-                                </Link>
-                              </li>
-                              <li>
-                                <Link onClick={ClickHandler} href="/programs">
-                                  Accounting Course
-                                </Link>
-                              </li>
-                              <li>
-                                <Link onClick={ClickHandler} href="/programs">
-                                  Tally
-                                </Link>
-                              </li>
-                            </ul>
-                          </li>
-                          <li className="has-submenu">
-                            <Link onClick={ClickHandler} href="/programs ">
-                              Language and Creative Arts
-                            </Link>
-                            <ul className={`sub-menu ${styles["sub-menu"]}`}>
-                              <li>
-                                <Link onClick={ClickHandler} href="/programs ">
-                                  Communicate English Language Studies
-                                </Link>
-                              </li>
-                              <li>
-                                <Link onClick={ClickHandler} href="/programs ">
-                                  Fashion Design
-                                </Link>
-                              </li>
-                            </ul>
-                          </li>{" "}
-                          <li className="has-submenu">
-                            {" "}
-                            <Link onClick={ClickHandler} href="/programs ">
-                              Health and Safety
-                            </Link>
-                            <ul className={`sub-menu ${styles["sub-menu"]}`}>
-                              <li>
-                                <Link onClick={ClickHandler} href="/programs">
-                                  Healthy and Safety Management
-                                </Link>
-                              </li>
-                              <li>
-                                <Link onClick={ClickHandler} href="/programs">
-                                  Diploma in Medical Lab Technology
-                                </Link>
-                              </li>
-                              <li>
-                                <Link onClick={ClickHandler} href="/programs">
-                                  Dialysis Assistant
-                                </Link>
-                              </li>
-                              <li>
-                                <Link onClick={ClickHandler} href="/programs">
-                                  Radiology and imaging Technology
-                                </Link>
-                              </li>
-                              <li>
-                                <Link onClick={ClickHandler} href="/programs">
-                                  Cardiac Assistant
-                                </Link>
-                              </li>
-                              <li>
-                                <Link onClick={ClickHandler} href="/programs">
-                                  Nursing Assistant
-                                </Link>
-                              </li>
-                              <li>
-                                <Link onClick={ClickHandler} href="/programs">
-                                  Operation Theatre Assistant
-                                </Link>
-                              </li>
-                              <li>
-                                <Link onClick={ClickHandler} href="/programs">
-                                  International Diploma in Oil and Gas
-                                </Link>
-                              </li>
-                              <li>
-                                <Link onClick={ClickHandler} href="/programs">
-                                  Acupuncture Course
-                                </Link>
-                              </li>
-                              <li>
-                                <Link onClick={ClickHandler} href="/programs">
-                                  Diploma in Optometry
-                                </Link>
-                              </li>
-                              <li>
-                                <Link onClick={ClickHandler} href="/programs">
-                                  Diploma in Hospital Administration
-                                </Link>
-                              </li>
-                              <li>
-                                <Link onClick={ClickHandler} href="/programs">
-                                  Diploma in Business Management
-                                </Link>
-                              </li>
-                            </ul>
-                          </li>
+                            ))
+                          )}
                         </ul>
                       </li>
                       <li>
@@ -317,7 +133,6 @@ const Header2 = (props) => {
               <div className="col-xl-3 col-lg-3 col-md-4 col-5 text-left">
                 <div className="header-area-right">
                   <ul className=" flex items-center gap-3">
-                    {/* <li><button className="search-toggle-btn"><i className="icon-23" onClick={() => setMenuState(!menuActive)}></i></button></li> */}
                     <li className="header-right-btn">
                       <Link
                         onClick={ClickHandler}
@@ -328,7 +143,10 @@ const Header2 = (props) => {
                       </Link>
                     </li>
                     <li className=" header-right-btn">
-                      <Link href="/login" className="btn-style-1 flex items-center gap-2 bg-blue-950 border-blue-950">
+                      <Link
+                        href="/login"
+                        className="btn-style-1 flex items-center gap-2 bg-blue-950 border-blue-950"
+                      >
                         Register/Login
                       </Link>
                     </li>
@@ -350,7 +168,6 @@ const Header2 = (props) => {
           <i className="icon-02"></i>
         </button>
         <form method="post" onSubmit={SubmitHandler}>
-          {" "}
           <div className="form-group">
             <input
               type="text"
