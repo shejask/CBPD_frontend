@@ -6,6 +6,12 @@ const Navbar2 = dynamic(() => import("../components/Navbar2/Navbar2"));
 const Hero2 = dynamic(() => import("../components/hero2/Hero2"));
 const About2 = dynamic(() => import("../components/about2/about2"));
 const About9 = dynamic(() => import("../components/about9/About9"));
+const StatisticsSection = dynamic(() =>
+  import("../components/StatisticsSection/StatisticsSection")
+);
+const ProcessFlowSection = dynamic(() =>
+  import("../components/ProcessFlowSection/ProcessFlowSection")
+);
 const ServiceSection = dynamic(() =>
   import("../components/ServiceSection/ServiceSection")
 );
@@ -32,6 +38,8 @@ const HomePage = () => {
         <Navbar2 hclass={"header-style-2"} />
         <Hero2 />
         <Recognition />
+        <StatisticsSection />
+        <ProcessFlowSection />
         <About2 />
         <PartnerSection />
         <About9 />

@@ -4,6 +4,7 @@ const nextConfig = {
   images: {
     domains: [
       "pub-36d2b418b9204c179793e36c0e125419.r2.dev", // <-- add your domain here
+      "images.unsplash.com", // Allow Unsplash images
     ],
   },
   eslint: {
