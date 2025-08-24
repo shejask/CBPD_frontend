@@ -8,29 +8,36 @@ const StatisticsSection = () => {
       number: "2.5K+",
       label: "STUDENTS ENROLLED",
       icon: "🎓",
-      color: "var(--primary-color, #2563eb)",
-      bgColor: "rgba(37, 99, 235, 0.1)",
+      color: "#1e40af", // Royal Blue
+      bgColor: "rgba(30, 64, 175, 0.1)",
     },
     {
       number: "80+",
       label: "COURSES AVAILABLE",
       icon: "📚",
-      color: "var(--accent-color, #dc2626)",
+      color: "#dc2626", // Royal Red
       bgColor: "rgba(220, 38, 38, 0.1)",
     },
     {
       number: "100%",
       label: "SATISFACTION RATE",
       icon: "⭐",
-      color: "var(--success-color, #7c3aed)",
-      bgColor: "rgba(124, 58, 237, 0.1)",
+      color: "#1e40af", // Royal Blue
+      bgColor: "rgba(30, 64, 175, 0.1)",
     },
     {
       number: "100+",
       label: "PARTNERS WORLDWIDE",
       icon: "🤝",
-      color: "var(--warning-color, #ea580c)",
-      bgColor: "rgba(234, 88, 12, 0.1)",
+      color: "#dc2626", // Royal Red
+      bgColor: "rgba(220, 38, 38, 0.1)",
+    },
+    {
+      number: "100+",
+      label: "COUNTRIES",
+      icon: "🌍",
+      color: "#1e40af", // Royal Blue
+      bgColor: "rgba(30, 64, 175, 0.1)",
     },
   ];
 
@@ -38,13 +45,10 @@ const StatisticsSection = () => {
     <section className={styles.statisticsSection}>
       <div className="container">
         <div className={styles.sectionHeader}>
-          <h2 className={styles.sectionTitle}>
-            <span className={styles.highlight}></span> Acquire Job-Related
-            Skills
-          </h2>
+          <h2 className={styles.sectionTitle}>Our Global Impact & Success</h2>
           <p className={styles.sectionSubtitle}>
-            Join thousands of successful learners who have transformed their
-            careers with our professional programs
+            Discover the numbers that reflect our commitment to excellence and
+            the trust placed in us by learners and partners worldwide
           </p>
         </div>
 
