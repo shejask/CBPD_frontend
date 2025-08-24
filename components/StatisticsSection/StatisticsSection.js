@@ -5,7 +5,7 @@ import styles from "./StatisticsSection.module.css";
 const StatisticsSection = () => {
   const stats = [
     {
-      number: "2.5K+",
+      number: "3K+",
       label: "STUDENTS ENROLLED",
       icon: "🎓",
       color: "#1e40af", // Royal Blue
@@ -34,7 +34,7 @@ const StatisticsSection = () => {
     },
     {
       number: "100+",
-      label: "COUNTRIES",
+      label: "Certificat Validated in 100+ Countries",
       icon: "🌍",
       color: "#1e40af", // Royal Blue
       bgColor: "rgba(30, 64, 175, 0.1)",
