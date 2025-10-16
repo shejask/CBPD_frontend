@@ -45,24 +45,27 @@ const Verificationscomp = () => {
         return str.trim().toLowerCase();
     };
 
-    const verifyStudent = () => {
-        const { regNumber, certNumber, learnerNumber, studentName } = formData;
-        
-        // Normalize all inputs before comparison
-        const normalizedRegNumber = normalizeString(regNumber);
-        const normalizedCertNumber = normalizeString(certNumber);
-        const normalizedLearnerNumber = normalizeString(learnerNumber);
-        const normalizedStudentName = normalizeString(studentName);
-        
-        if (normalizedRegNumber === 'arcg1021' && 
-            normalizedCertNumber === '3261' && 
-            normalizedLearnerNumber === '68' && 
-            normalizedStudentName === 'john doe') {
-            setStudentResult(true);
-        } else {
-            setStudentResult(false);
-        }
-    };
+  const verifyStudent = () => {
+    const { regNumber, certNumber, learnerNumber, studentName } = formData;
+
+    // Normalize all inputs before comparison
+    const normalizedRegNumber = normalizeString(regNumber);
+    const normalizedCertNumber = normalizeString(certNumber);
+    const normalizedLearnerNumber = normalizeString(learnerNumber);
+    const normalizedStudentName = normalizeString(studentName);
+
+    if (
+      normalizedStudentName === "sandeep pradeep" &&
+      normalizedRegNumber === "11025" &&
+      normalizedCertNumber === "cbpd/2025/hrm-3105" &&
+      normalizedLearnerNumber === "l-25-264"
+    ) {
+      setStudentResult(true);
+    } else {
+      setStudentResult(false);
+      setError("No student certificate found with the provided details");
+    }
+  };
 
     const verifyMember = async () => {
         console.log('verifyMember called');
@@ -278,24 +281,17 @@ const Verificationscomp = () => {
                     )}
                 </form>
 
-                {error && (
-                    <div className={styles.error}>
-                        <div className={styles.errorMessage}>❌ {error}</div>
-                    </div>
-                )}
+            {!studentResult && error && (
+              <div className={styles.error}>
+                <div className={styles.errorMessage}>❌ {error}</div>
+              </div>
+            )}
 
-                {studentResult && (
-                    <div className={styles.verified}>
-                        <div className={styles.greenTick}>✅ Certificate Verified</div>
-                        <h3>Student Details</h3>
-                        <ul>
-                            <li>Name: John Doe</li>
-                            <li>Certificate Number: 3261</li>
-                            <li>Course: International Diploma in Hotel Management</li>
-                            <li>Issue Date: 20 May 2025</li>
-                        </ul>
-                    </div>
-                )}
+            {studentResult && (
+              <div className={styles.verified}>
+                <div className={styles.greenTick}>✅ Certificate Verified</div>
+              </div>
+            )}
 
                 {memberResult && membershipData && (
                     <div className={styles.verified}>
