@@ -58,6 +58,18 @@ function Recognition() {
             maxWidth: "200px",
           }}
         />
+        <Image
+          src="/images/footer/ico.jpeg"
+          alt="ukrlp"
+          width={350}
+          height={30}
+          style={{
+            width: "auto",
+            paddingTop: "11px",
+            height: "auto",
+            maxWidth: "200px",
+          }}
+        />
       </div>
     </div>
   );

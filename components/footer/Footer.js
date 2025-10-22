@@ -148,6 +148,18 @@ const Footer = (props) => {
                     maxWidth: "150px",
                   }}
                 />
+                <Image
+                  src="/images/footer/ico.jpeg"
+                  alt="ukrlp"
+                  width={150}
+                  height={30}
+                  style={{
+                    width: "auto",
+                    paddingTop: "11px",
+                    height: "auto",
+                    maxWidth: "100px",
+                  }}
+                />
               </div>
             </div>
           </div>
