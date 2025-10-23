@@ -58,18 +58,21 @@ function Recognition() {
             maxWidth: "200px",
           }}
         />
-        <Image
-          src="/images/footer/ico.jpeg"
-          alt="ukrlp"
-          width={350}
-          height={30}
-          style={{
-            width: "auto",
-            paddingTop: "11px",
-            height: "auto",
-            maxWidth: "200px",
-          }}
-        />
+        <div className=" flex flex-col gap-2 items-center">
+          <Image
+            src="/images/footer/ico.jpeg"
+            alt="ukrlp"
+            width={350}
+            height={30}
+            style={{
+              width: "auto",
+              paddingTop: "11px",
+              height: "auto",
+              maxWidth: "200px",
+            }}
+          />
+          <h1 className=" text-black font-bold">Registration Number:ZC015593</h1>
+        </div>
       </div>
     </div>
   );
