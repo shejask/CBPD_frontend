@@ -2,7 +2,7 @@ import React from "react";
 import Link from "next/link";
 import Services from "../../api/service";
 import logo3 from "/public/CBPD_LOGO.png";
-import reg from "/public/images/reg no.png";
+import reg from "/public/images/reg noo.png";
 import ukrlp from "/public/images/footer/ukrlp.jpg";
 import aoht from "/public/images/footer/aoht.png";
 
