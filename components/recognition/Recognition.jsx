@@ -8,7 +8,7 @@ function Recognition() {
         Our Recognitions & Accreditations
       </h1>
       <div className=" md:flex md:items-center py-5  grid grid-cols-1 gap-10 place-items-center md:w-full md:justify-center md:gap-20">
-        <div className=" flex flex-col gap-2 items-center">
+        <div className=" flex flex-col gap-1 items-center">
           <Image
             src={reg}
             alt="payments"
@@ -20,8 +20,8 @@ function Recognition() {
               maxWidth: "200px",
             }}
           />
-          <h1 className=" text-black font-bold">
-            Registration Number:16442180
+          <h1 className=" text-black font-semibold text-sm">
+            REGISTERED NUMBER:16442180
           </h1>
         </div>
 
@@ -76,8 +76,8 @@ function Recognition() {
               maxWidth: "200px",
             }}
           />
-          <h1 className=" text-black font-bold">
-            Registration Number:ZC015593
+          <h1 className=" text-black font-semibold text-sm">
+            REGISTERED NUMBER:ZC015593
           </h1>
         </div>
       </div>
