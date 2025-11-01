@@ -155,6 +155,30 @@ const Verificationscomp = () => {
     }
   };
 
+  const getStatusBadgeClass = (status) => {
+    if (!status) return styles.statusBadge;
+
+    const statusLower = status.toLowerCase();
+    if (statusLower.includes("active") || statusLower.includes("valid")) {
+      return `${styles.statusBadge} ${styles.statusActive}`;
+    } else if (statusLower.includes("expir")) {
+      return `${styles.statusBadge} ${styles.statusExpired}`;
+    } else {
+      return `${styles.statusBadge} ${styles.statusExpiringSoon}`;
+    }
+  };
+
+  // Add this helper function to get expiry days class
+  const getExpiryDaysClass = (days) => {
+    if (days > 90) {
+      return `${styles.expiryDays} ${styles.expiryDaysGood}`;
+    } else if (days > 30) {
+      return `${styles.expiryDays} ${styles.expiryDaysWarning}`;
+    } else {
+      return `${styles.expiryDays} ${styles.expiryDaysCritical}`;
+    }
+  };
+
   return (
     <div className={styles.verificationContainer}>
       <h1>Verification Portal</h1>
