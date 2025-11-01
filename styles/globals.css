@@ -2,3 +2,218 @@
 @tailwind components;
 @tailwind utilities;
 
+
+.verified {
+    background: linear-gradient(135deg, #f0fdf4 0%, #dcfce7 100%);
+    border: 2px solid #22c55e;
+    border-radius: 16px;
+    padding: 32px;
+    margin-top: 32px;
+    box-shadow: 0 10px 30px rgba(34, 197, 94, 0.15);
+    animation: slideIn 0.4s ease-out;
+}
+
+@keyframes slideIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.greenTick {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 12px;
+    font-size: 24px;
+    font-weight: 700;
+    color: #15803d;
+    margin-bottom: 28px;
+    padding: 16px;
+    background: white;
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(34, 197, 94, 0.1);
+}
+
+.verified h3 {
+    color: #166534;
+    font-size: 20px;
+    font-weight: 600;
+    margin-bottom: 24px;
+    text-align: center;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+/* Enhanced table styling for center details */
+.verificationTable {
+    width: 100%;
+    background: white;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.08);
+    border-collapse: separate;
+    border-spacing: 0;
+}
+
+.verificationTable thead {
+    background: linear-gradient(135deg, #22c55e 0%, #16a34a 100%);
+}
+
+.verificationTable thead th {
+    color: white;
+    font-weight: 600;
+    font-size: 14px;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    padding: 18px 16px;
+    text-align: left;
+    border: none;
+}
+
+.verificationTable tbody tr {
+    transition: all 0.3s ease;
+}
+
+.verificationTable tbody tr:hover {
+    background-color: #f0fdf4;
+    transform: scale(1.01);
+}
+
+.verificationTable tbody td {
+    padding: 20px 16px;
+    color: #1f2937;
+    font-size: 15px;
+    border-bottom: 1px solid #e5e7eb;
+    vertical-align: middle;
+}
+
+.verificationTable tbody tr:last-child td {
+    border-bottom: none;
+}
+
+/* Status badge styling */
+.verificationTable tbody td:nth-child(5) {
+    font-weight: 600;
+}
+
+/* Add colored badges for status */
+.statusBadge {
+    display: inline-block;
+    padding: 6px 14px;
+    border-radius: 20px;
+    font-size: 13px;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.3px;
+}
+
+.statusActive {
+    background-color: #dcfce7;
+    color: #15803d;
+    border: 1px solid #22c55e;
+}
+
+.statusExpired {
+    background-color: #fee2e2;
+    color: #b91c1c;
+    border: 1px solid #ef4444;
+}
+
+.statusExpiringSoon {
+    background-color: #fef3c7;
+    color: #92400e;
+    border: 1px solid #f59e0b;
+}
+
+/* Days until expiry highlighting */
+.expiryDays {
+    font-weight: 700;
+    padding: 8px 12px;
+    border-radius: 8px;
+    display: inline-block;
+}
+
+.expiryDaysGood {
+    background-color: #dcfce7;
+    color: #15803d;
+}
+
+.expiryDaysWarning {
+    background-color: #fef3c7;
+    color: #92400e;
+}
+
+.expiryDaysCritical {
+    background-color: #fee2e2;
+    color: #b91c1c;
+}
+
+/* Responsive design */
+@media (max-width: 1024px) {
+    .verificationTable {
+        display: block;
+        overflow-x: auto;
+        white-space: nowrap;
+    }
+    
+    .verificationTable thead,
+    .verificationTable tbody,
+    .verificationTable th,
+    .verificationTable td,
+    .verificationTable tr {
+        display: block;
+    }
+    
+    .verificationTable thead {
+        display: none;
+    }
+    
+    .verificationTable tbody tr {
+        margin-bottom: 20px;
+        border: 2px solid #e5e7eb;
+        border-radius: 12px;
+        padding: 16px;
+        background: white;
+    }
+    
+    .verificationTable tbody td {
+        position: relative;
+        padding-left: 50%;
+        text-align: right;
+        border: none;
+        padding-top: 12px;
+        padding-bottom: 12px;
+    }
+    
+    .verificationTable tbody td:before {
+        content: attr(data-label);
+        position: absolute;
+        left: 16px;
+        font-weight: 600;
+        color: #4b5563;
+        text-transform: uppercase;
+        font-size: 12px;
+        letter-spacing: 0.5px;
+    }
+}
+
+@media (max-width: 640px) {
+    .verified {
+        padding: 20px;
+    }
+    
+    .greenTick {
+        font-size: 20px;
+        padding: 12px;
+    }
+    
+    .verified h3 {
+        font-size: 18px;
+    }
+}
+
