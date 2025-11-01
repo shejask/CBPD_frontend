@@ -155,30 +155,6 @@ const Verificationscomp = () => {
     }
   };
 
-  const getStatusBadgeClass = (status) => {
-    if (!status) return styles.statusBadge;
-
-    const statusLower = status.toLowerCase();
-    if (statusLower.includes("active") || statusLower.includes("valid")) {
-      return `${styles.statusBadge} ${styles.statusActive}`;
-    } else if (statusLower.includes("expir")) {
-      return `${styles.statusBadge} ${styles.statusExpired}`;
-    } else {
-      return `${styles.statusBadge} ${styles.statusExpiringSoon}`;
-    }
-  };
-
-  // Add this helper function to get expiry days class
-  const getExpiryDaysClass = (days) => {
-    if (days > 90) {
-      return `${styles.expiryDays} ${styles.expiryDaysGood}`;
-    } else if (days > 30) {
-      return `${styles.expiryDays} ${styles.expiryDaysWarning}`;
-    } else {
-      return `${styles.expiryDays} ${styles.expiryDaysCritical}`;
-    }
-  };
-
   return (
     <div className={styles.verificationContainer}>
       <h1>Verification Portal</h1>
@@ -353,52 +329,64 @@ const Verificationscomp = () => {
             </ul>
           </div>
         )}
-
         {centreResult && centerData && (
-          <div className={styles.verified}>
-            <div className={styles.greenTick}>
-              <span style={{ fontSize: "32px" }}>✅</span>
-              <span>Centre Verified Successfully</span>
+          <div className={styles.verifiedCard}>
+            <div className={styles.verifiedHeader}>
+              <div className={styles.verifiedIcon}>✅</div>
+              <div>
+                <h3 className={styles.verifiedTitle}>Centre Verified</h3>
+                <p className={styles.verifiedSubtitle}>
+                  This centre is officially approved and active.
+                </p>
+              </div>
             </div>
-            <h3>Approved Centre Details</h3>
-            <table className={styles.verificationTable}>
-              <thead>
-                <tr>
-                  <th>Centre Code</th>
-                  <th>Location</th>
-                  <th>Name of Affiliated Centre</th>
-                  <th>Expiry Date</th>
-                  <th>Status</th>
-                  <th>Days Until Expiry</th>
-                </tr>
-              </thead>
-              <tbody>
-                <tr>
-                  <td data-label="Centre Code">
-                    <strong>{centerData.centreCode}</strong>
-                  </td>
-                  <td data-label="Location">{centerData.location}</td>
-                  <td data-label="Name of Affiliated Centre">
-                    {centerData.nameOfAffiliatedCentre}
-                  </td>
-                  <td data-label="Expiry Date">
-                    {formatDate(centerData.expiryDate)}
-                  </td>
-                  <td data-label="Status">
-                    <span className={getStatusBadgeClass(centerData.status)}>
-                      {centerData.status}
-                    </span>
-                  </td>
-                  <td data-label="Days Until Expiry">
-                    <span
-                      className={getExpiryDaysClass(centerData.daysUntilExpiry)}
-                    >
-                      {centerData.daysUntilExpiry} days
-                    </span>
-                  </td>
-                </tr>
-              </tbody>
-            </table>
+
+            <div className={styles.detailsGrid}>
+              <div className={styles.detailItem}>
+                <span className={styles.detailLabel}>Centre Code</span>
+                <span className={styles.detailValue}>
+                  {centerData.centreCode}
+                </span>
+              </div>
+              <div className={styles.detailItem}>
+                <span className={styles.detailLabel}>Location</span>
+                <span className={styles.detailValue}>
+                  {centerData.location}
+                </span>
+              </div>
+              <div className={styles.detailItem}>
+                <span className={styles.detailLabel}>
+                  Affiliated Centre Name
+                </span>
+                <span className={styles.detailValue}>
+                  {centerData.nameOfAffiliatedCentre}
+                </span>
+              </div>
+              <div className={styles.detailItem}>
+                <span className={styles.detailLabel}>Expiry Date</span>
+                <span className={styles.detailValue}>
+                  {formatDate(centerData.expiryDate)}
+                </span>
+              </div>
+              <div className={styles.detailItem}>
+                <span className={styles.detailLabel}>Status</span>
+                <span
+                  className={`${styles.statusBadge} ${
+                    centerData.status?.toLowerCase() === "active"
+                      ? styles.active
+                      : styles.inactive
+                  }`}
+                >
+                  {centerData.status}
+                </span>
+              </div>
+              <div className={styles.detailItem}>
+                <span className={styles.detailLabel}>Days Until Expiry</span>
+                <span className={styles.detailValue}>
+                  {centerData.daysUntilExpiry}
+                </span>
+              </div>
+            </div>
           </div>
         )}
       </div>
