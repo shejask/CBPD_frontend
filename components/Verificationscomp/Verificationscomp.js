@@ -308,25 +308,79 @@ const Verificationscomp = () => {
         )}
 
         {memberResult && membershipData && (
-          <div className={styles.verified}>
-            <div className={styles.greenTick}>✅ Membership Verified</div>
-            <h3>Membership Details</h3>
-            <ul>
-              <li>Membership Name: {membershipData.membershipName}</li>
-              <li>Membership Number: {membershipData.membershipNumber}</li>
-              <li>Membership Type: {membershipData.membershipType}</li>
-              <li>Membership Status: {membershipData.membershipStatus}</li>
-              <li>
-                Valid From:{" "}
-                {formatDate(membershipData.validityPeriod?.startDate)}
-              </li>
-              <li>
-                Valid Until:{" "}
-                {formatDate(membershipData.validityPeriod?.endDate)}
-              </li>
-              <li>Days Until Expiry: {membershipData.daysUntilExpiry}</li>
-              <li>Validity Status: {membershipData.validityStatus}</li>
-            </ul>
+          <div className={styles.verifiedCard}>
+            <div className={styles.verifiedHeader}>
+              <div className={styles.verifiedIcon}>✅</div>
+              <div>
+                <h3 className={styles.verifiedTitle}>Membership Verified</h3>
+                <p className={styles.verifiedSubtitle}>
+                  This membership is officially approved and active.
+                </p>
+              </div>
+            </div>
+
+            <div className={styles.detailsGrid}>
+              <div className={styles.detailItem}>
+                <span className={styles.detailLabel}>Membership Name</span>
+                <span className={styles.detailValue}>
+                  {membershipData.membershipName}
+                </span>
+              </div>
+              <div className={styles.detailItem}>
+                <span className={styles.detailLabel}>Membership Number</span>
+                <span className={styles.detailValue}>
+                  {membershipData.membershipNumber}
+                </span>
+              </div>
+              <div className={styles.detailItem}>
+                <span className={styles.detailLabel}>Membership Type</span>
+                <span className={styles.detailValue}>
+                  {membershipData.membershipType}
+                </span>
+              </div>
+              <div className={styles.detailItem}>
+                <span className={styles.detailLabel}>Membership Status</span>
+                <span
+                  className={`${styles.statusBadge} ${
+                    membershipData.membershipStatus?.toLowerCase() === "active"
+                      ? styles.active
+                      : styles.inactive
+                  }`}
+                >
+                  {membershipData.membershipStatus}
+                </span>
+              </div>
+              <div className={styles.detailItem}>
+                <span className={styles.detailLabel}>Valid From</span>
+                <span className={styles.detailValue}>
+                  {formatDate(membershipData.validityPeriod?.startDate)}
+                </span>
+              </div>
+              <div className={styles.detailItem}>
+                <span className={styles.detailLabel}>Valid Until</span>
+                <span className={styles.detailValue}>
+                  {formatDate(membershipData.validityPeriod?.endDate)}
+                </span>
+              </div>
+              <div className={styles.detailItem}>
+                <span className={styles.detailLabel}>Days Until Expiry</span>
+                <span className={styles.detailValue}>
+                  {membershipData.daysUntilExpiry}
+                </span>
+              </div>
+              <div className={styles.detailItem}>
+                <span className={styles.detailLabel}>Validity Status</span>
+                <span
+                  className={`${styles.statusBadge} ${
+                    membershipData.validityStatus?.toLowerCase() === "valid"
+                      ? styles.active
+                      : styles.inactive
+                  }`}
+                >
+                  {membershipData.validityStatus}
+                </span>
+              </div>
+            </div>
           </div>
         )}
         {centreResult && centerData && (
