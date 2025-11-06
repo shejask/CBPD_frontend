@@ -34,7 +34,7 @@ const StatisticsSection = () => {
     },
     {
       number: "100+",
-      label: "Certificat Validated in 100+ Countries",
+      label: "Certificate Validated in 100+ Countries",
       icon: "🌍",
       color: "#1e40af", // Royal Blue
       bgColor: "rgba(30, 64, 175, 0.1)",
