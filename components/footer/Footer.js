@@ -5,6 +5,7 @@ import logo3 from "/public/CBPD_LOGO.png";
 import reg from "/public/images/reg noo.png";
 import ukrlp from "/public/images/footer/ukrlp.jpg";
 import aoht from "/public/images/footer/aoht.png";
+import protection from "/public/images/protection.png";
 
 import paymentsicons from "/public/images/payments-icons.png";
 
@@ -97,7 +98,7 @@ const Footer = (props) => {
             </div>
 
             <div className="col col-xl-2 col-lg-4 col-md-6 col-sm-12 col-12">
-              <div className="widget link-widget">
+              <div className="widget link-widget ">
                 <Image
                   src={reg}
                   alt="payments"
@@ -150,6 +151,18 @@ const Footer = (props) => {
                 />
                 <Image
                   src="/images/footer/ico.jpeg"
+                  alt="ukrlp"
+                  width={150}
+                  height={30}
+                  style={{
+                    width: "auto",
+                    paddingTop: "11px",
+                    height: "auto",
+                    maxWidth: "100px",
+                  }}
+                />
+                <Image
+                  src={protection}
                   alt="ukrlp"
                   width={150}
                   height={30}

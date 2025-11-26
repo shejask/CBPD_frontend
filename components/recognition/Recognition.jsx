@@ -1,6 +1,7 @@
 import Image from "next/image";
 import React from "react";
 import reg from "/public/images/reg noo.png";
+import protection from "/public/images/protection.png";
 function Recognition() {
   return (
     <div className="  md:my-11 grid grid-cols-1 gap-10 md:flex md:flex-col md:gap-10 items-center">
@@ -8,7 +9,7 @@ function Recognition() {
         Our Recognitions & Accreditations
       </h1>
       <div className=" md:flex md:items-center py-5  grid grid-cols-1 gap-10 place-items-center md:w-full md:justify-center md:gap-20">
-        <div className=" flex flex-col gap-1 items-center">
+        <div className=" flex flex-col gap-1 items-center justify-center">
           <Image
             src={reg}
             alt="payments"
@@ -17,10 +18,10 @@ function Recognition() {
             style={{
               width: "auto",
               height: "auto",
-              maxWidth: "200px",
+              maxWidth: "150px",
             }}
           />
-          <h1 className=" text-black font-semibold text-sm">
+          <h1 className=" text-black font-semibold text-sm text-center">
             REGISTERED NUMBER:16442180
           </h1>
         </div>
@@ -34,7 +35,7 @@ function Recognition() {
             width: "auto",
             paddingTop: "11px",
             height: "auto",
-            maxWidth: "200px",
+            maxWidth: "150px",
           }}
         />
 
@@ -47,7 +48,7 @@ function Recognition() {
             width: "auto",
             paddingTop: "11px",
             height: "auto",
-            maxWidth: "200px",
+            maxWidth: "150px",
           }}
         />
 
@@ -60,10 +61,10 @@ function Recognition() {
             width: "auto",
             paddingTop: "11px",
             height: "auto",
-            maxWidth: "200px",
+            maxWidth: "150px",
           }}
         />
-        <div className=" flex flex-col gap-2 items-center">
+        <div className=" flex flex-col gap-2 items-center justify-center">
           <Image
             src="/images/footer/ico.jpeg"
             alt="ukrlp"
@@ -73,13 +74,26 @@ function Recognition() {
               width: "auto",
               paddingTop: "11px",
               height: "auto",
-              maxWidth: "200px",
+              maxWidth: "150px",
             }}
           />
-          <h1 className=" text-black font-semibold text-sm">
+          <h1 className=" text-black font-semibold text-sm text-center">
             REGISTERED NUMBER:ZC015593
           </h1>
         </div>
+
+        <Image
+          src={protection}
+          alt="ukrlp"
+          width={350}
+          height={30}
+          style={{
+            width: "auto",
+            paddingTop: "11px",
+            height: "auto",
+            maxWidth: "200px",
+          }}
+        />
       </div>
     </div>
   );
