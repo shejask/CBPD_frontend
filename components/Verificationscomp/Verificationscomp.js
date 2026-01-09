@@ -26,6 +26,70 @@ const Verificationscomp = () => {
     centreCode: "",
   });
 
+  // Student database
+  const studentDatabase = [
+    {
+      name: "sandeep pradeep",
+      regNumber: "11025",
+      certNumber: "cbpd/2025/hrm-3105",
+      learnerNumber: "l-25-264",
+    },
+    {
+      name: "lijin s",
+      regNumber: "cbpd/000101",
+      certNumber: "cbpd/aidmm/25/001",
+      learnerNumber: "aibi6555/0001",
+    },
+    {
+      name: "vishnu ps",
+      regNumber: "cbpd/000102",
+      certNumber: "cbpd/aidmm/25/002",
+      learnerNumber: "aibi6555/0002",
+    },
+    {
+      name: "jabir ahammed vp",
+      regNumber: "cbpd/000103",
+      certNumber: "cbpd/aidmm/25/003",
+      learnerNumber: "aibi6555/0003",
+    },
+    {
+      name: "vivek ks",
+      regNumber: "cbpd/000104",
+      certNumber: "cbpd/aidmm/25/004",
+      learnerNumber: "aibi6555/0004",
+    },
+    {
+      name: "muhammed raheef",
+      regNumber: "cbpd/000105",
+      certNumber: "cbpd/aidmm/25/005",
+      learnerNumber: "aibi6555/0005",
+    },
+    {
+      name: "anjana r",
+      regNumber: "cbpd/000106",
+      certNumber: "cbpd/aidmm/25/006",
+      learnerNumber: "aibi6555/0006",
+    },
+    {
+      name: "aparna s vijayan",
+      regNumber: "cbpd/000107",
+      certNumber: "cbpd/aidmm/25/007",
+      learnerNumber: "aibi6555/0007",
+    },
+    {
+      name: "anjal t sahadevan",
+      regNumber: "cbpd/000108",
+      certNumber: "cbpd/aidmm/25/008",
+      learnerNumber: "aibi6555/0008",
+    },
+    {
+      name: "sajesh mankara",
+      regNumber: "cbpd/000109",
+      certNumber: "cbpd/aidmm/25/009",
+      learnerNumber: "aibi6555/0009",
+    },
+  ];
+
   const handleInputChange = (e) => {
     const { id, value } = e.target;
     setFormData((prev) => ({
@@ -58,13 +122,18 @@ const Verificationscomp = () => {
     const normalizedLearnerNumber = normalizeString(learnerNumber);
     const normalizedStudentName = normalizeString(studentName);
 
-    if (
-      normalizedStudentName === "sandeep pradeep" &&
-      normalizedRegNumber === "11025" &&
-      normalizedCertNumber === "cbpd/2025/hrm-3105" &&
-      normalizedLearnerNumber === "l-25-264"
-    ) {
+    // Search for matching student in database
+    const matchedStudent = studentDatabase.find(
+      (student) =>
+        normalizeString(student.name) === normalizedStudentName &&
+        normalizeString(student.regNumber) === normalizedRegNumber &&
+        normalizeString(student.certNumber) === normalizedCertNumber &&
+        normalizeString(student.learnerNumber) === normalizedLearnerNumber
+    );
+
+    if (matchedStudent) {
       setStudentResult(true);
+      setError("");
     } else {
       setStudentResult(false);
       setError("No student certificate found with the provided details");
