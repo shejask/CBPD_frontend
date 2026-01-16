@@ -88,6 +88,12 @@ const Verificationscomp = () => {
       certNumber: "cbpd/aidmm/25/009",
       learnerNumber: "aibi6555/0009",
     },
+    {
+      name: "arun mohan ma",
+      regNumber: "CBPD/11026",
+      certNumber: "cbpd/idft/25/3106",
+      learnerNumber: "cpl5499/002",
+    },
   ];
 
   const handleInputChange = (e) => {
