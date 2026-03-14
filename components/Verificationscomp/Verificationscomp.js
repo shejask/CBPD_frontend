@@ -438,6 +438,12 @@ const Verificationscomp = () => {
       certNumber: "CBPD/IASDME/25/3164",
       learnerNumber: "CPL5499/060",
     },
+    {
+  name: "THASNIYA K.M",
+  regNumber: "CBPD/11054",
+  certNumber: "CBPD/ISDME/25/3134",
+  learnerNumber: "CPL/5499/030",
+},
   ];
 
   const handleInputChange = (e) => {
