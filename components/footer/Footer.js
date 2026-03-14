@@ -76,7 +76,7 @@ const Footer = (props) => {
                   <ul>
                     {/* <li>Company -</li> */}
                     <li>
-                      Central Board of professional development 37th Floor 1
+                      Central Board of Professional Development 37th Floor 1
                       Canada Square London, E14 5DY
                     </li>
                     <li>+44 20 38074300</li>
