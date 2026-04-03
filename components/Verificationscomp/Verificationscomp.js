@@ -444,6 +444,66 @@ const Verificationscomp = () => {
   certNumber: "CBPD/ISDME/25/3134",
   learnerNumber: "CPL/5499/030",
 },
+    {
+  name: "rajika v p",
+  regNumber: "CBPD/11088",
+  certNumber: "CBPD/ISDME/25/3168",
+  learnerNumber: "CPL/5499/064",
+},
+{
+  name: "anju v john",
+  regNumber: "CBPD/11089",
+  certNumber: "CBPD/ISDME/25/3169",
+  learnerNumber: "CPL/5499/065",
+},
+{
+  name: "divya jagadish",
+  regNumber: "CBPD/11090",
+  certNumber: "CBPD/ISDME/25/3170",
+  learnerNumber: "CPL/5499/066",
+},
+{
+  name: "faseela m k",
+  regNumber: "CBPD/11091",
+  certNumber: "CBPD/ISDME/25/3170",
+  learnerNumber: "CPL/5499/067",
+},
+{
+  name: "naazia farhein",
+  regNumber: "CBPD/11092",
+  certNumber: "CBPD/IASDME/25/3172",
+  learnerNumber: "CPL/5499/068",
+},
+{
+  name: "abhinanda u",
+  regNumber: "CBPD/009",
+  certNumber: "CBPD/IADHA/26/0001",
+  learnerNumber: "INS/26/6558/001",
+},
+{
+  name: "amitha a n",
+  regNumber: "CBPD/012",
+  certNumber: "CBPD/IADHA/26/0002",
+  learnerNumber: "INS/26/6558/002",
+},
+{
+  name: "hadiya",
+  regNumber: "CBPD/022",
+  certNumber: "CBPD/IADHA/26/0003",
+  learnerNumber: "INS/26/6558/003",
+},
+{
+  name: "gopika k p",
+  regNumber: "CBPD/032",
+  certNumber: "CBPD/IADHA/26/0004",
+  learnerNumber: "INS/26/6558/004",
+},
+{
+  name: "hanoona fathima a k",
+  regNumber: "CBPD/033",
+  certNumber: "CBPD/IADHA/26/0005",
+  learnerNumber: "INS/26/6558/005",
+},
   ];
 
   const handleInputChange = (e) => {
