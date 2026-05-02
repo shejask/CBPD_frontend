@@ -22,9 +22,9 @@ export async function generateStaticParams() {
 export default async function SubProgramPage({ params }: { params: Promise<{ slug: string }> }) {
   const resolvedParams = await params;
   
-  let category = null;
-  let program = null;
-  let categoryCourses = [];
+  let category: any = null;
+  let program: any = null;
+  let categoryCourses: any[] = [];
 
   try {
     const [catsRes, coursesRes] = await Promise.all([

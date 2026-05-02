@@ -296,7 +296,7 @@ export default function Navbar() {
                     </button>
                     <div className={`overflow-hidden transition-all duration-300 ease-in-out ${mobileActiveCategory === idx ? 'max-h-[500px] opacity-100 mt-2 mb-3' : 'max-h-0 opacity-0'}`}>
                       <div className="pl-12 pr-4 flex flex-col gap-4 py-2 border-l border-white/10 ml-6">
-                        {prog.subs.map((sub, i) => (
+                        {prog.subs.map((sub: any, i: number) => (
                           <Link 
                             key={i} 
                             href={`/programs/${sub.slug}`} 

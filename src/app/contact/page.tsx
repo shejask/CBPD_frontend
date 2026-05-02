@@ -209,7 +209,7 @@ export default function ContactPage() {
                           <option value="" disabled>Select a programme</option>
                           {programData.map((category, idx) => (
                             <optgroup key={idx} label={category.title}>
-                              {category.subs.map((sub, subIdx) => (
+                              {category.subs.map((sub: any, subIdx: number) => (
                                 <option key={subIdx} value={sub.title}>{sub.title}</option>
                               ))}
                             </optgroup>
