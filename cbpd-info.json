@@ -1,0 +1,17 @@
+{
+  "logos": [
+    "src=\"/_next/image?url=%2Fimages%2Ffooter%2Fcpdlogo.png&amp;w=640&amp;q=75\"",
+    "src=\"/_next/image?url=%2F_next%2Fstatic%2Fmedia%2FCBPD_LOGO.7c42c792.png&amp;w=640&amp;q=75\"",
+    "src=\"/_next/image?url=%2Fimages%2Ffooter%2Fcpdlogo.png&amp;w=256&amp;q=75\""
+  ],
+  "colors": [
+    [
+      "#1e40af",
+      6
+    ],
+    [
+      "#dc2626",
+      4
+    ]
+  ]
+}
