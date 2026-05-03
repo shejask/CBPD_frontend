@@ -34,6 +34,7 @@ export default function ProgramsPage() {
           const formatted = cats.map((cat: any) => ({
              title: cat.name,
              slug: cat.slug,
+             description: cat.description,
              icon: cat.icon || "🎓",
              image: cat.image || "/images/external/1552664730-d307ca884978.jpg"
           }));
@@ -138,8 +139,8 @@ export default function ProgramsPage() {
                         </h2>
                       </Link>
                       
-                      <p className="text-sm text-slate-500 dark:text-slate-400 mb-6 shrink-0">
-                        Master the principles of {prog.title.replace(/\s*Programmes?/i, '').toLowerCase()} with our globally accredited industry curriculum. 
+                      <p className="text-sm text-slate-500 dark:text-slate-400 mb-6 shrink-0 line-clamp-3">
+                        {prog.description || `Master the principles of ${prog.title.replace(/\s*Programmes?/i, '').toLowerCase()} with our globally accredited industry curriculum.`}
                       </p>
                       
                       <Link 

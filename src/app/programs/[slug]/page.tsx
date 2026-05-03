@@ -56,7 +56,7 @@ export default async function SubProgramPage({ params }: { params: Promise<{ slu
               {category.name}
             </h1>
             <p className="text-xl text-slate-300 mb-8 max-w-2xl mx-auto">
-              Master the principles of {category.name.toLowerCase()} with our globally accredited industry curriculum. 
+              {category.description || `Master the principles of ${category.name.toLowerCase()} with our globally accredited industry curriculum.`}
             </p>
           </div>
         </section>
@@ -72,7 +72,7 @@ export default async function SubProgramPage({ params }: { params: Promise<{ slu
                       <h3 className="text-xl font-bold text-slate-900 dark:text-white group-hover:text-brand-red transition-colors mb-2">
                         {sub.title}
                       </h3>
-                      <p className="text-slate-500 dark:text-slate-400">Click to explore the core curriculum, market insights, and enrolment steps.</p>
+                      <p className="text-slate-500 dark:text-slate-400">{sub.description || "Click to explore the core curriculum, market insights, and enrolment steps."}</p>
                     </div>
                     <div className="w-10 h-10 rounded-full bg-slate-50 dark:bg-primary-900 flex items-center justify-center text-slate-400 group-hover:bg-brand-red group-hover:text-white transition-colors">
                       <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7"/></svg>
@@ -116,7 +116,7 @@ export default async function SubProgramPage({ params }: { params: Promise<{ slu
               {program.title}
             </h1>
             <p className="text-lg md:text-xl text-slate-300 leading-relaxed">
-              Equip yourself with verified expertise and drive industry innovation through our globally recognized curriculum.
+              {program.description || "Equip yourself with verified expertise and drive industry innovation through our globally recognized curriculum."}
             </p>
           </div>
         </div>
