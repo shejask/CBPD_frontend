@@ -31,15 +31,7 @@ export default function Programs() {
       try {
         const res = await api.getCategories();
         const cats = res.categories || [];
-        const popularSlugs = [
-          "business", 
-          "information-technology", 
-          "design", 
-          "engineering", 
-          "finance", 
-          "healthcare-medical"
-        ];
-        const filtered = cats.filter((p: any) => popularSlugs.includes(p.slug));
+        const filtered = cats.filter((p: any) => p.isPopular);
         if (filtered.length > 0) setPopularPrograms(filtered);
       } catch (err) {
         console.error("Failed to load popular programs", err);
