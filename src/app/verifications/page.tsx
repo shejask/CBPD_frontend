@@ -241,7 +241,9 @@ export default function VerificationPage() {
                       {verifyResult.data && (
                         <div className="mb-4 text-sm text-slate-600 dark:text-slate-400 border border-slate-200 dark:border-white/10 rounded-lg p-4 bg-white dark:bg-white/5">
                           <ul className="space-y-1">
-                            {Object.entries(verifyResult.data).map(([key, value]) => (
+                            {Object.entries(verifyResult.data)
+                              .filter(([key]) => !key.toLowerCase().includes('date'))
+                              .map(([key, value]) => (
                               <li key={key} className="flex flex-col sm:flex-row sm:justify-between border-b border-slate-100 dark:border-white/5 last:border-0 pb-1 last:pb-0">
                                 <span className="font-semibold capitalize text-slate-500">{key.replace(/([A-Z])/g, ' $1').trim()}:</span>
                                 <span className="text-slate-800 dark:text-slate-200 text-right">
