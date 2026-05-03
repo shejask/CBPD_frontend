@@ -71,7 +71,7 @@ export default function Hero() {
         {/* Text Area */}
         <div className="flex flex-col items-start justify-center w-full lg:w-1/2 h-full pb-10 pt-24 lg:pt-36">
           <h1 className="text-3xl sm:text-4xl lg:text-5xl xl:text-6xl font-bold text-white max-w-4xl leading-[1.2] mb-5 animate-[fadeInUp_1s_ease-out]">
-            A UK Professional Awarding Body Delivering Industry-Relevant, <br className="hidden md:block" />
+            A UK Professional Awarding and Certification Body Delivering Industry-Relevant, <br className="hidden md:block" />
             <span className="text-brand-red">Globally Recognised Qualifications and Professional Credentials</span>
           </h1>
         </div>
