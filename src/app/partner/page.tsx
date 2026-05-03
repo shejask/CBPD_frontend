@@ -21,7 +21,8 @@ export default function PartnerPage() {
     setStatus("loading");
     setErrorMessage("");
     setSuccessMessage("");
-    const formData = new FormData(e.currentTarget);
+    const form = e.currentTarget;
+    const formData = new FormData(form);
     const data = Object.fromEntries(formData.entries());
     
     // Map to backend schema
@@ -46,7 +47,7 @@ export default function PartnerPage() {
       const response = await api.submitPartner(payload);
       setStatus("success");
       setSuccessMessage(response?.message || "Partner enquiry sent successfully! We will get back to you shortly.");
-      e.currentTarget.reset();
+      form.reset();
       setTimeout(() => {
         setStatus("idle");
         setSuccessMessage("");
