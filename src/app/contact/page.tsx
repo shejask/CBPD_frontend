@@ -126,8 +126,8 @@ export default function ContactPage() {
                   <h3 className="text-xl font-bold text-slate-900 dark:text-white mb-2">Address</h3>
                   <p className="text-slate-600 dark:text-slate-400 leading-relaxed font-medium">
                     Central Board of Professional Development<br/>
-                    37th Floor, 1 Canada Square<br/>
-                    London, E14 5DY
+                    1 Canada Square, Canary Wharf<br/>
+                    London, E14 5DY, United Kingdom
                   </p>
                 </div>
               </TiltCard>
