@@ -1,23 +1,10 @@
+export const dynamic = 'force-dynamic';
+export const revalidate = 0;
+
 import { notFound } from "next/navigation";
 import Link from "next/link";
 import ApplicationForm from "./ApplicationForm";
 import { api } from "@/lib/api";
-
-// For static generation
-export async function generateStaticParams() {
-  try {
-    const [catsRes, coursesRes] = await Promise.all([
-      api.getCategories(),
-      api.getCourses()
-    ]);
-    const params: { slug: string }[] = [];
-    catsRes.categories?.forEach((c: any) => params.push({ slug: c.slug }));
-    coursesRes.courses?.forEach((c: any) => params.push({ slug: c.slug }));
-    return params;
-  } catch (e) {
-    return [];
-  }
-}
 
 export default async function SubProgramPage({ params }: { params: Promise<{ slug: string }> }) {
   const resolvedParams = await params;
