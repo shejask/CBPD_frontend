@@ -4,9 +4,18 @@ import Link from "next/link";
 import { useState } from "react";
 import { useRouter } from "next/navigation";
 import { countryCodes } from "@/data/countries";
-import { allCountries } from "@/data/allCountries";
 import FormAlert from "@/components/FormAlert";
 import { api } from "@/lib/api";
+import { countries } from "@/data/countryList";
+
+const InputWrapper = ({ label, required = false, children }: any) => (
+  <div className="flex flex-col gap-1.5 w-full">
+    <label className="text-sm font-semibold text-slate-700 dark:text-slate-300 ml-1">
+      {label} {required && <span className="text-red-500">*</span>}
+    </label>
+    {children}
+  </div>
+);
 
 export default function RegisterPage() {
   const [step, setStep] = useState(1);
@@ -112,14 +121,7 @@ export default function RegisterPage() {
     }
   };
 
-  const InputWrapper = ({ label, required = false, children }: any) => (
-    <div className="flex flex-col gap-1.5 w-full">
-      <label className="text-sm font-semibold text-slate-700 dark:text-slate-300 ml-1">
-        {label} {required && <span className="text-red-500">*</span>}
-      </label>
-      {children}
-    </div>
-  );
+
 
   return (
     <div className="min-h-screen bg-slate-50 dark:bg-[#0a0f1c] pt-24 pb-20 px-4 md:px-8 relative overflow-hidden">
@@ -183,8 +185,8 @@ export default function RegisterPage() {
                 <InputWrapper label="Country" required>
                   <select name="country" value={formData.country} onChange={handleChange} required className="w-full px-4 py-3 bg-slate-50 dark:bg-primary-800 border border-slate-200 dark:border-white/10 rounded-xl focus:ring-2 focus:ring-brand-blue transition-all text-slate-800 dark:text-white">
                     <option value="">Select Country</option>
-                    {allCountries.map((c, i) => (
-                      <option key={i} value={c}>{c}</option>
+                    {countries.map(c => (
+                      <option key={c} value={c}>{c}</option>
                     ))}
                   </select>
                 </InputWrapper>
