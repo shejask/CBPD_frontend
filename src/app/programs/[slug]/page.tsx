@@ -4,6 +4,7 @@ export const revalidate = 0;
 import { notFound } from "next/navigation";
 import Link from "next/link";
 import ApplicationForm from "./ApplicationForm";
+import CategoryView from "./CategoryView";
 import { api } from "@/lib/api";
 
 export default async function SubProgramPage({ params }: { params: Promise<{ slug: string }> }) {
@@ -36,55 +37,9 @@ export default async function SubProgramPage({ params }: { params: Promise<{ slu
     notFound();
   }
 
-  // If it's a category page (and doesn't have a dedicated page like /business already), render a generic category template
+  // If it's a category page (and doesn't have a dedicated page like /business already), render the dynamic category template
   if (category && !program) {
-    return (
-      <main className="min-h-screen bg-slate-50 dark:bg-primary-900 pb-20">
-        <div className="bg-white dark:bg-primary-900 pt-32 pb-4 border-b border-slate-200 dark:border-primary-800">
-          <div className="container mx-auto px-6 md:px-12 flex items-center gap-3 text-sm text-slate-500 font-medium">
-            <Link href="/" className="hover:text-brand-red border-transparent transition-colors">Home</Link>
-            <span className="text-slate-300">/</span>
-            <Link href="/programs" className="hover:text-brand-red border-transparent transition-colors">Programmes</Link>
-            <span className="text-slate-300">/</span>
-            <span className="text-slate-900 dark:text-white">{category.name}</span>
-          </div>
-        </div>
-
-        <section className="bg-primary-900 py-20 relative overflow-hidden">
-          <div className="container mx-auto px-6 md:px-12 relative z-10 text-center">
-            <h1 className="text-4xl md:text-5xl font-bold text-white mb-6">
-              {category.name}
-            </h1>
-            <p className="text-xl text-slate-300 mb-8 max-w-2xl mx-auto">
-              {category.description || `Master the principles of ${category.name.toLowerCase()} with our globally accredited industry curriculum.`}
-            </p>
-          </div>
-        </section>
-
-        <section className="py-16">
-          <div className="container mx-auto px-6 md:px-12 max-w-4xl">
-            <h2 className="text-2xl font-bold text-slate-900 dark:text-white mb-8">Available Sub-Programmes</h2>
-            <div className="space-y-4">
-              {categoryCourses.map((sub: any, i: number) => (
-                <Link key={i} href={`/programs/${sub.slug}`} className="block p-6 bg-white dark:bg-primary-800 border border-slate-200 dark:border-primary-700 rounded-lg hover:border-brand-red dark:hover:border-brand-red transition-all group shadow-sm">
-                  <div className="flex items-center justify-between">
-                    <div>
-                      <h3 className="text-xl font-bold text-slate-900 dark:text-white group-hover:text-brand-red transition-colors mb-2">
-                        {sub.title}
-                      </h3>
-                      <p className="text-slate-500 dark:text-slate-400">{sub.description || "Click to explore the core curriculum, market insights, and enrolment steps."}</p>
-                    </div>
-                    <div className="w-10 h-10 rounded-full bg-slate-50 dark:bg-primary-900 flex items-center justify-center text-slate-400 group-hover:bg-brand-red group-hover:text-white transition-colors">
-                      <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7"/></svg>
-                    </div>
-                  </div>
-                </Link>
-              ))}
-            </div>
-          </div>
-        </section>
-      </main>
-    );
+    return <CategoryView category={category} />;
   }
 
   // Render specific Sub-Program template

@@ -2,32 +2,49 @@
 
 import { useState } from "react";
 import { countryCodes } from "@/data/countries";
+import { api } from "@/lib/api";
+import FormAlert from "@/components/FormAlert";
 
 export default function ApplicationForm({ programTitle }: { programTitle: string }) {
   const [formData, setFormData] = useState({
-    name: "",
+    firstName: "",
+    lastName: "",
     email: "",
     phoneCode: "+44",
     phone: "",
-    country: "",
     message: ""
   });
   
-  const [status, setStatus] = useState<"idle" | "loading" | "success">("idle");
+  const [status, setStatus] = useState<"idle" | "loading" | "success" | "error">("idle");
+  const [errorMessage, setErrorMessage] = useState("");
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>) => {
     const { name, value } = e.target;
     setFormData(prev => ({ ...prev, [name]: value }));
   };
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     setStatus("loading");
+    setErrorMessage("");
     
-    // Simulate submission
-    setTimeout(() => {
+    try {
+      await api.submitContact({
+        firstName: formData.firstName.trim(),
+        lastName: formData.lastName.trim(),
+        email: formData.email,
+        phone: `${formData.phoneCode} ${formData.phone}`.trim(),
+        enquiryType: "Programme",
+        programmeName: programTitle,
+        message: formData.message,
+      });
+      
       setStatus("success");
-    }, 1500);
+    } catch (err: any) {
+      console.error("Application submission error:", err);
+      setStatus("error");
+      setErrorMessage(err.message || "There was an error submitting your application. Please try again.");
+    }
   };
 
   if (status === "success") {
@@ -53,15 +70,28 @@ export default function ApplicationForm({ programTitle }: { programTitle: string
         <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
           
           <div className="space-y-2">
-            <label className="text-sm font-semibold text-slate-700 dark:text-slate-300">Full Name <span className="text-brand-red">*</span></label>
+            <label className="text-sm font-semibold text-slate-700 dark:text-slate-300">First Name <span className="text-brand-red">*</span></label>
             <input 
               type="text" 
-              name="name"
+              name="firstName"
               required
-              value={formData.name}
+              value={formData.firstName}
               onChange={handleChange}
               className="w-full px-4 py-3 bg-slate-50 dark:bg-primary-900 border border-slate-200 dark:border-white/10 rounded-xl focus:ring-2 focus:ring-brand-blue transition-all dark:text-white"
-              placeholder="John Doe"
+              placeholder="John"
+            />
+          </div>
+
+          <div className="space-y-2">
+            <label className="text-sm font-semibold text-slate-700 dark:text-slate-300">Last Name <span className="text-brand-red">*</span></label>
+            <input 
+              type="text" 
+              name="lastName"
+              required
+              value={formData.lastName}
+              onChange={handleChange}
+              className="w-full px-4 py-3 bg-slate-50 dark:bg-primary-900 border border-slate-200 dark:border-white/10 rounded-xl focus:ring-2 focus:ring-brand-blue transition-all dark:text-white"
+              placeholder="Doe"
             />
           </div>
 
@@ -102,24 +132,6 @@ export default function ApplicationForm({ programTitle }: { programTitle: string
               />
             </div>
           </div>
-
-          <div className="space-y-2">
-            <label className="text-sm font-semibold text-slate-700 dark:text-slate-300">Country of Residence <span className="text-brand-red">*</span></label>
-            <select 
-              name="country"
-              required
-              value={formData.country}
-              onChange={handleChange}
-              className="w-full px-4 py-3 bg-slate-50 dark:bg-primary-900 border border-slate-200 dark:border-white/10 rounded-xl focus:ring-2 focus:ring-brand-blue transition-all dark:text-white"
-            >
-              <option value="">Select Country</option>
-              <option value="US">United States</option>
-              <option value="UK">United Kingdom</option>
-              <option value="IN">India</option>
-              <option value="AE">United Arab Emirates</option>
-              <option value="Other">Other</option>
-            </select>
-          </div>
         </div>
 
         <div className="space-y-2">
@@ -134,6 +146,10 @@ export default function ApplicationForm({ programTitle }: { programTitle: string
             placeholder="Tell us about your background and career goals..."
           ></textarea>
         </div>
+
+        {status === "error" && (
+          <FormAlert type="error" message={errorMessage} onClose={() => setStatus("idle")} />
+        )}
 
         <button 
           type="submit"
