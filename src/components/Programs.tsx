@@ -80,7 +80,7 @@ export default function Programs() {
               >
                 <div className="flex items-center gap-4">
                   <span className="text-3xl font-black text-brand-blue/30 dark:text-primary-700 group-hover:text-brand-blue dark:group-hover:text-brand-red transition-colors">{item.number}.</span>
-                  {item.img && <Image src={item.img} alt={item.name} width={64} height={64} className="rounded-lg object-cover group-hover:scale-105 transition-transform" />}
+                  {item.img && <img src={item.img} alt={item.name} width={64} height={64} className="rounded-lg object-cover group-hover:scale-105 transition-transform" />}
                   <h3 className="text-xl font-bold text-slate-800 dark:text-white group-hover:text-brand-blue dark:group-hover:text-brand-red group-hover:translate-x-2 transition-all duration-300">{item.name}</h3>
                 </div>
                 <div className="w-12 h-12 rounded-full bg-white dark:bg-primary-700 flex items-center justify-center group-hover:bg-brand-red group-hover:scale-110 transition-all shadow border border-slate-100 dark:border-primary-700">
