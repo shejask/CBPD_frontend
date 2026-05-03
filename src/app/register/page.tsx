@@ -4,6 +4,7 @@ import Link from "next/link";
 import { useState } from "react";
 import { useRouter } from "next/navigation";
 import { countryCodes } from "@/data/countries";
+import { allCountries } from "@/data/allCountries";
 import FormAlert from "@/components/FormAlert";
 import { api } from "@/lib/api";
 
@@ -16,7 +17,7 @@ export default function RegisterPage() {
 
   // Form State
   const [formData, setFormData] = useState({
-    country: "",
+    country: "United Kingdom",
     orgName: "",
     industry: "",
     address: "",
@@ -182,10 +183,9 @@ export default function RegisterPage() {
                 <InputWrapper label="Country" required>
                   <select name="country" value={formData.country} onChange={handleChange} required className="w-full px-4 py-3 bg-slate-50 dark:bg-primary-800 border border-slate-200 dark:border-white/10 rounded-xl focus:ring-2 focus:ring-brand-blue transition-all text-slate-800 dark:text-white">
                     <option value="">Select Country</option>
-                    <option value="IN">India</option>
-                    <option value="US">United States</option>
-                    <option value="UK">United Kingdom</option>
-                    <option value="AE">United Arab Emirates</option>
+                    {allCountries.map((c, i) => (
+                      <option key={i} value={c}>{c}</option>
+                    ))}
                   </select>
                 </InputWrapper>
 
