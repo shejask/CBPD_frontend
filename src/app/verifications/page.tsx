@@ -244,7 +244,11 @@ export default function VerificationPage() {
                             {Object.entries(verifyResult.data).map(([key, value]) => (
                               <li key={key} className="flex flex-col sm:flex-row sm:justify-between border-b border-slate-100 dark:border-white/5 last:border-0 pb-1 last:pb-0">
                                 <span className="font-semibold capitalize text-slate-500">{key.replace(/([A-Z])/g, ' $1').trim()}:</span>
-                                <span className="text-slate-800 dark:text-slate-200 text-right">{String(value)}</span>
+                                <span className="text-slate-800 dark:text-slate-200 text-right">
+                                  {typeof value === 'string' && /^\d{4}-\d{2}-\d{2}T/.test(value) && !isNaN(Date.parse(value))
+                                    ? new Date(value).toLocaleDateString('en-GB', { day: 'numeric', month: 'long', year: 'numeric' })
+                                    : String(value)}
+                                </span>
                               </li>
                             ))}
                           </ul>
