@@ -29,7 +29,9 @@ export default function LoginPage() {
       }
       
       setSuccessMsg("Login successful! Redirecting...");
-      setTimeout(() => router.push("/dashboard"), 1000);
+      setTimeout(() => {
+        window.location.href = "https://admin.cbpd.co.uk";
+      }, 1000);
     } catch (err: any) {
       console.error("Login error:", err);
       setErrorMsg(err.message || "Invalid credentials. Please try again.");
