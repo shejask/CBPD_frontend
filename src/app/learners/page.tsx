@@ -42,9 +42,10 @@ export default function LearnersPage() {
   ];
 
   const testimonials = [
-    { name: "Sarah M.", role: "HR Director", quote: "Obtaining my CBPD certification was a turning point. It provided tangible skills that I instantly applied to streamline our entire recruitment process.", image: "/images/external/1573496359142-b8d87734a5a2.jpg" },
-    { name: "James L.", role: "IT Project Manager", quote: "The flexible learning options meant I could continue my demanding role while studying. The digital credential I gained was key for my promotion.", image: "/images/external/1560250097-0b93528c311a.jpg" },
-    { name: "Amanda T.", role: "Operations Lead", quote: "CBPD's focus on practical application makes it stand out from typical theoretical courses. The results were immediate and incredibly beneficial.", image: "/images/external/1580489944761-15a19d654956.jpg" },
+    { name: "Hanoona Fathima", role: "India", quote: "The Diploma in Hospital Administration from CBPD helped me understand hospital operations, patient management, healthcare coordination, and medical office systems in a professional way. The course content was practical and industry-focused, which improved my confidence for working in the healthcare sector.", image: "/images/testimonials/hanoona.jpg" },
+    { name: "Abhinanda", role: "India", quote: "CBPD’s Diploma in Hospital Administration provided excellent knowledge in healthcare management, administration procedures, communication skills, and hospital documentation systems. The programme structure was clear and easy to follow, and it gave me valuable insights into modern hospital operations.", image: "/images/testimonials/abhinanda.jpg" },
+    { name: "Gopika", role: "India", quote: "I was searching for a professional qualification in hospital administration, and CBPD exceeded my expectations. The diploma covered healthcare ethics, patient care coordination, hospital management, and administrative responsibilities in detail. This programme added strong value to my professional profile.", image: "/images/testimonials/gopika.jpg" },
+    { name: "Amitha", role: "India", quote: "The Diploma in Hospital Administration offered by CBPD was highly informative and professionally designed. The learning experience helped me develop leadership, communication, and healthcare administration skills that are essential in today’s medical industry.", image: "/images/testimonials/amitha.jpg" },
   ];
 
   return (
@@ -121,7 +122,7 @@ export default function LearnersPage() {
             </p>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 w-full max-w-7xl mx-auto">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 w-full max-w-[90rem] mx-auto">
             {testimonials.map((testi, idx) => (
               <div key={idx} className="animate-on-scroll translate-y-12 opacity-0 transition-all duration-700 ease-out" style={{ transitionDelay: `${idx * 150}ms` }}>
                 <TiltCard sensitivity={5} className="h-full">

@@ -3,46 +3,32 @@ import TiltCard from "@/components/TiltCard";
 export default function TestimonialsPage() {
   const testimonials = [
     {
-      name: "Sarah Jenkins",
-      title: "Senior Project Manager",
-      text: "Securing my certification through CBPD was a phenomenal milestone in my career. The entire process was incredibly streamlined, and the instant global recognition helped me land my current senior role within two months.",
+      name: "Hanoona Fathima",
+      title: "India",
+      text: "The Diploma in Hospital Administration from CBPD helped me understand hospital operations, patient management, healthcare coordination, and medical office systems in a professional way. The course content was practical and industry-focused, which improved my confidence for working in the healthcare sector. I highly recommend this programme to students looking for a career in healthcare management.",
       rating: 5,
-      image: "/images/external/1494790108377-be9c29b29330.jpg"
+      image: "/images/testimonials/hanoona.jpg"
     },
     {
-      name: "David Chen",
-      title: "Data Analytics Lead",
-      text: "The rigour of the assessments proved the high quality of the CBPD accreditation. My employer immediately recognized the value of the credential. Highly recommend this for professionals looking to upskill quickly but reliably.",
+      name: "Abhinanda",
+      title: "India",
+      text: "CBPD’s Diploma in Hospital Administration provided excellent knowledge in healthcare management, administration procedures, communication skills, and hospital documentation systems. The programme structure was clear and easy to follow, and it gave me valuable insights into modern hospital operations.",
       rating: 5,
-      image: "/images/external/1507003211169-0a1dd7228f2d.jpg"
+      image: "/images/testimonials/abhinanda.jpg"
     },
     {
-      name: "Elena Rodriguez",
-      title: "HR Director",
-      text: "As an HR professional, I look for candidates with verified, practical skills. CBPD's approach to professional mastery and real-world application means that a candidate holding this certification is ready to hit the ground running.",
+      name: "Gopika",
+      title: "India",
+      text: "I was searching for a professional qualification in hospital administration, and CBPD exceeded my expectations. The diploma covered healthcare ethics, patient care coordination, hospital management, and administrative responsibilities in detail. This programme added strong value to my professional profile.",
       rating: 5,
-      image: "/images/external/1573496359142-b8d87734a5a2.jpg"
+      image: "/images/testimonials/gopika.jpg"
     },
     {
-      name: "Michael Chang",
-      title: "Operations Consultant",
-      text: "I was looking for a credential that carried weight across Europe and Asia. CBPD exceeded my expectations. The networking opportunities with other industry experts have been incredibly valuable for my consulting business.",
-      rating: 4,
-      image: "/images/external/1506794778202-cad84cf45f1d.jpg"
-    },
-    {
-      name: "Anita Patel",
-      title: "Healthcare Administrator",
-      text: "The Health and Safety discipline training through CBPD's partners was top-tier. I particularly appreciated the seamless digital verification, which made updating my compliance records effortless.",
+      name: "Amitha",
+      title: "India",
+      text: "The Diploma in Hospital Administration offered by CBPD was highly informative and professionally designed. The learning experience helped me develop leadership, communication, and healthcare administration skills that are essential in today’s medical industry. I appreciate the quality and flexibility of the programme.",
       rating: 5,
-      image: "/images/external/1580489944761-15a19d654956.jpg"
-    },
-    {
-      name: "James Wilson",
-      title: "Creative Art Director",
-      text: "Creative fields often lack structured recognition. The Language and Creative Arts certification gave my portfolio the formal prestige it needed when bidding for massive corporate contracts.",
-      rating: 5,
-      image: "/images/external/1519085360753-af0119f7cbe7.jpg"
+      image: "/images/testimonials/amitha.jpg"
     }
   ];
 
