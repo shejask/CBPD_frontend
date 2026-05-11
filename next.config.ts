@@ -10,6 +10,20 @@ const nextConfig: NextConfig = {
       },
     ];
   },
+  async redirects() {
+    return [
+      {
+        source: '/Verifications',
+        destination: '/verifications',
+        permanent: true,
+      },
+      {
+        source: '/Verifications/:path*',
+        destination: '/verifications/:path*',
+        permanent: true,
+      }
+    ];
+  },
 };
 
 export default nextConfig;

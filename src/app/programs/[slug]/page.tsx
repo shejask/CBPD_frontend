@@ -60,7 +60,7 @@ export default async function SubProgramPage({ params }: { params: Promise<{ slu
         
         <div className="container mx-auto px-6 md:px-12 relative z-10">
           <div className="max-w-3xl">
-            <Link href="/programs" className="inline-flex items-center gap-2 text-brand-blue dark:text-brand-red font-bold mb-6 hover:-translate-x-1 transition-transform bg-white/10 px-4 py-2 rounded-full backdrop-blur-md">
+            <Link href={`/programs/${program.categoryId?.slug || ''}`} className="inline-flex items-center gap-2 text-brand-blue dark:text-brand-red font-bold mb-6 hover:-translate-x-1 transition-transform bg-white/10 px-4 py-2 rounded-full backdrop-blur-md">
               <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 19l-7-7m0 0l7-7m-7 7h18" /></svg>
               View All Programs
             </Link>

@@ -27,10 +27,13 @@ export default function LoginPage() {
       if (response.token) {
         localStorage.setItem("token", response.token);
       }
+      if (response.org) {
+        localStorage.setItem("org", JSON.stringify(response.org));
+      }
       
       setSuccessMsg("Login successful! Redirecting...");
       setTimeout(() => {
-        window.location.href = "https://admin.cbpd.co.uk";
+        router.push("/dashboard");
       }, 1000);
     } catch (err: any) {
       console.error("Login error:", err);

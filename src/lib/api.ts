@@ -29,12 +29,21 @@ async function fetchAPI(endpoint: string, options: RequestInit = {}) {
   const response = await fetch(url, {
     ...options,
     headers,
+    credentials: 'include',
   });
 
-  const data = await response.json().catch(() => ({}));
+  const responseText = await response.text();
+  let data: any = {};
+  try {
+    data = JSON.parse(responseText);
+  } catch (e) {
+    // If it's not JSON, maybe it's HTML from a 404/500 page
+    console.error("Non-JSON API Error Response:", response.status, responseText.substring(0, 200));
+  }
 
   if (!response.ok) {
-    throw new Error(data.error || data.message || 'Something went wrong');
+    console.error("API Error Response Data:", data);
+    throw new Error(data.error || data.message || `API Error ${response.status}: ${response.statusText}`);
   }
 
   return data;
@@ -87,5 +96,17 @@ export const api = {
   getCourses: async (categoryId?: string) => {
     const url = categoryId ? `/admin/courses?categoryId=${categoryId}&limit=500` : '/admin/courses?limit=500';
     return fetchAPI(url);
+  },
+
+  // --- Students ---
+  getStudents: async (institutionId: string, page = 1, limit = 10) => {
+    return fetchAPI(`/student?institutionId=${institutionId}&page=${page}&limit=${limit}`);
+  },
+
+  createStudent: async (formData: FormData) => {
+    return fetchAPI('/student', {
+      method: 'POST',
+      body: formData,
+    });
   }
 };

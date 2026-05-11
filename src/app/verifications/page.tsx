@@ -25,6 +25,34 @@ export default function VerificationPage() {
 
   useEffect(() => {
     const timer = setTimeout(() => setIsVisible(true), 100);
+    
+    // Parse URL parameters for auto-filling
+    if (typeof window !== "undefined") {
+      const params = new URLSearchParams(window.location.search);
+      
+      const pName = params.get("name") || params.get("studentName") || params.get("learnerName");
+      const pReg = params.get("regNo") || params.get("registrationNo") || params.get("reg");
+      const pCert = params.get("certNo") || params.get("certificateNo") || params.get("cert");
+      const pLearner = params.get("learnerNo") || params.get("learner");
+      
+      if (pName) setStudentName(decodeURIComponent(pName));
+      if (pReg) setRegistrationNo(decodeURIComponent(pReg));
+      if (pCert) setCertificateNo(decodeURIComponent(pCert));
+      if (pLearner) setLearnerNo(decodeURIComponent(pLearner));
+      
+      if (pName || pReg || pCert || pLearner) {
+        setCertType("student");
+        
+        // Auto-submit if all required fields are present
+        if (pName && pReg && pCert && pLearner) {
+          setTimeout(() => {
+            const form = document.getElementById("verification-form") as HTMLFormElement;
+            if (form) form.requestSubmit();
+          }, 500);
+        }
+      }
+    }
+
     return () => clearTimeout(timer);
   }, []);
 
@@ -159,7 +187,7 @@ export default function VerificationPage() {
             <div className="bg-white dark:bg-white/5 backdrop-blur-xl border border-slate-200 dark:border-white/10 p-8 md:p-12 rounded-3xl shadow-2xl relative overflow-hidden">
               <div className="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-brand-blue via-brand-red to-brand-red"></div>
               
-              <form onSubmit={handleVerify} className="relative z-10 space-y-6">
+              <form id="verification-form" onSubmit={handleVerify} className="relative z-10 space-y-6">
                 
                 {/* Type Selection */}
                 <div className="flex flex-wrap gap-4 mb-2">
