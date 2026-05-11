@@ -9,6 +9,7 @@ const nextConfig: NextConfig = {
         destination: 'https://admin.cbpd.co.uk/api/:path*',
       },
     ];
+  }
 };
 
 export default nextConfig;
