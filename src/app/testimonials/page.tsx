@@ -3,32 +3,32 @@ import TiltCard from "@/components/TiltCard";
 export default function TestimonialsPage() {
   const testimonials = [
     {
-      name: "Abhinanda",
+      name: "Hanoona Fathima",
       title: "India",
       text: "The Diploma in Hospital Administration from CBPD helped me understand hospital operations, patient management, healthcare coordination, and medical office systems in a professional way. The course content was practical and industry-focused, which improved my confidence for working in the healthcare sector. I highly recommend this programme to students looking for a career in healthcare management.",
       rating: 5,
-      image: "/images/testimonials/hanoona.jpg"
+      image: "/images/testimonials/hanoona-fathima.jpeg"
+    },
+    {
+      name: "Abhinanda",
+      title: "India",
+      text: "CBPD’s Diploma in Hospital Administration provided excellent knowledge in healthcare management, administration procedures, communication skills, and hospital documentation systems. The programme structure was clear and easy to follow, and it gave me valuable insights into modern hospital operations.",
+      rating: 5,
+      image: "/images/testimonials/abhinanda.jpeg"
     },
     {
       name: "Gopika",
       title: "India",
-      text: "CBPD’s Diploma in Hospital Administration provided excellent knowledge in healthcare management, administration procedures, communication skills, and hospital documentation systems. The programme structure was clear and easy to follow, and it gave me valuable insights into modern hospital operations.",
-      rating: 5,
-      image: "/images/testimonials/abhinanda.jpg"
-    },
-    {
-      name: "Hanoona Fathima",
-      title: "India",
       text: "I was searching for a professional qualification in hospital administration, and CBPD exceeded my expectations. The diploma covered healthcare ethics, patient care coordination, hospital management, and administrative responsibilities in detail. This programme added strong value to my professional profile.",
       rating: 5,
-      image: "/images/testimonials/gopika.jpg"
+      image: "/images/testimonials/gopika.jpeg"
     },
     {
       name: "Amitha",
       title: "India",
       text: "The Diploma in Hospital Administration offered by CBPD was highly informative and professionally designed. The learning experience helped me develop leadership, communication, and healthcare administration skills that are essential in today’s medical industry. I appreciate the quality and flexibility of the programme.",
       rating: 5,
-      image: "/images/testimonials/amitha.jpg"
+      image: "/images/testimonials/amitha.jpeg"
     },
     {
       name: "Sarah Jenkins",
@@ -73,13 +73,13 @@ export default function TestimonialsPage() {
       <section className="relative pt-40 pb-20 bg-primary-900 border-b border-primary-800 overflow-hidden">
         <div className="absolute top-0 right-0 w-[600px] h-[600px] bg-brand-red/10 rounded-full blur-[150px] pointer-events-none"></div>
         <div className="absolute bottom-0 left-0 w-[500px] h-[500px] bg-brand-blue/10 rounded-full blur-[120px] pointer-events-none transform translate-y-1/2"></div>
-        
+
         <div className="container mx-auto px-6 md:px-12 relative z-10 text-center">
           <div className="inline-block px-4 py-1.5 rounded-full border border-brand-red/40 bg-brand-red/10 backdrop-blur-md mb-6 animate-[fadeInUp_0.8s_ease-out]">
             <span className="text-brand-red font-semibold tracking-wide text-sm uppercase">Success Stories</span>
           </div>
           <h1 className="text-5xl md:text-7xl font-bold text-white max-w-4xl mx-auto leading-tight mb-8 animate-[fadeInUp_1s_ease-out]">
-            Trusted by Professionals <br/>
+            Trusted by Professionals <br />
             <span className="text-brand-red">Worldwide</span>
           </h1>
           <p className="text-xl text-slate-300 max-w-2xl mx-auto leading-relaxed animate-[fadeInUp_1.2s_ease-out]">
@@ -94,7 +94,7 @@ export default function TestimonialsPage() {
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
             {testimonials.map((testimonial, index) => (
               <TiltCard key={index} sensitivity={8} className="h-full">
-                <div 
+                <div
                   className="bg-white dark:bg-primary-900 rounded-3xl p-10 shadow-[0_5px_20px_rgba(0,0,0,0.05)] border border-slate-100 dark:border-primary-800 relative h-full flex flex-col group hover:shadow-[0_20px_40px_rgba(30,64,175,0.1)] transition-all duration-500"
                   style={{ transform: "translateZ(10px)", transitionDelay: `${index * 100}ms` }}
                 >
@@ -116,9 +116,9 @@ export default function TestimonialsPage() {
                   </p>
 
                   <div className="flex items-center gap-4 relative z-10 mt-auto pt-6 border-t border-slate-100 dark:border-primary-800">
-                    <img 
-                      src={testimonial.image} 
-                      alt={testimonial.name} 
+                    <img
+                      src={testimonial.image}
+                      alt={testimonial.name}
                       className="w-14 h-14 rounded-full object-cover border-2 border-brand-blue/20 dark:border-primary-700 group-hover:border-brand-red transition-colors"
                     />
                     <div>
