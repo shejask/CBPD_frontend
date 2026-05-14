@@ -35,35 +35,35 @@ export default function TestimonialsPage() {
       title: "UK",
       text: "Securing my Diploma in Project Management through CBPD was a phenomenal milestone in my career. The entire process was incredibly streamlined, and the instant global recognition helped me land my current senior role within two months.",
       rating: 5,
-      image: "/images/external/1494790108377-be9c29b29330.jpg"
+      image: "/images/testimonials/sarah-jenkins.jpg"
     },
     {
       name: "David Chen",
       title: "Singapore",
       text: "The rigour of the Certificate in Data Analytics proved the high quality of the CBPD accreditation. My employer immediately recognized the value of the credential. Highly recommend this for professionals looking to upskill quickly but reliably.",
       rating: 5,
-      image: "/images/external/1507003211169-0a1dd7228f2d.jpg"
+      image: "/images/testimonials/david-chen.jpg"
     },
     {
       name: "Elena Rodriguez",
       title: "Spain",
       text: "The Advanced Diploma in Human Resources was exactly what I needed. As an HR professional, I look for candidates with verified, practical skills. CBPD's approach to professional mastery and real-world application means a candidate holding this certification is ready to hit the ground running.",
       rating: 5,
-      image: "/images/external/1573496359142-b8d87734a5a2.jpg"
+      image: "/images/testimonials/elena-rodriguez.jpg"
     },
     {
       name: "Michael Chang",
       title: "Canada",
       text: "I was looking for a Diploma in Operations Management that carried weight across North America and Europe. CBPD exceeded my expectations. The structured curriculum and networking opportunities with other industry experts have been incredibly valuable.",
       rating: 4,
-      image: "/images/external/1506794778202-cad84cf45f1d.jpg"
+      image: "/images/testimonials/michael-chang.jpg"
     },
     {
       name: "Anita Patel",
       title: "UAE",
       text: "The Certificate in Healthcare Administration training through CBPD's partners was top-tier. I particularly appreciated the seamless digital verification, which made updating my professional compliance records effortless across borders.",
       rating: 5,
-      image: "/images/external/1580489944761-15a19d654956.jpg"
+      image: "/images/testimonials/anita-patel.jpg"
     }
   ];
 
