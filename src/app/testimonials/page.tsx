@@ -59,7 +59,7 @@ export default function TestimonialsPage() {
       image: "/images/testimonials/michael-chang.jpg"
     },
     {
-      name: "Anita Patel",
+      name: "Sara",
       title: "India",
       text: "The Certificate in Healthcare Administration training through CBPD's partners was top-tier. I particularly appreciated the seamless digital verification, which made updating my professional compliance records effortless across borders.",
       rating: 5,

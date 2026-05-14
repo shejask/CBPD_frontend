@@ -22,6 +22,7 @@ export default function DashboardLayout({
   const [collapsed, setCollapsed] = useState(false);
   const [isMobileOpen, setIsMobileOpen] = useState(false);
   const [isAuthenticated, setIsAuthenticated] = useState<boolean | null>(null);
+  const [orgName, setOrgName] = useState("Institute Portal");
   const router = useRouter();
   const pathname = usePathname();
 
@@ -39,6 +40,13 @@ export default function DashboardLayout({
       router.push("/login");
     } else {
       setIsAuthenticated(true);
+      const orgStr = localStorage.getItem("org");
+      if (orgStr) {
+        try {
+          const org = JSON.parse(orgStr);
+          if (org.name) setOrgName(org.name);
+        } catch (e) {}
+      }
     }
   };
 
@@ -88,7 +96,7 @@ export default function DashboardLayout({
           </div>
           {!collapsed && (
             <div className="flex flex-col overflow-hidden whitespace-nowrap">
-              <span className="font-bold tracking-wide">CBPD Portal</span>
+              <span className="font-bold tracking-wide truncate">{orgName}</span>
               <span className="text-xs text-slate-400">Institution Dashboard</span>
             </div>
           )}
