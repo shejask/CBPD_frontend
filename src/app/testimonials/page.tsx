@@ -3,21 +3,21 @@ import TiltCard from "@/components/TiltCard";
 export default function TestimonialsPage() {
   const testimonials = [
     {
-      name: "Hanoona Fathima",
+      name: "Abhinanda",
       title: "India",
       text: "The Diploma in Hospital Administration from CBPD helped me understand hospital operations, patient management, healthcare coordination, and medical office systems in a professional way. The course content was practical and industry-focused, which improved my confidence for working in the healthcare sector. I highly recommend this programme to students looking for a career in healthcare management.",
       rating: 5,
       image: "/images/testimonials/hanoona.jpg"
     },
     {
-      name: "Abhinanda",
+      name: "Gopika",
       title: "India",
       text: "CBPD’s Diploma in Hospital Administration provided excellent knowledge in healthcare management, administration procedures, communication skills, and hospital documentation systems. The programme structure was clear and easy to follow, and it gave me valuable insights into modern hospital operations.",
       rating: 5,
       image: "/images/testimonials/abhinanda.jpg"
     },
     {
-      name: "Gopika",
+      name: "Hanoona Fathima",
       title: "India",
       text: "I was searching for a professional qualification in hospital administration, and CBPD exceeded my expectations. The diploma covered healthcare ethics, patient care coordination, hospital management, and administrative responsibilities in detail. This programme added strong value to my professional profile.",
       rating: 5,
@@ -60,7 +60,7 @@ export default function TestimonialsPage() {
     },
     {
       name: "Anita Patel",
-      title: "UAE",
+      title: "India",
       text: "The Certificate in Healthcare Administration training through CBPD's partners was top-tier. I particularly appreciated the seamless digital verification, which made updating my professional compliance records effortless across borders.",
       rating: 5,
       image: "/images/testimonials/anita-patel.jpg"
