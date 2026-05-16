@@ -44,7 +44,8 @@ export default function DashboardLayout({
       if (orgStr) {
         try {
           const org = JSON.parse(orgStr);
-          if (org.name) setOrgName(org.name);
+          const name = org.orgName || org.name || org.institutionName || org.organizationName;
+          if (name) setOrgName(name);
         } catch (e) {}
       }
     }

@@ -35,6 +35,7 @@ export default function AddStudentPage() {
     centreCode: "",
     trainerTutorName: "",
     internalStudentId: "",
+    programmeSelection: "",
   });
 
   const [learnerPhotograph, setLearnerPhotograph] = useState<File | null>(null);
@@ -191,6 +192,37 @@ export default function AddStudentPage() {
               Qualification Information
             </h2>
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+              <div className="space-y-2">
+                <label className="text-sm font-semibold text-slate-700">Programme Selection *</label>
+                <select required name="programmeSelection" value={formData.programmeSelection} onChange={handleInputChange} className="w-full px-4 py-3 bg-slate-50 border border-slate-200 rounded-xl focus:ring-2 focus:ring-brand-blue focus:border-brand-blue outline-none transition-all text-slate-900 dark:bg-slate-800 dark:border-slate-700 dark:text-white">
+                  <option value="">Select Programme</option>
+                  <option value="Security">Security</option>
+                  <option value="Social Care">Social Care</option>
+                  <option value="Sport">Sport</option>
+                  <option value="Telecommunications">Telecommunications</option>
+                  <option value="Tourism">Tourism</option>
+                  <option value="Transport">Transport</option>
+                  <option value="Property">Property</option>
+                  <option value="Beauty & Wellness">Beauty & Wellness</option>
+                  <option value="International">International</option>
+                  <option value="Marine">Marine</option>
+                  <option value="Media">Media</option>
+                  <option value="Science">Science</option>
+                  <option value="Hospitality">Hospitality</option>
+                  <option value="Human Resources">Human Resources</option>
+                  <option value="Fire & Safety">Fire & Safety</option>
+                  <option value="Healthcare & Medical">Healthcare & Medical</option>
+                  <option value="Finance">Finance</option>
+                  <option value="Energy">Energy</option>
+                  <option value="Construction">Construction</option>
+                  <option value="Engineering">Engineering</option>
+                  <option value="Technical">Technical</option>
+                  <option value="Education">Education</option>
+                  <option value="Design">Design</option>
+                  <option value="Information Technology">Information Technology</option>
+                  <option value="Business">Business</option>
+                </select>
+              </div>
               <div className="space-y-2">
                 <label className="text-sm font-semibold text-slate-700">Qualification Title *</label>
                 <input required type="text" name="qualificationTitle" value={formData.qualificationTitle} onChange={handleInputChange} className="w-full px-4 py-3 bg-slate-50 border border-slate-200 rounded-xl focus:ring-2 focus:ring-brand-blue focus:border-brand-blue outline-none transition-all text-slate-900 dark:bg-slate-800 dark:border-slate-700 dark:text-white" />

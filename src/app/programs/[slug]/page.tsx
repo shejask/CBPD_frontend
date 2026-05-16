@@ -46,17 +46,18 @@ export default async function SubProgramPage({ params }: { params: Promise<{ slu
   if (!program) return notFound();
 
   const categoryName = program.categoryId?.name || "Programme";
-  const heroImage = program.image || `https://picsum.photos/seed/${categoryName.replace(/ & | /g, "")}/1920/600`;
+  const heroImage = program.image || '/images/external/1552664730-d307ca884978.jpg';
 
   return (
     <div className="min-h-screen bg-slate-50 dark:bg-[#0a0f1c] pt-20">
       
       {/* Hero Section */}
-      <section className="relative w-full h-[400px] md:h-[500px] flex items-center">
-        <div className="absolute inset-0 z-0">
-          <img src={heroImage} alt={categoryName} className="w-full h-full object-cover" />
-          <div className="absolute inset-0 bg-gradient-to-r from-primary-900 via-primary-900/90 to-transparent"></div>
-        </div>
+      <section className="relative w-full h-[400px] md:h-[500px] flex items-center overflow-hidden">
+        <div 
+          className="absolute inset-0 z-0 bg-cover bg-center bg-no-repeat pointer-events-none"
+          style={{ backgroundImage: `url('${heroImage}')` }}
+        ></div>
+        <div className="absolute inset-0 z-0 bg-gradient-to-r from-primary-900 via-primary-900/90 to-transparent pointer-events-none"></div>
         
         <div className="container mx-auto px-6 md:px-12 relative z-10">
           <div className="max-w-3xl">
