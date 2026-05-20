@@ -44,7 +44,20 @@ export default function DashboardLayout({
       if (orgStr) {
         try {
           const org = JSON.parse(orgStr);
-          const name = org.orgName || org.institutionName || org.name || org.organizationName || org.businessName || (org.firstName ? `${org.firstName} ${org.lastName || ''}` : null);
+          const getName = (obj: any): string | null => {
+            if (!obj || typeof obj !== 'object') return null;
+            if (obj.orgName) return obj.orgName;
+            if (obj.institutionName) return obj.institutionName;
+            if (obj.name && typeof obj.name === 'string') return obj.name;
+            if (obj.organizationName) return obj.organizationName;
+            if (obj.businessName) return obj.businessName;
+            if (obj.firstName) return `${obj.firstName} ${obj.lastName || ''}`.trim();
+            if (obj.data) return getName(obj.data);
+            if (obj.institution) return getName(obj.institution);
+            if (obj.user) return getName(obj.user);
+            return null;
+          };
+          const name = getName(org);
           if (name) setOrgName(name);
         } catch (e) {}
       }
