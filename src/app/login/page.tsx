@@ -27,8 +27,9 @@ export default function LoginPage() {
       if (response.token) {
         localStorage.setItem("token", response.token);
       }
-      if (response.org) {
-        localStorage.setItem("org", JSON.stringify(response.org));
+      const orgData = response.org || response.institution || response.user || response.data?.institution || response.data?.org || response;
+      if (orgData && typeof orgData === 'object') {
+        localStorage.setItem("org", JSON.stringify(orgData));
       }
       
       setSuccessMsg("Login successful! Redirecting...");

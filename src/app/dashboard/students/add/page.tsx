@@ -51,10 +51,10 @@ export default function AddStudentPage() {
   const handleFileChange = (e: React.ChangeEvent<HTMLInputElement>, type: 'photo' | 'document') => {
     if (e.target.files && e.target.files.length > 0) {
       const file = e.target.files[0];
-      const MAX_SIZE = 4 * 1024 * 1024; // 4MB limit to prevent Vercel 413 errors
+      const MAX_SIZE = 1000 * 1024; // 1MB limit to prevent API 413 errors
       
       if (file.size > MAX_SIZE) {
-        setErrorMsg(`File size must be less than 4MB.`);
+        setErrorMsg(`File size must be less than 1MB. Please compress your file before uploading.`);
         e.target.value = ''; // Reset input
         return;
       }
