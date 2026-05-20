@@ -38,6 +38,8 @@ export default function AddStudentPage() {
     programmeSelection: "",
   });
 
+  const [fieldErrors, setFieldErrors] = useState<Record<string, string>>({});
+
   const [learnerPhotograph, setLearnerPhotograph] = useState<File | null>(null);
   const [qualificationDocument, setQualificationDocument] = useState<File | null>(null);
   
@@ -46,9 +48,18 @@ export default function AddStudentPage() {
 
   const handleInputChange = (e: React.ChangeEvent<HTMLInputElement | HTMLSelectElement>) => {
     setFormData({ ...formData, [e.target.name]: e.target.value });
+    if (fieldErrors[e.target.name]) {
+      setFieldErrors({ ...fieldErrors, [e.target.name]: "" });
+    }
   };
 
   const handleFileChange = (e: React.ChangeEvent<HTMLInputElement>, type: 'photo' | 'document') => {
+    if (type === 'photo' && fieldErrors.learnerPhotograph) {
+      setFieldErrors({ ...fieldErrors, learnerPhotograph: "" });
+    } else if (type === 'document' && fieldErrors.qualificationDocument) {
+      setFieldErrors({ ...fieldErrors, qualificationDocument: "" });
+    }
+
     if (e.target.files && e.target.files.length > 0) {
       const file = e.target.files[0];
       const MAX_SIZE = 1000 * 1024; // 1MB limit to prevent API 413 errors
@@ -72,12 +83,14 @@ export default function AddStudentPage() {
     
     if (!learnerPhotograph) {
       setErrorMsg("Learner Photograph is required.");
+      setFieldErrors({ ...fieldErrors, learnerPhotograph: "Learner Photograph is required." });
       return;
     }
 
     setIsLoading(true);
     setErrorMsg("");
     setSuccessMsg("");
+    setFieldErrors({});
 
     try {
       const orgStr = localStorage.getItem("org");
@@ -108,11 +121,45 @@ export default function AddStudentPage() {
           router.push("/dashboard/students");
         }, 1500);
       } else {
-        throw new Error(response.error || "Failed to create student");
+        const err: any = new Error(response.error || "Failed to create student");
+        if (response.details) err.details = response.details;
+        throw err;
       }
     } catch (err: any) {
       console.error(err);
       setErrorMsg(err.message || "An error occurred while creating the student");
+      
+      if (err.details && Array.isArray(err.details)) {
+        const errors: Record<string, string> = {};
+        err.details.forEach((msg: string) => {
+          const lowerMsg = msg.toLowerCase();
+          if (lowerMsg.includes("admission number")) errors.internalStudentId = msg;
+          else if (lowerMsg.includes("year/semester") || lowerMsg.includes("batch")) errors.batchNumber = msg;
+          else if (lowerMsg.includes("department/branch")) errors.qualificationTitle = msg; 
+          else if (lowerMsg.includes("current course") || lowerMsg.includes("programme")) errors.programmeSelection = msg;
+          else if (lowerMsg.includes("district")) errors.districtCity = msg;
+          else if (lowerMsg.includes("state")) errors.stateProvince = msg;
+          else if (lowerMsg.includes("joining date") || lowerMsg.includes("start date")) errors.programmeStartDate = msg;
+          else if (lowerMsg.includes("phone") || lowerMsg.includes("mobile")) errors.mobileNumber = msg;
+          else if (lowerMsg.includes("name")) errors.learnerFullName = msg;
+          else if (lowerMsg.includes("email")) errors.emailAddress = msg;
+          else if (lowerMsg.includes("dob") || lowerMsg.includes("date of birth")) errors.dateOfBirth = msg;
+          else if (lowerMsg.includes("gender")) errors.gender = msg;
+          else if (lowerMsg.includes("country")) errors.country = msg;
+          else if (lowerMsg.includes("level")) errors.qualificationLevel = msg;
+          else if (lowerMsg.includes("type")) errors.qualificationType = msg;
+          else if (lowerMsg.includes("mode")) errors.studyMode = msg;
+          else if (lowerMsg.includes("completion date")) errors.completionDate = msg;
+          else if (lowerMsg.includes("guided")) errors.guidedLearningHours = msg;
+          else if (lowerMsg.includes("grade")) errors.resultGrade = msg;
+          else if (lowerMsg.includes("centre name")) errors.approvedCentreName = msg;
+          else if (lowerMsg.includes("centre code")) errors.centreCode = msg;
+          else if (lowerMsg.includes("trainer")) errors.trainerTutorName = msg;
+          else if (lowerMsg.includes("photograph") || lowerMsg.includes("photo")) errors.learnerPhotograph = msg;
+          else if (lowerMsg.includes("document")) errors.qualificationDocument = msg;
+        });
+        setFieldErrors(errors);
+      }
     } finally {
       setIsLoading(false);
     }
@@ -148,6 +195,7 @@ export default function AddStudentPage() {
               <div className="space-y-2">
                 <label className="text-sm font-semibold text-slate-700">Learner Full Name *</label>
                 <input required type="text" name="learnerFullName" value={formData.learnerFullName} onChange={handleInputChange} className="w-full px-4 py-3 bg-slate-50 border border-slate-200 rounded-xl focus:ring-2 focus:ring-brand-blue focus:border-brand-blue outline-none transition-all text-slate-900 dark:bg-slate-800 dark:border-slate-700 dark:text-white" />
+                {fieldErrors.learnerFullName && <p className="text-red-500 text-xs mt-1">{fieldErrors.learnerFullName}</p>}
               </div>
               <div className="space-y-2">
                 <label className="text-sm font-semibold text-slate-700">Gender *</label>
@@ -157,30 +205,37 @@ export default function AddStudentPage() {
                   <option value="Female">Female</option>
                   <option value="Other">Other</option>
                 </select>
+                {fieldErrors.gender && <p className="text-red-500 text-xs mt-1">{fieldErrors.gender}</p>}
               </div>
               <div className="space-y-2">
                 <label className="text-sm font-semibold text-slate-700">Date of Birth *</label>
                 <input required type="date" name="dateOfBirth" value={formData.dateOfBirth} onChange={handleInputChange} className="w-full px-4 py-3 bg-slate-50 border border-slate-200 rounded-xl focus:ring-2 focus:ring-brand-blue focus:border-brand-blue outline-none transition-all text-slate-900 dark:bg-slate-800 dark:border-slate-700 dark:text-white" />
+                {fieldErrors.dateOfBirth && <p className="text-red-500 text-xs mt-1">{fieldErrors.dateOfBirth}</p>}
               </div>
               <div className="space-y-2">
                 <label className="text-sm font-semibold text-slate-700">Email Address *</label>
                 <input required type="email" name="emailAddress" value={formData.emailAddress} onChange={handleInputChange} className="w-full px-4 py-3 bg-slate-50 border border-slate-200 rounded-xl focus:ring-2 focus:ring-brand-blue focus:border-brand-blue outline-none transition-all text-slate-900 dark:bg-slate-800 dark:border-slate-700 dark:text-white" />
+                {fieldErrors.emailAddress && <p className="text-red-500 text-xs mt-1">{fieldErrors.emailAddress}</p>}
               </div>
               <div className="space-y-2">
                 <label className="text-sm font-semibold text-slate-700">Mobile Number *</label>
                 <input required type="tel" name="mobileNumber" value={formData.mobileNumber} onChange={handleInputChange} className="w-full px-4 py-3 bg-slate-50 border border-slate-200 rounded-xl focus:ring-2 focus:ring-brand-blue focus:border-brand-blue outline-none transition-all text-slate-900 dark:bg-slate-800 dark:border-slate-700 dark:text-white" />
+                {fieldErrors.mobileNumber && <p className="text-red-500 text-xs mt-1">{fieldErrors.mobileNumber}</p>}
               </div>
               <div className="space-y-2">
                 <label className="text-sm font-semibold text-slate-700">District / City *</label>
                 <input required type="text" name="districtCity" value={formData.districtCity} onChange={handleInputChange} className="w-full px-4 py-3 bg-slate-50 border border-slate-200 rounded-xl focus:ring-2 focus:ring-brand-blue focus:border-brand-blue outline-none transition-all text-slate-900 dark:bg-slate-800 dark:border-slate-700 dark:text-white" />
+                {fieldErrors.districtCity && <p className="text-red-500 text-xs mt-1">{fieldErrors.districtCity}</p>}
               </div>
               <div className="space-y-2">
                 <label className="text-sm font-semibold text-slate-700">State / Province *</label>
                 <input required type="text" name="stateProvince" value={formData.stateProvince} onChange={handleInputChange} className="w-full px-4 py-3 bg-slate-50 border border-slate-200 rounded-xl focus:ring-2 focus:ring-brand-blue focus:border-brand-blue outline-none transition-all text-slate-900 dark:bg-slate-800 dark:border-slate-700 dark:text-white" />
+                {fieldErrors.stateProvince && <p className="text-red-500 text-xs mt-1">{fieldErrors.stateProvince}</p>}
               </div>
               <div className="space-y-2">
                 <label className="text-sm font-semibold text-slate-700">Country *</label>
                 <input required type="text" name="country" value={formData.country} onChange={handleInputChange} className="w-full px-4 py-3 bg-slate-50 border border-slate-200 rounded-xl focus:ring-2 focus:ring-brand-blue focus:border-brand-blue outline-none transition-all text-slate-900 dark:bg-slate-800 dark:border-slate-700 dark:text-white" />
+                {fieldErrors.country && <p className="text-red-500 text-xs mt-1">{fieldErrors.country}</p>}
               </div>
             </div>
           </div>
@@ -222,14 +277,17 @@ export default function AddStudentPage() {
                   <option value="Information Technology Programmes">Information Technology Programmes</option>
                   <option value="Business Programmes">Business Programmes</option>
                 </select>
+                {fieldErrors.programmeSelection && <p className="text-red-500 text-xs mt-1">{fieldErrors.programmeSelection}</p>}
               </div>
               <div className="space-y-2">
                 <label className="text-sm font-semibold text-slate-700">Qualification Title *</label>
                 <input required type="text" name="qualificationTitle" value={formData.qualificationTitle} onChange={handleInputChange} className="w-full px-4 py-3 bg-slate-50 border border-slate-200 rounded-xl focus:ring-2 focus:ring-brand-blue focus:border-brand-blue outline-none transition-all text-slate-900 dark:bg-slate-800 dark:border-slate-700 dark:text-white" />
+                {fieldErrors.qualificationTitle && <p className="text-red-500 text-xs mt-1">{fieldErrors.qualificationTitle}</p>}
               </div>
               <div className="space-y-2">
                 <label className="text-sm font-semibold text-slate-700">Qualification Level (CQF Level) *</label>
                 <input required type="text" name="qualificationLevel" value={formData.qualificationLevel} onChange={handleInputChange} className="w-full px-4 py-3 bg-slate-50 border border-slate-200 rounded-xl focus:ring-2 focus:ring-brand-blue focus:border-brand-blue outline-none transition-all text-slate-900 dark:bg-slate-800 dark:border-slate-700 dark:text-white" />
+                {fieldErrors.qualificationLevel && <p className="text-red-500 text-xs mt-1">{fieldErrors.qualificationLevel}</p>}
               </div>
               <div className="space-y-2">
                 <label className="text-sm font-semibold text-slate-700">Qualification Type *</label>
@@ -243,6 +301,7 @@ export default function AddStudentPage() {
                   <option value="Level 6 Higher Diploma">Level 6 Higher Diploma</option>
                   <option value="Level 7 Postgraduate Diploma">Level 7 Postgraduate Diploma</option>
                 </select>
+                {fieldErrors.qualificationType && <p className="text-red-500 text-xs mt-1">{fieldErrors.qualificationType}</p>}
               </div>
               <div className="space-y-2">
                 <label className="text-sm font-semibold text-slate-700">Study Mode *</label>
@@ -252,26 +311,32 @@ export default function AddStudentPage() {
                   <option value="Blended">Blended</option>
                   <option value="Classroom">Classroom</option>
                 </select>
+                {fieldErrors.studyMode && <p className="text-red-500 text-xs mt-1">{fieldErrors.studyMode}</p>}
               </div>
               <div className="space-y-2">
                 <label className="text-sm font-semibold text-slate-700">Batch Number *</label>
                 <input required type="text" name="batchNumber" value={formData.batchNumber} onChange={handleInputChange} className="w-full px-4 py-3 bg-slate-50 border border-slate-200 rounded-xl focus:ring-2 focus:ring-brand-blue focus:border-brand-blue outline-none transition-all text-slate-900 dark:bg-slate-800 dark:border-slate-700 dark:text-white" />
+                {fieldErrors.batchNumber && <p className="text-red-500 text-xs mt-1">{fieldErrors.batchNumber}</p>}
               </div>
               <div className="space-y-2">
                 <label className="text-sm font-semibold text-slate-700">Programme Start Date *</label>
                 <input required type="date" name="programmeStartDate" value={formData.programmeStartDate} onChange={handleInputChange} className="w-full px-4 py-3 bg-slate-50 border border-slate-200 rounded-xl focus:ring-2 focus:ring-brand-blue focus:border-brand-blue outline-none transition-all text-slate-900 dark:bg-slate-800 dark:border-slate-700 dark:text-white" />
+                {fieldErrors.programmeStartDate && <p className="text-red-500 text-xs mt-1">{fieldErrors.programmeStartDate}</p>}
               </div>
               <div className="space-y-2">
                 <label className="text-sm font-semibold text-slate-700">Completion Date *</label>
                 <input required type="date" name="completionDate" value={formData.completionDate} onChange={handleInputChange} className="w-full px-4 py-3 bg-slate-50 border border-slate-200 rounded-xl focus:ring-2 focus:ring-brand-blue focus:border-brand-blue outline-none transition-all text-slate-900 dark:bg-slate-800 dark:border-slate-700 dark:text-white" />
+                {fieldErrors.completionDate && <p className="text-red-500 text-xs mt-1">{fieldErrors.completionDate}</p>}
               </div>
               <div className="space-y-2">
                 <label className="text-sm font-semibold text-slate-700">Guided Learning Hours (GLH) *</label>
                 <input required type="number" name="guidedLearningHours" value={formData.guidedLearningHours} onChange={handleInputChange} className="w-full px-4 py-3 bg-slate-50 border border-slate-200 rounded-xl focus:ring-2 focus:ring-brand-blue focus:border-brand-blue outline-none transition-all text-slate-900 dark:bg-slate-800 dark:border-slate-700 dark:text-white" />
+                {fieldErrors.guidedLearningHours && <p className="text-red-500 text-xs mt-1">{fieldErrors.guidedLearningHours}</p>}
               </div>
               <div className="space-y-2">
                 <label className="text-sm font-semibold text-slate-700">Result / Grade *</label>
                 <input required type="text" name="resultGrade" value={formData.resultGrade} onChange={handleInputChange} className="w-full px-4 py-3 bg-slate-50 border border-slate-200 rounded-xl focus:ring-2 focus:ring-brand-blue focus:border-brand-blue outline-none transition-all text-slate-900 dark:bg-slate-800 dark:border-slate-700 dark:text-white" />
+                {fieldErrors.resultGrade && <p className="text-red-500 text-xs mt-1">{fieldErrors.resultGrade}</p>}
               </div>
             </div>
           </div>
@@ -286,18 +351,22 @@ export default function AddStudentPage() {
               <div className="space-y-2">
                 <label className="text-sm font-semibold text-slate-700">Approved Centre Name *</label>
                 <input required type="text" name="approvedCentreName" value={formData.approvedCentreName} onChange={handleInputChange} className="w-full px-4 py-3 bg-slate-50 border border-slate-200 rounded-xl focus:ring-2 focus:ring-brand-blue focus:border-brand-blue outline-none transition-all text-slate-900 dark:bg-slate-800 dark:border-slate-700 dark:text-white" />
+                {fieldErrors.approvedCentreName && <p className="text-red-500 text-xs mt-1">{fieldErrors.approvedCentreName}</p>}
               </div>
               <div className="space-y-2">
                 <label className="text-sm font-semibold text-slate-700">Centre Code *</label>
                 <input required type="text" name="centreCode" value={formData.centreCode} onChange={handleInputChange} className="w-full px-4 py-3 bg-slate-50 border border-slate-200 rounded-xl focus:ring-2 focus:ring-brand-blue focus:border-brand-blue outline-none transition-all text-slate-900 dark:bg-slate-800 dark:border-slate-700 dark:text-white" />
+                {fieldErrors.centreCode && <p className="text-red-500 text-xs mt-1">{fieldErrors.centreCode}</p>}
               </div>
               <div className="space-y-2">
                 <label className="text-sm font-semibold text-slate-700">Trainer / Tutor Name</label>
                 <input type="text" name="trainerTutorName" value={formData.trainerTutorName} onChange={handleInputChange} className="w-full px-4 py-3 bg-slate-50 border border-slate-200 rounded-xl focus:ring-2 focus:ring-brand-blue focus:border-brand-blue outline-none transition-all text-slate-900 dark:bg-slate-800 dark:border-slate-700 dark:text-white" />
+                {fieldErrors.trainerTutorName && <p className="text-red-500 text-xs mt-1">{fieldErrors.trainerTutorName}</p>}
               </div>
               <div className="space-y-2">
                 <label className="text-sm font-semibold text-slate-700">Internal Student ID</label>
                 <input type="text" name="internalStudentId" value={formData.internalStudentId} onChange={handleInputChange} className="w-full px-4 py-3 bg-slate-50 border border-slate-200 rounded-xl focus:ring-2 focus:ring-brand-blue focus:border-brand-blue outline-none transition-all text-slate-900 dark:bg-slate-800 dark:border-slate-700 dark:text-white" />
+                {fieldErrors.internalStudentId && <p className="text-red-500 text-xs mt-1">{fieldErrors.internalStudentId}</p>}
               </div>
             </div>
           </div>

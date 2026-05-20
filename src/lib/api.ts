@@ -43,7 +43,9 @@ async function fetchAPI(endpoint: string, options: RequestInit = {}) {
 
   if (!response.ok) {
     console.error("API Error Response Data:", data);
-    throw new Error(data.error || data.message || `API Error ${response.status}: ${response.statusText}`);
+    const err: any = new Error(data.error || data.message || `API Error ${response.status}: ${response.statusText}`);
+    err.details = data.details;
+    throw err;
   }
 
   return data;
