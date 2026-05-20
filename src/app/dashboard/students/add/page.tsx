@@ -211,16 +211,16 @@ export default function AddStudentPage() {
                   <option value="Hospitality">Hospitality</option>
                   <option value="Human Resources">Human Resources</option>
                   <option value="Fire & Safety">Fire & Safety</option>
-                  <option value="Healthcare & Medical">Healthcare & Medical</option>
-                  <option value="Finance">Finance</option>
-                  <option value="Energy">Energy</option>
-                  <option value="Construction">Construction</option>
-                  <option value="Engineering">Engineering</option>
-                  <option value="Technical">Technical</option>
-                  <option value="Education">Education</option>
-                  <option value="Design">Design</option>
-                  <option value="Information Technology">Information Technology</option>
-                  <option value="Business">Business</option>
+                  <option value="Healthcare & Medical Programmes">Healthcare & Medical Programmes</option>
+                  <option value="Finance Programmes">Finance Programmes</option>
+                  <option value="Energy Programmes">Energy Programmes</option>
+                  <option value="Construction Programmes">Construction Programmes</option>
+                  <option value="Engineering Programmes">Engineering Programmes</option>
+                  <option value="Technical Programmes">Technical Programmes</option>
+                  <option value="Education Programmes">Education Programmes</option>
+                  <option value="Design Programmes">Design Programmes</option>
+                  <option value="Information Technology Programmes">Information Technology Programmes</option>
+                  <option value="Business Programmes">Business Programmes</option>
                 </select>
               </div>
               <div className="space-y-2">
