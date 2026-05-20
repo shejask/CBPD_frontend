@@ -100,17 +100,26 @@ export default function AddStudentPage() {
       const org = JSON.parse(orgStr);
 
       const submitData = new FormData();
-      Object.entries(formData).forEach(([key, value]) => {
-        submitData.append(key, value);
-      });
+      submitData.append("fullName", formData.learnerFullName);
+      submitData.append("gender", formData.gender);
+      submitData.append("phoneNumber", formData.mobileNumber);
+      submitData.append("dateOfBirth", formData.dateOfBirth);
+      submitData.append("joiningDate", formData.programmeStartDate);
+      submitData.append("state", formData.stateProvince);
+      submitData.append("district", formData.districtCity);
+      submitData.append("county", formData.country);
+      submitData.append("currentCourse", formData.qualificationTitle);
+      submitData.append("department", formData.programmeSelection);
+      submitData.append("semester", formData.batchNumber);
+      submitData.append("admissionNumber", formData.internalStudentId);
       submitData.append("institutionId", org._id);
 
       if (learnerPhotograph) {
-        submitData.append("learnerPhotograph", learnerPhotograph);
+        submitData.append("passportPhoto", learnerPhotograph);
       }
       
       if (qualificationDocument) {
-        submitData.append("qualificationDocument", qualificationDocument);
+        submitData.append("marksheets", qualificationDocument);
       }
 
       const response = await api.createStudent(submitData);
@@ -135,8 +144,8 @@ export default function AddStudentPage() {
           const lowerMsg = msg.toLowerCase();
           if (lowerMsg.includes("admission number")) errors.internalStudentId = msg;
           else if (lowerMsg.includes("year/semester") || lowerMsg.includes("batch")) errors.batchNumber = msg;
-          else if (lowerMsg.includes("department/branch")) errors.qualificationTitle = msg; 
-          else if (lowerMsg.includes("current course") || lowerMsg.includes("programme")) errors.programmeSelection = msg;
+          else if (lowerMsg.includes("department/branch")) errors.programmeSelection = msg; 
+          else if (lowerMsg.includes("current course") || lowerMsg.includes("programme")) errors.qualificationTitle = msg;
           else if (lowerMsg.includes("district")) errors.districtCity = msg;
           else if (lowerMsg.includes("state")) errors.stateProvince = msg;
           else if (lowerMsg.includes("joining date") || lowerMsg.includes("start date")) errors.programmeStartDate = msg;
