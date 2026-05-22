@@ -156,6 +156,18 @@ export default function EditStudentPage() {
       submitData.append("semester", formData.batchNumber);
       submitData.append("admissionNumber", formData.internalStudentId);
       submitData.append("institutionId", org._id);
+      
+      // Additional fields added to schema
+      submitData.append("emailAddress", formData.emailAddress);
+      submitData.append("qualificationLevel", formData.qualificationLevel);
+      submitData.append("qualificationType", formData.qualificationType);
+      submitData.append("studyMode", formData.studyMode);
+      submitData.append("completionDate", formData.completionDate);
+      submitData.append("guidedLearningHours", formData.guidedLearningHours);
+      submitData.append("resultGrade", formData.resultGrade);
+      submitData.append("approvedCentreName", formData.approvedCentreName);
+      submitData.append("centreCode", formData.centreCode);
+      submitData.append("trainerTutorName", formData.trainerTutorName);
 
       if (learnerPhotograph) {
         submitData.append("passportPhoto", learnerPhotograph);
