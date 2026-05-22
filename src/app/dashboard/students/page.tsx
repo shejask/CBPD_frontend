@@ -26,9 +26,14 @@ export default function StudentsPage() {
   const [error, setError] = useState("");
   const [searchQuery, setSearchQuery] = useState("");
   const [openDropdown, setOpenDropdown] = useState<string | null>(null);
+  const [statusFilter, setStatusFilter] = useState<"all" | "active" | "inactive">("all");
+  const [isFilterOpen, setIsFilterOpen] = useState(false);
 
   useEffect(() => {
-    const handleClickOutside = () => setOpenDropdown(null);
+    const handleClickOutside = () => {
+      setOpenDropdown(null);
+      setIsFilterOpen(false);
+    };
     document.addEventListener("click", handleClickOutside);
     return () => document.removeEventListener("click", handleClickOutside);
   }, []);
@@ -82,11 +87,17 @@ export default function StudentsPage() {
     }
   };
 
-  const filteredStudents = students.filter(student => 
-    student.fullName.toLowerCase().includes(searchQuery.toLowerCase()) ||
-    student.admissionNumber.toLowerCase().includes(searchQuery.toLowerCase()) ||
-    student.currentCourse.toLowerCase().includes(searchQuery.toLowerCase())
-  );
+  const filteredStudents = students.filter(student => {
+    const matchesSearch = student.fullName.toLowerCase().includes(searchQuery.toLowerCase()) ||
+                          student.admissionNumber.toLowerCase().includes(searchQuery.toLowerCase()) ||
+                          student.currentCourse.toLowerCase().includes(searchQuery.toLowerCase());
+    
+    const matchesStatus = statusFilter === "all" ? true :
+                          statusFilter === "active" ? student.isActive :
+                          !student.isActive;
+                          
+    return matchesSearch && matchesStatus;
+  });
 
   return (
     <div className="space-y-6 animate-fade-in-up">
@@ -117,10 +128,29 @@ export default function StudentsPage() {
             className="w-full pl-10 pr-4 py-2.5 bg-white border border-slate-200 rounded-xl focus:ring-2 focus:ring-brand-blue/20 focus:border-brand-blue outline-none transition-all"
           />
         </div>
-        <button className="flex items-center gap-2 px-4 py-2.5 bg-white border border-slate-200 rounded-xl hover:bg-slate-50 transition-colors text-slate-700 font-medium">
-          <Filter className="w-4 h-4" />
-          Filter
-        </button>
+        <div className="relative">
+          <button 
+            onClick={(e) => {
+              e.stopPropagation();
+              setIsFilterOpen(!isFilterOpen);
+            }}
+            className="flex items-center gap-2 px-4 py-2.5 bg-white border border-slate-200 rounded-xl hover:bg-slate-50 transition-colors text-slate-700 font-medium"
+          >
+            <Filter className="w-4 h-4" />
+            Filter: {statusFilter === "all" ? "All" : statusFilter === "active" ? "Active" : "Inactive"}
+          </button>
+          
+          {isFilterOpen && (
+            <div 
+              className="absolute right-0 top-12 w-40 bg-white rounded-xl shadow-lg border border-slate-200 py-2 z-20"
+              onClick={(e) => e.stopPropagation()}
+            >
+              <button onClick={() => { setStatusFilter("all"); setIsFilterOpen(false); }} className={`block w-full text-left px-4 py-2 text-sm hover:bg-slate-50 ${statusFilter === 'all' ? 'font-bold text-brand-blue' : 'text-slate-700'}`}>All Students</button>
+              <button onClick={() => { setStatusFilter("active"); setIsFilterOpen(false); }} className={`block w-full text-left px-4 py-2 text-sm hover:bg-slate-50 ${statusFilter === 'active' ? 'font-bold text-brand-blue' : 'text-slate-700'}`}>Active Only</button>
+              <button onClick={() => { setStatusFilter("inactive"); setIsFilterOpen(false); }} className={`block w-full text-left px-4 py-2 text-sm hover:bg-slate-50 ${statusFilter === 'inactive' ? 'font-bold text-brand-blue' : 'text-slate-700'}`}>Inactive Only</button>
+            </div>
+          )}
+        </div>
       </div>
 
       {/* Error State */}
@@ -132,8 +162,8 @@ export default function StudentsPage() {
       )}
 
       {/* Data Table */}
-      <div className="bg-white rounded-2xl border border-slate-200 shadow-sm overflow-hidden">
-        <div className="overflow-x-auto">
+      <div className="bg-white rounded-2xl border border-slate-200 shadow-sm">
+        <div className="w-full pb-32">
           <table className="w-full text-left border-collapse">
             <thead>
               <tr className="bg-slate-50 border-b border-slate-200 text-slate-500 text-sm font-semibold uppercase tracking-wider">
