@@ -110,5 +110,30 @@ export const api = {
       method: 'POST',
       body: formData,
     });
+  },
+  getStudent: async (id: string) => {
+    return fetchAPI(`/student/${id}`);
+  },
+
+  updateStudent: async (id: string, formData: FormData) => {
+    return fetchAPI(`/student/${id}`, {
+      method: 'PUT',
+      body: formData,
+    });
+  },
+
+  deactivateStudent: async (id: string) => {
+    const formData = new FormData();
+    formData.append('isActive', 'false');
+    return fetchAPI(`/student/${id}`, {
+      method: 'PUT',
+      body: formData,
+    });
+  },
+
+  deleteStudent: async (id: string) => {
+    return fetchAPI(`/student/${id}`, {
+      method: 'DELETE',
+    });
   }
 };

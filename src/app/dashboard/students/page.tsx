@@ -2,7 +2,7 @@
 
 import { useState, useEffect } from "react";
 import Link from "next/link";
-import { Plus, Search, Filter, MoreVertical, Loader2 } from "lucide-react";
+import { Plus, Search, Filter, MoreVertical, Loader2, Edit, PowerOff, Trash2 } from "lucide-react";
 import { api } from "@/lib/api";
 
 interface Student {
@@ -25,6 +25,13 @@ export default function StudentsPage() {
   const [isLoading, setIsLoading] = useState(true);
   const [error, setError] = useState("");
   const [searchQuery, setSearchQuery] = useState("");
+  const [openDropdown, setOpenDropdown] = useState<string | null>(null);
+
+  useEffect(() => {
+    const handleClickOutside = () => setOpenDropdown(null);
+    document.addEventListener("click", handleClickOutside);
+    return () => document.removeEventListener("click", handleClickOutside);
+  }, []);
 
   useEffect(() => {
     fetchStudents();
@@ -52,6 +59,26 @@ export default function StudentsPage() {
       setError("Failed to load students.");
     } finally {
       setIsLoading(false);
+    }
+  };
+
+  const handleDeactivate = async (id: string) => {
+    if (!window.confirm("Are you sure you want to deactivate this student?")) return;
+    try {
+      await api.deactivateStudent(id);
+      fetchStudents();
+    } catch (err: any) {
+      alert(err.message || "Failed to deactivate student");
+    }
+  };
+
+  const handleDelete = async (id: string) => {
+    if (!window.confirm("Are you sure you want to delete this student?")) return;
+    try {
+      await api.deleteStudent(id);
+      fetchStudents();
+    } catch (err: any) {
+      alert(err.message || "Failed to delete student");
     }
   };
 
@@ -171,10 +198,51 @@ export default function StudentsPage() {
                         {student.isActive ? 'Active' : 'Inactive'}
                       </span>
                     </td>
-                    <td className="px-6 py-4 text-center">
-                      <button className="p-2 text-slate-400 hover:text-brand-blue hover:bg-brand-blue/10 rounded-lg transition-colors">
+                    <td className="px-6 py-4 text-center relative">
+                      <button 
+                        onClick={(e) => {
+                          e.stopPropagation();
+                          setOpenDropdown(openDropdown === student._id ? null : student._id);
+                        }}
+                        className="p-2 text-slate-400 hover:text-brand-blue hover:bg-brand-blue/10 rounded-lg transition-colors"
+                      >
                         <MoreVertical className="w-5 h-5" />
                       </button>
+
+                      {openDropdown === student._id && (
+                        <div 
+                          className="absolute right-8 top-12 w-48 bg-white rounded-xl shadow-lg border border-slate-200 py-2 z-10"
+                          onClick={(e) => e.stopPropagation()}
+                        >
+                          <Link
+                            href={`/dashboard/students/edit/${student._id}`}
+                            className="flex items-center gap-3 px-4 py-2 text-sm text-slate-700 hover:bg-slate-50 transition-colors w-full text-left"
+                          >
+                            <Edit className="w-4 h-4" />
+                            Edit
+                          </Link>
+                          <button
+                            onClick={() => {
+                              setOpenDropdown(null);
+                              handleDeactivate(student._id);
+                            }}
+                            className="flex items-center gap-3 px-4 py-2 text-sm text-slate-700 hover:bg-slate-50 transition-colors w-full text-left"
+                          >
+                            <PowerOff className="w-4 h-4" />
+                            Deactivate
+                          </button>
+                          <button
+                            onClick={() => {
+                              setOpenDropdown(null);
+                              handleDelete(student._id);
+                            }}
+                            className="flex items-center gap-3 px-4 py-2 text-sm text-red-600 hover:bg-red-50 transition-colors w-full text-left"
+                          >
+                            <Trash2 className="w-4 h-4" />
+                            Delete
+                          </button>
+                        </div>
+                      )}
                     </td>
                   </tr>
                 ))
