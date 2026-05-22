@@ -2,7 +2,7 @@
 
 import { useState, useEffect } from "react";
 import Link from "next/link";
-import { Plus, Search, Filter, MoreVertical, Loader2, Edit, PowerOff, Trash2 } from "lucide-react";
+import { Plus, Search, Filter, MoreVertical, Loader2, Edit, PowerOff, Trash2, CheckCircle } from "lucide-react";
 import { api } from "@/lib/api";
 
 interface Student {
@@ -79,6 +79,16 @@ export default function StudentsPage() {
       fetchStudents();
     } catch (err: any) {
       alert(err.message || "Failed to deactivate student");
+    }
+  };
+
+  const handleActivate = async (id: string) => {
+    if (!window.confirm("Are you sure you want to activate this student?")) return;
+    try {
+      await api.activateStudent(id);
+      fetchStudents();
+    } catch (err: any) {
+      alert(err.message || "Failed to activate student");
     }
   };
 
@@ -248,16 +258,29 @@ export default function StudentsPage() {
                             <Edit className="w-4 h-4" />
                             Edit
                           </Link>
-                          <button
-                            onClick={() => {
-                              setOpenDropdown(null);
-                              handleDeactivate(student._id);
-                            }}
-                            className="flex items-center gap-3 px-4 py-2 text-sm text-slate-700 hover:bg-slate-50 transition-colors w-full text-left"
-                          >
-                            <PowerOff className="w-4 h-4" />
-                            Deactivate
-                          </button>
+                          {student.isActive ? (
+                            <button
+                              onClick={() => {
+                                setOpenDropdown(null);
+                                handleDeactivate(student._id);
+                              }}
+                              className="flex items-center gap-3 px-4 py-2 text-sm text-slate-700 hover:bg-slate-50 transition-colors w-full text-left"
+                            >
+                              <PowerOff className="w-4 h-4" />
+                              Deactivate
+                            </button>
+                          ) : (
+                            <button
+                              onClick={() => {
+                                setOpenDropdown(null);
+                                handleActivate(student._id);
+                              }}
+                              className="flex items-center gap-3 px-4 py-2 text-sm text-green-600 hover:bg-green-50 transition-colors w-full text-left"
+                            >
+                              <CheckCircle className="w-4 h-4" />
+                              Activate
+                            </button>
+                          )}
                           <button
                             onClick={() => {
                               setOpenDropdown(null);

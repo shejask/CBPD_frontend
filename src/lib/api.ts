@@ -30,6 +30,7 @@ async function fetchAPI(endpoint: string, options: RequestInit = {}) {
     ...options,
     headers,
     credentials: 'include',
+    cache: 'no-store',
   });
 
   const responseText = await response.text();
@@ -125,6 +126,15 @@ export const api = {
   deactivateStudent: async (id: string) => {
     const formData = new FormData();
     formData.append('isActive', 'false');
+    return fetchAPI(`/student/${id}`, {
+      method: 'PUT',
+      body: formData,
+    });
+  },
+
+  activateStudent: async (id: string) => {
+    const formData = new FormData();
+    formData.append('isActive', 'true');
     return fetchAPI(`/student/${id}`, {
       method: 'PUT',
       body: formData,
