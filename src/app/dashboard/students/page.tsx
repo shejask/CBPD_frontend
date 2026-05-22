@@ -30,9 +30,14 @@ export default function StudentsPage() {
   const [isFilterOpen, setIsFilterOpen] = useState(false);
 
   useEffect(() => {
-    const handleClickOutside = () => {
-      setOpenDropdown(null);
-      setIsFilterOpen(false);
+    const handleClickOutside = (e: MouseEvent) => {
+      const target = e.target as HTMLElement;
+      if (!target.closest('.action-dropdown-trigger') && !target.closest('.action-dropdown-content')) {
+        setOpenDropdown(null);
+      }
+      if (!target.closest('.filter-dropdown-trigger') && !target.closest('.filter-dropdown-content')) {
+        setIsFilterOpen(false);
+      }
     };
     document.addEventListener("click", handleClickOutside);
     return () => document.removeEventListener("click", handleClickOutside);
@@ -130,11 +135,8 @@ export default function StudentsPage() {
         </div>
         <div className="relative">
           <button 
-            onClick={(e) => {
-              e.stopPropagation();
-              setIsFilterOpen(!isFilterOpen);
-            }}
-            className="flex items-center gap-2 px-4 py-2.5 bg-white border border-slate-200 rounded-xl hover:bg-slate-50 transition-colors text-slate-700 font-medium"
+            onClick={() => setIsFilterOpen(!isFilterOpen)}
+            className="filter-dropdown-trigger flex items-center gap-2 px-4 py-2.5 bg-white border border-slate-200 rounded-xl hover:bg-slate-50 transition-colors text-slate-700 font-medium"
           >
             <Filter className="w-4 h-4" />
             Filter: {statusFilter === "all" ? "All" : statusFilter === "active" ? "Active" : "Inactive"}
@@ -142,8 +144,7 @@ export default function StudentsPage() {
           
           {isFilterOpen && (
             <div 
-              className="absolute right-0 top-12 w-40 bg-white rounded-xl shadow-lg border border-slate-200 py-2 z-20"
-              onClick={(e) => e.stopPropagation()}
+              className="filter-dropdown-content absolute right-0 top-12 w-40 bg-white rounded-xl shadow-lg border border-slate-200 py-2 z-20"
             >
               <button onClick={() => { setStatusFilter("all"); setIsFilterOpen(false); }} className={`block w-full text-left px-4 py-2 text-sm hover:bg-slate-50 ${statusFilter === 'all' ? 'font-bold text-brand-blue' : 'text-slate-700'}`}>All Students</button>
               <button onClick={() => { setStatusFilter("active"); setIsFilterOpen(false); }} className={`block w-full text-left px-4 py-2 text-sm hover:bg-slate-50 ${statusFilter === 'active' ? 'font-bold text-brand-blue' : 'text-slate-700'}`}>Active Only</button>
@@ -230,19 +231,15 @@ export default function StudentsPage() {
                     </td>
                     <td className="px-6 py-4 text-center relative">
                       <button 
-                        onClick={(e) => {
-                          e.stopPropagation();
-                          setOpenDropdown(openDropdown === student._id ? null : student._id);
-                        }}
-                        className="p-2 text-slate-400 hover:text-brand-blue hover:bg-brand-blue/10 rounded-lg transition-colors"
+                        onClick={() => setOpenDropdown(openDropdown === student._id ? null : student._id)}
+                        className="action-dropdown-trigger p-2 text-slate-400 hover:text-brand-blue hover:bg-brand-blue/10 rounded-lg transition-colors"
                       >
                         <MoreVertical className="w-5 h-5" />
                       </button>
 
                       {openDropdown === student._id && (
                         <div 
-                          className="absolute right-8 top-12 w-48 bg-white rounded-xl shadow-lg border border-slate-200 py-2 z-10"
-                          onClick={(e) => e.stopPropagation()}
+                          className="action-dropdown-content absolute right-8 top-12 w-48 bg-white rounded-xl shadow-lg border border-slate-200 py-2 z-10"
                         >
                           <Link
                             href={`/dashboard/students/edit/${student._id}`}
