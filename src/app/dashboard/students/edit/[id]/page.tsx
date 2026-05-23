@@ -45,6 +45,8 @@ export default function EditStudentPage() {
             internalStudentId: s.admissionNumber || "",
             programmeSelection: s.department || "",
           });
+          setExistingPhotoUrl(s.passportPhoto || "");
+          setExistingDocumentUrls(s.marksheets || []);
         }
       } catch (err) {
         console.error(err);
@@ -89,6 +91,9 @@ export default function EditStudentPage() {
 
   const [learnerPhotograph, setLearnerPhotograph] = useState<File | null>(null);
   const [qualificationDocument, setQualificationDocument] = useState<File | null>(null);
+  
+  const [existingPhotoUrl, setExistingPhotoUrl] = useState("");
+  const [existingDocumentUrls, setExistingDocumentUrls] = useState<string[]>([]);
   
   const photoInputRef = useRef<HTMLInputElement>(null);
   const documentInputRef = useRef<HTMLInputElement>(null);
@@ -238,8 +243,8 @@ export default function EditStudentPage() {
             <ArrowLeft className="w-4 h-4" />
             Back to Students
           </Link>
-          <h1 className="text-3xl font-bold text-slate-900">Add New Student</h1>
-          <p className="text-slate-500 mt-1">Register a new student to your institution.</p>
+          <h1 className="text-3xl font-bold text-slate-900">Edit Student</h1>
+          <p className="text-slate-500 mt-1">Update student details and records.</p>
         </div>
       </div>
 
@@ -449,10 +454,16 @@ export default function EditStudentPage() {
                   <Upload className="w-5 h-5 text-brand-blue" />
                 </div>
                 <h3 className="font-semibold text-slate-900">Learner Photograph *</h3>
-                <p className="text-sm text-slate-500 mt-1 mb-3">Upload a clear passport-sized photo.</p>
+                <p className="text-sm text-slate-500 mt-1 mb-1">Upload a clear passport-sized photo.</p>
+                <p className="text-xs text-slate-400 mb-3">Maximum file size: 1MB</p>
                 {learnerPhotograph ? (
                   <div className="inline-flex items-center gap-2 bg-green-50 text-green-700 px-3 py-1.5 rounded-lg text-sm font-medium border border-green-200">
                     <AlertCircle className="w-4 h-4" /> {learnerPhotograph.name}
+                  </div>
+                ) : existingPhotoUrl ? (
+                  <div className="flex flex-col items-center gap-2">
+                    <img src={existingPhotoUrl} alt="Current Photo" className="w-16 h-16 object-cover rounded-md border border-slate-200" />
+                    <span className="text-sm font-medium text-brand-blue">Replace file</span>
                   </div>
                 ) : (
                   <span className="text-sm font-medium text-brand-blue">Browse file</span>
@@ -466,10 +477,18 @@ export default function EditStudentPage() {
                   <Upload className="w-5 h-5 text-brand-blue" />
                 </div>
                 <h3 className="font-semibold text-slate-900">Previous Academic Mark Sheet / Qualification Document</h3>
-                <p className="text-sm text-slate-500 mt-1 mb-3">Upload qualification document (Optional).</p>
+                <p className="text-sm text-slate-500 mt-1 mb-1">Upload qualification document (Optional).</p>
+                <p className="text-xs text-slate-400 mb-3">Maximum file size: 1MB</p>
                 {qualificationDocument ? (
                   <div className="inline-flex items-center gap-2 bg-green-50 text-green-700 px-3 py-1.5 rounded-lg text-sm font-medium border border-green-200">
                     <AlertCircle className="w-4 h-4" /> {qualificationDocument.name}
+                  </div>
+                ) : existingDocumentUrls.length > 0 ? (
+                  <div className="flex flex-col items-center gap-2">
+                    <div className="inline-flex items-center gap-2 bg-blue-50 text-brand-blue px-3 py-1.5 rounded-lg text-sm font-medium border border-blue-200">
+                      <AlertCircle className="w-4 h-4" /> Existing Document Uploaded
+                    </div>
+                    <span className="text-sm font-medium text-brand-blue">Replace file</span>
                   </div>
                 ) : (
                   <span className="text-sm font-medium text-brand-blue">Browse file</span>
