@@ -145,5 +145,10 @@ export const api = {
     return fetchAPI(`/student/${id}`, {
       method: 'DELETE',
     });
+  },
+
+  // --- Statistics ---
+  getInstitutionStatistics: async (institutionId: string) => {
+    return fetchAPI(`/institution/${institutionId}/students/statistics`);
   }
 };
