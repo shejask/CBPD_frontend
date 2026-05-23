@@ -103,9 +103,10 @@ export default function StudentsPage() {
   };
 
   const filteredStudents = students.filter(student => {
-    const matchesSearch = student.fullName.toLowerCase().includes(searchQuery.toLowerCase()) ||
-                          student.admissionNumber.toLowerCase().includes(searchQuery.toLowerCase()) ||
-                          student.currentCourse.toLowerCase().includes(searchQuery.toLowerCase());
+    const searchLower = searchQuery.toLowerCase();
+    const matchesSearch = (student.fullName || "").toLowerCase().includes(searchLower) ||
+                          (student.admissionNumber || "").toLowerCase().includes(searchLower) ||
+                          (student.currentCourse || "").toLowerCase().includes(searchLower);
     
     const matchesStatus = statusFilter === "all" ? true :
                           statusFilter === "active" ? student.isActive :

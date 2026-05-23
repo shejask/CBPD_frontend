@@ -102,7 +102,7 @@ export const api = {
   },
 
   // --- Students ---
-  getStudents: async (institutionId: string, page = 1, limit = 10) => {
+  getStudents: async (institutionId: string, page = 1, limit = 1000) => {
     return fetchAPI(`/student?institutionId=${institutionId}&page=${page}&limit=${limit}`);
   },
 
