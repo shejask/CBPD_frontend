@@ -47,19 +47,26 @@ export default function NewCertificateRequestPage() {
       if (orgId) {
         // Fetch all students for the institute to compute programmes and batches
         const res = await api.getStudents(orgId, 1, 1000);
-        if (res.success && res.data?.students) {
-          const studentList = res.data.students;
-          setStudents(studentList);
-          
-          // Extract unique active programmes
-          const uniqueProgrammes = Array.from(new Set(
-            studentList
-              .map((s: any) => s.department)
-              .filter(Boolean)
-          )) as string[];
-          
-          setProgrammes(uniqueProgrammes);
+        
+        let studentList = [];
+        if (res.success && res.data) {
+          studentList = res.data;
+        } else if (res.students) {
+          studentList = res.students;
+        } else if (Array.isArray(res)) {
+          studentList = res;
         }
+        
+        setStudents(studentList);
+        
+        // Extract unique active programmes
+        const uniqueProgrammes = Array.from(new Set(
+          studentList
+            .map((s: any) => s.department)
+            .filter(Boolean)
+        )) as string[];
+        
+        setProgrammes(uniqueProgrammes);
       }
     } catch (error) {
       console.error("Failed to fetch initial data", error);
