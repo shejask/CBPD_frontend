@@ -107,14 +107,7 @@ export default function DashboardPage() {
 
   return (
     <div className="space-y-6 animate-fade-in-up">
-      <div className="flex flex-col gap-2 border-b border-slate-200 pb-4">
-        <h1 className="text-2xl font-bold text-slate-900 flex items-center gap-2">
-          ⭐ FINAL RECOMMENDED DASHBOARD
-        </h1>
-        <h2 className="text-xl font-bold text-slate-800 flex items-center gap-2 mt-2">
-          📊 Dashboard Cards
-        </h2>
-      </div>
+
 
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5 gap-4">
         {statCards.map((stat, i) => (

@@ -71,7 +71,7 @@ export default function DashboardLayout({
 
   const menuItems = [
     { name: "Dashboard", href: "/dashboard", icon: LayoutDashboard },
-    { name: "My Students", href: "/dashboard/students", icon: Users },
+    { name: "My Learners", href: "/dashboard/students", icon: Users },
     { name: "Certificate Requests", href: "/dashboard/certificate-requests", icon: Award },
   ];
 
