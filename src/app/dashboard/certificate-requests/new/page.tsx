@@ -22,6 +22,7 @@ export default function NewCertificateRequestPage() {
   const [formData, setFormData] = useState({
     programmeName: "",
     batchNumber: "",
+    batchStartDate: "",
     examCompletedDate: "",
     message: "",
   });
@@ -98,15 +99,26 @@ export default function NewCertificateRequestPage() {
     }
   }, [formData.programmeName, students]);
 
-  // When programme OR batch changes, recalculate number of learners
+  // When programme OR batch changes, recalculate number of learners and batch start date
   useEffect(() => {
     if (formData.programmeName && formData.batchNumber && students.length > 0) {
-      const count = students.filter(
+      const batchStudents = students.filter(
         s => s.department === formData.programmeName && s.semester === formData.batchNumber
-      ).length;
-      setNumberOfLearners(count);
+      );
+      setNumberOfLearners(batchStudents.length);
+      
+      if (batchStudents.length > 0 && batchStudents[0].joiningDate) {
+        // Auto-fill batch start date from the first student's joining date
+        const dateObj = new Date(batchStudents[0].joiningDate);
+        if (!isNaN(dateObj.getTime())) {
+          setFormData(prev => ({ ...prev, batchStartDate: dateObj.toISOString().split('T')[0] }));
+        }
+      } else {
+        setFormData(prev => ({ ...prev, batchStartDate: "" }));
+      }
     } else {
       setNumberOfLearners(0);
+      setFormData(prev => ({ ...prev, batchStartDate: "" }));
     }
   }, [formData.programmeName, formData.batchNumber, students]);
 
@@ -126,6 +138,7 @@ export default function NewCertificateRequestPage() {
         instituteName: instituteData.orgName || "Institute",
         programmeName: formData.programmeName,
         batchNumber: formData.batchNumber,
+        batchStartDate: formData.batchStartDate,
         numberOfLearners: numberOfLearners,
         examCompletedDate: formData.examCompletedDate,
         message: formData.message,
@@ -223,6 +236,18 @@ export default function NewCertificateRequestPage() {
                 className="w-full px-4 py-3 bg-slate-100 border border-slate-200 rounded-xl text-slate-700 font-medium cursor-not-allowed outline-none"
               />
               <p className="text-xs text-slate-500">Auto-calculated based on selected programme and batch.</p>
+            </div>
+
+            <div className="space-y-2 md:col-span-2">
+              <label className="text-sm font-semibold text-slate-700">Batch Start Date *</label>
+              <input 
+                required 
+                type="date" 
+                name="batchStartDate" 
+                value={formData.batchStartDate} 
+                onChange={handleChange} 
+                className="w-full px-4 py-3 bg-slate-50 border border-slate-200 rounded-xl focus:ring-2 focus:ring-brand-blue focus:border-brand-blue outline-none transition-all text-slate-900"
+              />
             </div>
 
             <div className="space-y-2 md:col-span-2">
