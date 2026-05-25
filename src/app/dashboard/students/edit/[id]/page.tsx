@@ -185,7 +185,7 @@ export default function EditStudentPage() {
       const response = await api.updateStudent(id, submitData);
       
       if (response.success) {
-        setSuccessMsg("Student created successfully!");
+        setSuccessMsg("Learner created successfully!");
         setTimeout(() => {
           router.push("/dashboard/students");
         }, 1500);
@@ -241,9 +241,8 @@ export default function EditStudentPage() {
         <div>
           <Link href="/dashboard/students" className="inline-flex items-center gap-2 text-sm font-medium text-slate-500 hover:text-brand-blue transition-colors mb-2">
             <ArrowLeft className="w-4 h-4" />
-            Back to Students
-          </Link>
-          <h1 className="text-3xl font-bold text-slate-900">Edit Student</h1>
+            Back to Learners </Link>
+          <h1 className="text-3xl font-bold text-slate-900">Edit Learner </h1>
           <p className="text-slate-500 mt-1">Update student details and records.</p>
         </div>
       </div>

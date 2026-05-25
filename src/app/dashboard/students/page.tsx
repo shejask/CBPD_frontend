@@ -120,7 +120,7 @@ export default function StudentsPage() {
       {/* Header */}
       <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4 bg-white p-6 rounded-2xl border border-slate-200 shadow-sm">
         <div>
-          <h1 className="text-2xl font-bold text-slate-900">My Students</h1>
+          <h1 className="text-2xl font-bold text-slate-900">My Learners </h1>
           <p className="text-slate-500 mt-1">Manage all your enrolled students.</p>
         </div>
         <Link 
@@ -128,8 +128,7 @@ export default function StudentsPage() {
           className="flex items-center gap-2 bg-brand-blue hover:bg-brand-blue/90 text-white px-4 py-2.5 rounded-xl transition-colors shadow-sm font-medium whitespace-nowrap"
         >
           <Plus className="w-5 h-5" />
-          Add New Student
-        </Link>
+          Add New Learner </Link>
       </div>
 
       {/* Filters & Search */}
@@ -157,7 +156,7 @@ export default function StudentsPage() {
             <div 
               className="filter-dropdown-content absolute right-0 top-12 w-40 bg-white rounded-xl shadow-lg border border-slate-200 py-2 z-20"
             >
-              <button onClick={() => { setStatusFilter("all"); setIsFilterOpen(false); }} className={`block w-full text-left px-4 py-2 text-sm hover:bg-slate-50 ${statusFilter === 'all' ? 'font-bold text-brand-blue' : 'text-slate-700'}`}>All Students</button>
+              <button onClick={() => { setStatusFilter("all"); setIsFilterOpen(false); }} className={`block w-full text-left px-4 py-2 text-sm hover:bg-slate-50 ${statusFilter === 'all' ? 'font-bold text-brand-blue' : 'text-slate-700'}`}>All Learners </button>
               <button onClick={() => { setStatusFilter("active"); setIsFilterOpen(false); }} className={`block w-full text-left px-4 py-2 text-sm hover:bg-slate-50 ${statusFilter === 'active' ? 'font-bold text-brand-blue' : 'text-slate-700'}`}>Active Only</button>
               <button onClick={() => { setStatusFilter("inactive"); setIsFilterOpen(false); }} className={`block w-full text-left px-4 py-2 text-sm hover:bg-slate-50 ${statusFilter === 'inactive' ? 'font-bold text-brand-blue' : 'text-slate-700'}`}>Inactive Only</button>
             </div>
@@ -179,7 +178,7 @@ export default function StudentsPage() {
           <table className="w-full text-left border-collapse">
             <thead>
               <tr className="bg-slate-50 border-b border-slate-200 text-slate-500 text-sm font-semibold uppercase tracking-wider">
-                <th className="px-6 py-4">Student</th>
+                <th className="px-6 py-4"> Learner</th>
                 <th className="px-6 py-4">Course Details</th>
                 <th className="px-6 py-4">Contact</th>
                 <th className="px-6 py-4">Location</th>

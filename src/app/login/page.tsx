@@ -59,7 +59,7 @@ export default function LoginPage() {
             <div className="absolute inset-0 z-0 opacity-40">
               <img 
                 src="/images/external/1522202176988-66273c2fd55f.jpg" 
-                alt="Students studying" 
+                alt="Learners studying" 
                 className="w-full h-full object-cover mix-blend-luminosity"
               />
               <div className="absolute inset-0 bg-gradient-to-t from-primary-900 via-primary-900/80 to-brand-blue/50"></div>
