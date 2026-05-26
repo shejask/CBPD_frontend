@@ -152,7 +152,7 @@ export const api = {
     return fetchAPI(`/institution/${institutionId}/students/statistics`);
   },
 
-  // --- Certificate Requests ---
+  // --- Certificate Request ---
   createCertificateRequest: async (payload: any) => {
     return fetchAPI('/certificate-requests', {
       method: 'POST',

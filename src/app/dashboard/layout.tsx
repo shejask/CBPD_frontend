@@ -72,7 +72,7 @@ export default function DashboardLayout({
   const menuItems = [
     { name: "Dashboard", href: "/dashboard", icon: LayoutDashboard },
     { name: "My Learners", href: "/dashboard/students", icon: Users },
-    { name: "Certificate Requests", href: "/dashboard/certificate-requests", icon: Award },
+    { name: "Certificate Request", href: "/dashboard/certificate-requests", icon: Award },
   ];
 
   if (isAuthenticated === null) {

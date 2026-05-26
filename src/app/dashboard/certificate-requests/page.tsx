@@ -53,7 +53,7 @@ export default function CertificateRequestsPage() {
     <div className="space-y-6">
       <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4">
         <div>
-          <h1 className="text-2xl font-bold text-slate-900">Certificate Requests</h1>
+          <h1 className="text-2xl font-bold text-slate-900">Certificate Request</h1>
           <p className="text-slate-500">Manage your certificate printing and dispatch requests.</p>
         </div>
         <Link
@@ -94,7 +94,7 @@ export default function CertificateRequestsPage() {
                     </div>
                     <h3 className="text-slate-900 font-semibold mb-1">No requests found</h3>
                     <p className="text-slate-500 text-sm max-w-sm mx-auto">
-                      You haven't made any certificate requests yet.
+                      You haven't made any certificate request yet.
                     </p>
                   </td>
                 </tr>

@@ -92,7 +92,7 @@ export default function DashboardPage() {
     { 
       label: "Rejected", 
       value: stats?.overview.rejected || 0, 
-      description: "Rejected certificate requests.",
+      description: "Rejected certificate request.",
       color: "bg-red-50 text-red-600 border-red-200",
       icon: <XCircle className="w-5 h-5" />
     },
@@ -214,7 +214,7 @@ export default function DashboardPage() {
             </div>
           ) : (
             <div className="p-8 text-center">
-              <p className="text-slate-500">No certificate requests found.</p>
+              <p className="text-slate-500">No certificate request found.</p>
             </div>
           )}
         </div>
