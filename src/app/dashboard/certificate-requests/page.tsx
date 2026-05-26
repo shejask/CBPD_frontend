@@ -9,6 +9,10 @@ export default function CertificateRequestsPage() {
   const [requests, setRequests] = useState<any[]>([]);
   const [isLoading, setIsLoading] = useState(true);
 
+  const [filterProgramme, setFilterProgramme] = useState("");
+  const [filterStatus, setFilterStatus] = useState("");
+  const [filterDate, setFilterDate] = useState("");
+
   useEffect(() => {
     fetchRequests();
   }, []);
@@ -36,14 +40,21 @@ export default function CertificateRequestsPage() {
 
   const getStatusColor = (status: string) => {
     switch (status) {
-      case "Pending":
-        return "bg-yellow-100 text-yellow-700 border-yellow-200";
-      case "Processing":
+      case "Pending": return "bg-yellow-100 text-yellow-700 border-yellow-200";
+      case "Under Review":
+      case "Under Processing":
+      case "Printing in Progress":
         return "bg-blue-100 text-blue-700 border-blue-200";
+      case "Approved":
       case "Completed":
+      case "Ready for Dispatch":
+      case "Dispatched":
+      case "Collected":
         return "bg-green-100 text-green-700 border-green-200";
       case "Rejected":
         return "bg-red-100 text-red-700 border-red-200";
+      default:
+        return "bg-slate-100 text-slate-700 border-slate-200";
     }
   };
 
@@ -79,12 +90,54 @@ export default function CertificateRequestsPage() {
         </Link>
       </div>
 
+      <div className="bg-white border border-slate-200 rounded-2xl p-4 shadow-sm flex flex-col md:flex-row gap-4">
+        <div className="flex-1">
+          <label className="block text-xs font-semibold text-slate-500 mb-1">Programme</label>
+          <input 
+            type="text" 
+            placeholder="Search programme..." 
+            className="w-full border border-slate-200 rounded-lg px-3 py-2 text-sm outline-none focus:border-brand-blue"
+            value={filterProgramme}
+            onChange={(e) => setFilterProgramme(e.target.value)}
+          />
+        </div>
+        <div className="flex-1">
+          <label className="block text-xs font-semibold text-slate-500 mb-1">Status</label>
+          <select 
+            className="w-full border border-slate-200 rounded-lg px-3 py-2 text-sm outline-none focus:border-brand-blue bg-white"
+            value={filterStatus}
+            onChange={(e) => setFilterStatus(e.target.value)}
+          >
+            <option value="">All Statuses</option>
+            <option value="Pending">Pending</option>
+            <option value="Under Review">Under Review</option>
+            <option value="Under Processing">Under Processing</option>
+            <option value="Approved">Approved</option>
+            <option value="Printing in Progress">Printing in Progress</option>
+            <option value="Ready for Dispatch">Ready for Dispatch</option>
+            <option value="Dispatched">Dispatched</option>
+            <option value="Collected">Collected</option>
+            <option value="Completed">Completed</option>
+            <option value="Rejected">Rejected</option>
+          </select>
+        </div>
+        <div className="flex-1">
+          <label className="block text-xs font-semibold text-slate-500 mb-1">Requested Date</label>
+          <input 
+            type="date" 
+            className="w-full border border-slate-200 rounded-lg px-3 py-2 text-sm outline-none focus:border-brand-blue"
+            value={filterDate}
+            onChange={(e) => setFilterDate(e.target.value)}
+          />
+        </div>
+      </div>
+
       <div className="bg-white border border-slate-200 rounded-2xl overflow-hidden shadow-sm">
         <div className="overflow-x-auto">
           <table className="w-full text-left border-collapse">
             <thead>
               <tr className="bg-slate-50 border-b border-slate-200 text-sm font-semibold text-slate-600">
-                <th className="py-4 px-6">Programme Name</th>
+                <th className="py-4 px-6">Programme</th>
                 <th className="py-4 px-6">Batch No.</th>
                 <th className="py-4 px-6">Learners</th>
                 <th className="py-4 px-6">Exam Date</th>
@@ -113,9 +166,32 @@ export default function CertificateRequestsPage() {
                     </p>
                   </td>
                 </tr>
-              ) : (
-                requests.map((req) => (
-                  <tr key={req._id} className="hover:bg-slate-50/50 transition-colors">
+              ) : (() => {
+                  const filteredRequests = requests.filter(req => {
+                    const matchProgramme = req.programmeName?.toLowerCase().includes(filterProgramme.toLowerCase());
+                    const matchStatus = filterStatus ? req.status === filterStatus : true;
+                    const matchDate = filterDate ? new Date(req.createdAt).toISOString().split('T')[0] === filterDate : true;
+                    return matchProgramme && matchStatus && matchDate;
+                  });
+
+                  if (filteredRequests.length === 0) {
+                    return (
+                      <tr>
+                        <td colSpan={7} className="py-12 text-center">
+                          <div className="w-16 h-16 bg-slate-50 rounded-full flex items-center justify-center mx-auto mb-4 border border-slate-100">
+                            <Calendar className="w-8 h-8 text-slate-400" />
+                          </div>
+                          <h3 className="text-slate-900 font-semibold mb-1">No matching requests</h3>
+                          <p className="text-slate-500 text-sm max-w-sm mx-auto">
+                            Try adjusting your filters to see more results.
+                          </p>
+                        </td>
+                      </tr>
+                    );
+                  }
+
+                  return filteredRequests.map((req) => (
+                    <tr key={req._id} className="hover:bg-slate-50/50 transition-colors">
                     <td className="py-4 px-6 font-medium text-slate-900">
                       {req.programmeName}
                     </td>
@@ -150,8 +226,9 @@ export default function CertificateRequestsPage() {
                       {new Date(req.createdAt).toLocaleDateString()}
                     </td>
                   </tr>
-                ))
-              )}
+                  ));
+                })()
+              }
             </tbody>
           </table>
         </div>
