@@ -53,12 +53,12 @@ export default function CertificateRequestsPage() {
       case "Under Review": return "Your certificate request is currently under review by our team.";
       case "Under Processing": return "Your certificate request is currently being processed. Final review is in progress.";
       case "Approved": return "Your certificate request has been approved successfully.";
+      case "Printing in Progress": return "Your certificate is currently being prepared for printing.";
+      case "Ready for Dispatch": return "Your certificate is ready for dispatch. Expected dispatch date: [DD/MM/YYYY].";
+      case "Dispatched": return "Your certificate has been dispatched successfully. Please collect it from your channel partner office.";
+      case "Collected": return "Your certificate has been marked as collected successfully.";
       case "Completed": return "Your certificate request has been completed successfully.";
       case "Rejected": return "Unfortunately, your certificate request has been rejected. Please contact support for further details.";
-      case "Printing in Progress": return "Your certificates are currently being printed.";
-      case "Ready for Dispatch": return "Your certificates are printed and ready for dispatch.";
-      case "Dispatched": return "Your certificates have been dispatched.";
-      case "Collected": return "Your certificates have been collected.";
       default: return `Status: ${status}`;
     }
   };
@@ -89,20 +89,21 @@ export default function CertificateRequestsPage() {
                 <th className="py-4 px-6">Learners</th>
                 <th className="py-4 px-6">Exam Date</th>
                 <th className="py-4 px-6">Status</th>
+                <th className="py-4 px-6">Message</th>
                 <th className="py-4 px-6">Requested On</th>
               </tr>
             </thead>
             <tbody className="divide-y divide-slate-100">
               {isLoading ? (
                 <tr>
-                  <td colSpan={6} className="py-12 text-center">
+                  <td colSpan={7} className="py-12 text-center">
                     <Loader2 className="w-8 h-8 animate-spin text-brand-blue mx-auto mb-3" />
                     <p className="text-slate-500 font-medium">Loading requests...</p>
                   </td>
                 </tr>
               ) : requests.length === 0 ? (
                 <tr>
-                  <td colSpan={6} className="py-12 text-center">
+                  <td colSpan={7} className="py-12 text-center">
                     <div className="w-16 h-16 bg-slate-50 rounded-full flex items-center justify-center mx-auto mb-4 border border-slate-100">
                       <Award className="w-8 h-8 text-slate-400" />
                     </div>
@@ -139,6 +140,11 @@ export default function CertificateRequestsPage() {
                       >
                         {req.status}
                       </span>
+                    </td>
+                    <td className="py-4 px-6">
+                      <p className="text-sm text-slate-600 max-w-[250px] line-clamp-2" title={getStatusMessage(req.status)}>
+                        {getStatusMessage(req.status)}
+                      </p>
                     </td>
                     <td className="py-4 px-6 text-slate-500 text-sm">
                       {new Date(req.createdAt).toLocaleDateString()}

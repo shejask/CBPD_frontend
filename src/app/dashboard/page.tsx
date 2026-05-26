@@ -44,12 +44,12 @@ export default function DashboardPage() {
       case "Under Review": return "Your certificate request is currently under review by our team.";
       case "Under Processing": return "Your certificate request is currently being processed. Final review is in progress.";
       case "Approved": return "Your certificate request has been approved successfully.";
+      case "Printing in Progress": return "Your certificate is currently being prepared for printing.";
+      case "Ready for Dispatch": return "Your certificate is ready for dispatch. Expected dispatch date: [DD/MM/YYYY].";
+      case "Dispatched": return "Your certificate has been dispatched successfully. Please collect it from your channel partner office.";
+      case "Collected": return "Your certificate has been marked as collected successfully.";
       case "Completed": return "Your certificate request has been completed successfully.";
       case "Rejected": return "Unfortunately, your certificate request has been rejected. Please contact support for further details.";
-      case "Printing in Progress": return "Your certificates are currently being printed.";
-      case "Ready for Dispatch": return "Your certificates are printed and ready for dispatch.";
-      case "Dispatched": return "Your certificates have been dispatched.";
-      case "Collected": return "Your certificates have been collected.";
       default: return `Status: ${status}`;
     }
   };
@@ -200,6 +200,7 @@ export default function DashboardPage() {
                     <th className="px-4 py-3 font-semibold">Programme</th>
                     <th className="px-4 py-3 font-semibold">Learners</th>
                     <th className="px-4 py-3 font-semibold">Status</th>
+                    <th className="px-4 py-3 font-semibold">Message</th>
                   </tr>
                 </thead>
                 <tbody className="divide-y divide-slate-100">
@@ -225,6 +226,11 @@ export default function DashboardPage() {
                         >
                           {request.status}
                         </span>
+                      </td>
+                      <td className="px-4 py-3">
+                        <p className="text-xs text-slate-600 line-clamp-2" title={getStatusMessage(request.status)}>
+                          {getStatusMessage(request.status)}
+                        </p>
                       </td>
                     </tr>
                   ))}
