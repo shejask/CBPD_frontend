@@ -210,10 +210,7 @@ export default function CertificateRequestsPage() {
                       </div>
                     </td>
                     <td className="py-4 px-6">
-                      <span 
-                        title={getStatusMessage(req.status)}
-                        className={`px-2.5 py-1 rounded-full text-xs font-semibold border cursor-help ${getStatusColor(req.status)}`}
-                      >
+                      <span className={`px-2.5 py-1 rounded-full text-xs font-semibold border ${getStatusColor(req.status)}`}>
                         {req.status}
                       </span>
                     </td>
