@@ -236,12 +236,12 @@ export default function DashboardPage() {
                         </span>
                       </td>
                       <td className="px-4 py-3">
-                        <span className={`px-2.5 py-1 rounded-full text-xs font-semibold border ${getStatusColor(request.status)}`}>
+                        <span className={`px-2.5 py-1 rounded-full text-xs font-semibold border whitespace-nowrap ${getStatusColor(request.status)}`}>
                           {request.status}
                         </span>
                       </td>
                       <td className="px-4 py-3">
-                        <p className="text-xs text-slate-600 line-clamp-2" title={getStatusMessage(request.status)}>
+                        <p className="text-xs text-slate-600">
                           {getStatusMessage(request.status)}
                         </p>
                       </td>
