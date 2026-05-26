@@ -44,8 +44,22 @@ export default function CertificateRequestsPage() {
         return "bg-green-100 text-green-700 border-green-200";
       case "Rejected":
         return "bg-red-100 text-red-700 border-red-200";
-      default:
-        return "bg-slate-100 text-slate-700 border-slate-200";
+    }
+  };
+
+  const getStatusMessage = (status: string) => {
+    switch (status) {
+      case "Pending": return "Your certificate request has been successfully submitted and is currently pending review.";
+      case "Under Review": return "Your certificate request is currently under review by our team.";
+      case "Under Processing": return "Your certificate request is currently being processed. Final review is in progress.";
+      case "Approved": return "Your certificate request has been approved successfully.";
+      case "Completed": return "Your certificate request has been completed successfully.";
+      case "Rejected": return "Unfortunately, your certificate request has been rejected. Please contact support for further details.";
+      case "Printing in Progress": return "Your certificates are currently being printed.";
+      case "Ready for Dispatch": return "Your certificates are printed and ready for dispatch.";
+      case "Dispatched": return "Your certificates have been dispatched.";
+      case "Collected": return "Your certificates have been collected.";
+      default: return `Status: ${status}`;
     }
   };
 
@@ -119,7 +133,10 @@ export default function CertificateRequestsPage() {
                       </div>
                     </td>
                     <td className="py-4 px-6">
-                      <span className={`px-2.5 py-1 rounded-full text-xs font-semibold border ${getStatusColor(req.status)}`}>
+                      <span 
+                        title={getStatusMessage(req.status)}
+                        className={`px-2.5 py-1 rounded-full text-xs font-semibold border cursor-help ${getStatusColor(req.status)}`}
+                      >
                         {req.status}
                       </span>
                     </td>

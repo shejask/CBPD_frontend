@@ -38,6 +38,22 @@ export default function DashboardPage() {
   const [stats, setStats] = useState<StatisticsData | null>(null);
   const [isLoading, setIsLoading] = useState(true);
 
+  const getStatusMessage = (status: string) => {
+    switch (status) {
+      case "Pending": return "Your certificate request has been successfully submitted and is currently pending review.";
+      case "Under Review": return "Your certificate request is currently under review by our team.";
+      case "Under Processing": return "Your certificate request is currently being processed. Final review is in progress.";
+      case "Approved": return "Your certificate request has been approved successfully.";
+      case "Completed": return "Your certificate request has been completed successfully.";
+      case "Rejected": return "Unfortunately, your certificate request has been rejected. Please contact support for further details.";
+      case "Printing in Progress": return "Your certificates are currently being printed.";
+      case "Ready for Dispatch": return "Your certificates are printed and ready for dispatch.";
+      case "Dispatched": return "Your certificates have been dispatched.";
+      case "Collected": return "Your certificates have been collected.";
+      default: return `Status: ${status}`;
+    }
+  };
+
   useEffect(() => {
     const fetchStats = async () => {
       try {
@@ -199,11 +215,14 @@ export default function DashboardPage() {
                         </span>
                       </td>
                       <td className="px-4 py-3">
-                        <span className={`px-2 py-1 rounded text-xs font-medium ${
-                          request.status === "Approved" || request.status === "Completed" ? "bg-green-100 text-green-700" :
-                          request.status === "Rejected" ? "bg-red-100 text-red-700" :
-                          "bg-orange-100 text-orange-700"
-                        }`}>
+                        <span 
+                          title={getStatusMessage(request.status)}
+                          className={`px-2 py-1 rounded text-xs font-medium cursor-help ${
+                            request.status === "Approved" || request.status === "Completed" ? "bg-green-100 text-green-700" :
+                            request.status === "Rejected" ? "bg-red-100 text-red-700" :
+                            "bg-orange-100 text-orange-700"
+                          }`}
+                        >
                           {request.status}
                         </span>
                       </td>
