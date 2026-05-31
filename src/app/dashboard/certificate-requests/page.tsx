@@ -76,59 +76,58 @@ export default function CertificateRequestsPage() {
 
   return (
     <div className="space-y-6">
-      <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4">
-        <div>
-          <h1 className="text-2xl font-bold text-slate-900">Certificate Request</h1>
-          <p className="text-slate-500">Manage your certificate printing and dispatch requests.</p>
-        </div>
-        <Link
-          href="/dashboard/certificate-requests/new"
-          className="flex items-center gap-2 bg-brand-blue hover:bg-brand-blue/90 text-white px-5 py-2.5 rounded-xl font-medium transition-all shadow-sm w-full sm:w-auto justify-center"
-        >
-          <Plus className="w-5 h-5" />
-          Request Certificate Status
-        </Link>
-      </div>
-
-      <div className="bg-white border border-slate-200 rounded-2xl p-4 shadow-sm flex flex-col md:flex-row gap-4">
-        <div className="flex-1">
-          <label className="block text-xs font-semibold text-slate-500 mb-1">Programme</label>
-          <input 
-            type="text" 
-            placeholder="Search programme..." 
-            className="w-full border border-slate-200 rounded-lg px-3 py-2 text-sm outline-none focus:border-brand-blue"
-            value={filterProgramme}
-            onChange={(e) => setFilterProgramme(e.target.value)}
-          />
-        </div>
-        <div className="flex-1">
-          <label className="block text-xs font-semibold text-slate-500 mb-1">Status</label>
-          <select 
-            className="w-full border border-slate-200 rounded-lg px-3 py-2 text-sm outline-none focus:border-brand-blue bg-white"
-            value={filterStatus}
-            onChange={(e) => setFilterStatus(e.target.value)}
+      <div className="bg-white p-6 rounded-2xl border border-slate-200 shadow-sm space-y-4">
+        <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4">
+          <div>
+            <h1 className="text-2xl font-bold text-slate-900">Certificate Request</h1>
+            <p className="text-slate-500 mt-1">Manage your certificate printing and dispatch requests.</p>
+          </div>
+          <Link
+            href="/dashboard/certificate-requests/new"
+            className="flex items-center gap-2 bg-brand-blue hover:bg-brand-blue/90 text-white px-5 py-2.5 rounded-xl font-medium transition-all shadow-sm w-full sm:w-auto justify-center whitespace-nowrap"
           >
-            <option value="">All Statuses</option>
-            <option value="Pending">Pending</option>
-            <option value="Under Review">Under Review</option>
-            <option value="Under Processing">Under Processing</option>
-            <option value="Approved">Approved</option>
-            <option value="Printing in Progress">Printing in Progress</option>
-            <option value="Ready for Dispatch">Ready for Dispatch</option>
-            <option value="Dispatched">Dispatched</option>
-            <option value="Collected">Collected</option>
-            <option value="Completed">Completed</option>
-            <option value="Rejected">Rejected</option>
-          </select>
+            <Plus className="w-5 h-5" />
+            Request Certificate Status
+          </Link>
         </div>
-        <div className="flex-1">
-          <label className="block text-xs font-semibold text-slate-500 mb-1">Requested Date</label>
-          <input 
-            type="date" 
-            className="w-full border border-slate-200 rounded-lg px-3 py-2 text-sm outline-none focus:border-brand-blue"
-            value={filterDate}
-            onChange={(e) => setFilterDate(e.target.value)}
-          />
+
+        <div className="flex flex-col md:flex-row gap-4 pt-4 border-t border-slate-100">
+          <div className="flex-1">
+            <input 
+              type="text" 
+              placeholder="Search programme..." 
+              className="w-full bg-slate-50 border border-slate-200 rounded-xl px-4 py-2.5 text-sm outline-none focus:border-brand-blue focus:bg-white transition-colors text-slate-900"
+              value={filterProgramme}
+              onChange={(e) => setFilterProgramme(e.target.value)}
+            />
+          </div>
+          <div className="flex-1">
+            <select 
+              className="w-full bg-slate-50 border border-slate-200 rounded-xl px-4 py-2.5 text-sm outline-none focus:border-brand-blue focus:bg-white transition-colors text-slate-700"
+              value={filterStatus}
+              onChange={(e) => setFilterStatus(e.target.value)}
+            >
+              <option value="">All Statuses</option>
+              <option value="Pending">Pending</option>
+              <option value="Under Review">Under Review</option>
+              <option value="Under Processing">Under Processing</option>
+              <option value="Approved">Approved</option>
+              <option value="Printing in Progress">Printing in Progress</option>
+              <option value="Ready for Dispatch">Ready for Dispatch</option>
+              <option value="Dispatched">Dispatched</option>
+              <option value="Collected">Collected</option>
+              <option value="Completed">Completed</option>
+              <option value="Rejected">Rejected</option>
+            </select>
+          </div>
+          <div className="flex-1">
+            <input 
+              type="date" 
+              className="w-full bg-slate-50 border border-slate-200 rounded-xl px-4 py-2.5 text-sm outline-none focus:border-brand-blue focus:bg-white transition-colors text-slate-600"
+              value={filterDate}
+              onChange={(e) => setFilterDate(e.target.value)}
+            />
+          </div>
         </div>
       </div>
 
