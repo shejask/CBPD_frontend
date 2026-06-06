@@ -24,7 +24,7 @@ export default function Partners() {
   }, []);
 
   const partners = [
-    { name: "CIMAA", url: cimaaLogo.src },
+    { name: "CIMAA", url: "/partners-cimaa-logo.png" },
     { name: "CPD Logo", url: "/images/external/cpdlogo.png" },
     { name: "AOHT", url: "/images/external/aoht.png" },
     { name: "UKRLP", url: "/images/external/ukrlp.jpg" },
@@ -53,13 +53,13 @@ export default function Partners() {
                 }`}
               >
                 <div 
-                  className="flex items-center justify-center p-6 bg-white dark:bg-primary-900 rounded-2xl shadow-sm border border-slate-100 dark:border-primary-800 hover:shadow-xl hover:-translate-y-3 transition-all duration-500 h-[160px] md:h-[180px]"
+                  className="flex items-center justify-center bg-white rounded-2xl shadow-sm border border-slate-100 dark:border-slate-800 hover:shadow-xl hover:-translate-y-3 transition-all duration-500 h-[160px] md:h-[180px] overflow-hidden p-2"
                   style={{ transform: "translateZ(20px)" }}
                 >
                   <img 
                     src={partner.url} 
                     alt={`${partner.name} Logo`} 
-                    className="max-h-24 w-auto object-contain mix-blend-multiply dark:mix-blend-normal hover:scale-110 transition-transform duration-300" 
+                    className="w-full h-full object-contain hover:scale-110 transition-transform duration-300 bg-white" 
                   />
                 </div>
               </TiltCard>
