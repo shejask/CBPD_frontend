@@ -84,6 +84,20 @@ export const api = {
     });
   },
 
+  forgotPassword: async (email: string) => {
+    return fetchAPI('/institution/forgot-password', {
+      method: 'POST',
+      body: JSON.stringify({ email }),
+    });
+  },
+
+  resetPassword: async (payload: any) => {
+    return fetchAPI('/institution/reset-password', {
+      method: 'POST',
+      body: JSON.stringify(payload),
+    });
+  },
+
   register: async (payload: any) => {
     return fetchAPI('/institution/registration', {
       method: 'POST',
