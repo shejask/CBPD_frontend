@@ -34,6 +34,7 @@ export default function GlobalPartners() {
     { name: "Hertfordshire", url: "/images/external/hertfort.webp" },
     { name: "Leicester", url: "/images/external/leicester.webp" },
     { name: "Midland", url: "/images/external/midland.webp" },
+    { name: "7K Global", url: "/images/external/7k-global.png" },
   ];
 
 
