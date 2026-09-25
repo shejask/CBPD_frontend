@@ -31,13 +31,9 @@ export default function DashboardLayout({
   }, []);
 
   const checkAuth = () => {
-    // FORCE LOGOUT FOR ALL USERS (MAINTENANCE)
-    localStorage.removeItem("token");
-    localStorage.removeItem("org");
-    setIsAuthenticated(false);
-    router.push("/login");
-    return;
-
+    // Basic check: Ensure a token exists in localStorage
+    // More robust check would ping the backend /api/admin/dashboard but for frontend, 
+    // we assume the token is valid if present. If API calls fail with 401 later, we catch it there.
     const token = localStorage.getItem("token");
     if (!token) {
       setIsAuthenticated(false);

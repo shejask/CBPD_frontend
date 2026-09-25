@@ -23,13 +23,6 @@ export default function LoginPage() {
     setErrorMsg("");
     setSuccessMsg("");
 
-    // BLOCKED FOR MAINTENANCE
-    setTimeout(() => {
-      setErrorMsg("Something went wrong! Please check with the technical team.");
-      setIsLoading(false);
-    }, 800);
-    return;
-
     try {
       const response = await api.login({ email, password });
       
