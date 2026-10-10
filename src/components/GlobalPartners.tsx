@@ -34,7 +34,8 @@ export default function GlobalPartners() {
     { name: "Hertfordshire", url: "/images/external/hertfort.webp" },
     { name: "Leicester", url: "/images/external/leicester.webp" },
     { name: "Midland", url: "/images/external/midland.webp" },
-    { name: "7K Global", url: "/images/external/7k-global.png" },
+    { name: "SRJ Digital", url: "/images/external/srj-digital.webp" },
+    { name: "Vexta International", url: "/images/external/vexta.webp" },
   ];
 
 
