@@ -1,7 +1,6 @@
 "use client";
 
 import { useEffect, useState, useRef } from "react";
-import createPlus from "../../public/create-plus.jpg";
 
 export default function GlobalPartners() {
   const [isVisible, setIsVisible] = useState(false);
@@ -23,7 +22,6 @@ export default function GlobalPartners() {
   }, []);
 
   const partnersRow1 = [
-    { name: "CREATE+", url: createPlus.src },
     { name: "Anglia", url: "/images/external/anglia.webp" },
     { name: "Bloomsbury", url: "/images/external/bloomsberry.webp" },
     { name: "Brooks", url: "/images/external/brooks.webp" },
