@@ -23,6 +23,11 @@
   --animate-popup-shade-2: popupShadeTwo 10s ease-in-out infinite alternate;
   --animate-popup-shine: popupShine 6s ease-in-out infinite;
   --animate-popup-seal-ring: popupSealRing 3s ease-in-out infinite;
+  --animate-cap-float: capFloat 4s ease-in-out infinite;
+  --animate-cap-tassel: capTassel 3.5s ease-in-out infinite;
+  --animate-cap-orbit: capOrbit 14s linear infinite;
+  --animate-cap-glow: capGlow 3s ease-in-out infinite alternate;
+  --animate-sparkle-twinkle: sparkleTwinkle 2.5s ease-in-out infinite;
 }
 
 @keyframes popupShadeOne {
@@ -77,6 +82,61 @@
   50% {
     transform: scale(1.2);
     opacity: 0.85;
+  }
+}
+
+@keyframes capFloat {
+  0%, 100% {
+    transform: translateY(0px) rotate(0deg);
+  }
+  50% {
+    transform: translateY(-4px) rotate(-1.5deg);
+  }
+}
+
+@keyframes capTassel {
+  0%, 100% {
+    transform: rotate(0deg);
+    transform-origin: 32px 18px;
+  }
+  30% {
+    transform: rotate(6deg);
+    transform-origin: 32px 18px;
+  }
+  70% {
+    transform: rotate(-4deg);
+    transform-origin: 32px 18px;
+  }
+}
+
+@keyframes capOrbit {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes capGlow {
+  0% {
+    opacity: 0.55;
+    transform: scale(0.96);
+  }
+  100% {
+    opacity: 0.95;
+    transform: scale(1.12);
+  }
+}
+
+@keyframes sparkleTwinkle {
+  0%, 100% {
+    opacity: 0.25;
+    transform: scale(0.65) rotate(0deg);
+  }
+  50% {
+    opacity: 1;
+    transform: scale(1.15) rotate(90deg);
   }
 }
 
