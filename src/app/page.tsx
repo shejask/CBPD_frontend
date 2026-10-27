@@ -9,10 +9,12 @@ import ProcessFlow from "@/components/ProcessFlow";
 import Programs from "@/components/Programs";
 import GlobalRecognition from "@/components/GlobalRecognition";
 import GlobalPartners from "@/components/GlobalPartners";
+import CoursesPopup from "@/components/CoursesPopup";
 
 export default function Home() {
   return (
     <>
+      <CoursesPopup />
       <Hero />
       <HeroIntro />
       <Stats />

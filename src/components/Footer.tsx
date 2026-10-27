@@ -18,12 +18,14 @@ export default function Footer() {
 
           <div>
             <h4 className="text-white font-semibold mb-6 uppercase tracking-wider text-sm">Quick Links</h4>
-            <ul className="space-y-3">
+            <ul className="space-y-2.5">
               {[
                 { name: 'Home', path: '/' },
                 { name: 'About Us', path: '/about' },
                 { name: 'Programs', path: '/programs' },
-                { name: 'Verify Certificate', path: '/verifications' }
+                { name: 'Verify Certificate', path: '/verifications' },
+                { name: 'Become a Partner', path: '/partner' },
+                { name: 'Contact Us', path: '/contact' }
               ].map((item) => (
                 <li key={item.name}>
                   <Link href={item.path} className="hover:text-brand-red transition-colors text-sm font-medium">{item.name}</Link>
@@ -33,13 +35,16 @@ export default function Footer() {
           </div>
 
           <div>
-            <h4 className="text-white font-semibold mb-6 uppercase tracking-wider text-sm">Support</h4>
-            <ul className="space-y-3">
+            <h4 className="text-white font-semibold mb-6 uppercase tracking-wider text-sm">Policies & Legal Information</h4>
+            <ul className="space-y-2.5">
               {[
-                { name: 'Contact Us', path: '/contact' },
-                { name: 'Become a Partner', path: '/partner' },
-                { name: 'Privacy Policy', path: '#' },
-                { name: 'Terms of Service', path: '#' }
+                { name: 'Privacy Policy', path: '/privacy-policy' },
+                { name: 'Terms and Conditions', path: '/terms-and-conditions' },
+                { name: 'Complaints & Appeals Policy', path: '/complaints-appeals-policy' },
+                { name: 'Cookies Policy', path: '/cookies-policy' },
+                { name: 'Data Protection Notice', path: '/data-protection-notice' },
+                { name: 'Copyright Notice', path: '/copyright-notice' },
+                { name: 'Legal Information', path: '/legal-information' }
               ].map((item) => (
                 <li key={item.name}>
                   <Link href={item.path} className="hover:text-brand-red transition-colors text-sm font-medium">{item.name}</Link>
@@ -69,7 +74,7 @@ export default function Footer() {
         </div>
 
         <div className="mt-16 pt-8 border-t border-primary-800 flex flex-col md:flex-row justify-between items-center gap-4">
-          <p className="text-sm text-slate-500">© 2026 CBPD. All rights reserved. Registered Number: ZC015593</p>
+          <p className="text-sm text-slate-500">© 2026 CBPD. All rights reserved. Company Registration: 16442180</p>
           <div className="flex gap-4">
                         {/* Social Icons */}
             <a href="https://www.facebook.com/share/1CZ5M3cWip/?mibextid=wwXIfr" target="_blank" rel="noopener noreferrer" className="w-8 h-8 rounded-full bg-primary-800 hover:bg-brand-red transition-colors flex items-center justify-center">
