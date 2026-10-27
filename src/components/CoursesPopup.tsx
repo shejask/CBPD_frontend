@@ -387,7 +387,7 @@ export default function CoursesPopup() {
 
           {/* CTA Button */}
           <Link
-            href="/programs"
+            href="/coming-soon"
             onClick={handleClose}
             className="group relative inline-flex items-center justify-center gap-2.5 w-full sm:w-auto px-7 sm:px-9 py-3 sm:py-3.5 rounded-full bg-gradient-to-r from-[#D62839] via-[#E8404F] to-[#D62839] bg-[length:200%_auto] hover:bg-[position:right_center] text-white font-semibold text-xs sm:text-sm tracking-[0.08em] uppercase transition-all duration-300 shadow-[0_8px_24px_rgba(214,40,57,0.45)] hover:shadow-[0_12px_32px_rgba(214,40,57,0.65)] hover:-translate-y-0.5 active:translate-y-0 focus:outline-none focus-visible:ring-2 focus-visible:ring-white"
           >
