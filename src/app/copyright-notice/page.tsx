@@ -13,7 +13,6 @@ export default function CopyrightNoticePage() {
       title="Copyright Notice"
       subtitle="Intellectual property, trademarks, curriculum frameworks, and content usage permissions of the Central Board of Professional Development."
       activeSlug="copyright-notice"
-      lastUpdated="23 October 2026"
     >
       <div className="space-y-10 text-slate-700 dark:text-slate-300">
         

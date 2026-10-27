@@ -13,7 +13,6 @@ export default function PrivacyPolicyPage() {
       title="Privacy Policy"
       subtitle="Central Board of Professional Development (CBPD UK) is committed to protecting personal information and handling it responsibly, fairly, and transparently."
       activeSlug="privacy-policy"
-      lastUpdated="23 October 2026"
     >
       <div className="space-y-10 text-slate-700 dark:text-slate-300">
         
@@ -616,7 +615,7 @@ export default function PrivacyPolicyPage() {
             <span className="text-brand-red">19.</span> Changes to This Privacy Policy
           </h2>
           <p className="leading-relaxed">
-            We may update this Privacy Policy from time to time to reflect changes in our services, systems, legal obligations or data handling practices. The latest version will be published on our website with the revised &ldquo;Last updated&rdquo; date. Where a change materially affects how we use personal information, we will provide additional notice where required by law.
+            We may update this Privacy Policy from time to time to reflect changes in our services, systems, legal obligations or data handling practices. The latest version will always be published on our website. Where a change materially affects how we use personal information, we will provide additional notice where required by law.
           </p>
         </section>
 

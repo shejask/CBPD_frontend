@@ -13,7 +13,6 @@ export default function CookiesPolicyPage() {
       title="Cookies Policy"
       subtitle="Clear information regarding how we use cookies, web storage, and similar technologies to ensure site security, support essential functionality, and respect your privacy choices."
       activeSlug="cookies-policy"
-      lastUpdated="23 October 2026"
     >
       <div className="space-y-10 text-slate-700 dark:text-slate-300">
         

@@ -4,7 +4,6 @@ import React from "react";
 import Link from "next/link";
 import { 
   ShieldCheck, 
-  Clock, 
   ChevronRight, 
   FileText, 
   Mail, 
@@ -27,7 +26,6 @@ interface PolicyPageLayoutProps {
   title: string;
   subtitle?: string;
   activeSlug: string;
-  lastUpdated?: string;
   children: React.ReactNode;
 }
 
@@ -35,7 +33,6 @@ export default function PolicyPageLayout({
   title,
   subtitle,
   activeSlug,
-  lastUpdated,
   children,
 }: PolicyPageLayoutProps) {
   return (
@@ -85,16 +82,6 @@ export default function PolicyPageLayout({
                 </p>
               )}
             </div>
-
-            {/* Last Updated Badge */}
-            {lastUpdated && (
-              <div className="shrink-0 self-start md:self-auto inline-flex items-center gap-2 px-4 py-2 rounded-xl bg-white/10 border border-white/10 text-slate-200 text-xs sm:text-sm backdrop-blur-sm shadow-sm">
-                <Clock className="w-4 h-4 text-brand-red" />
-                <span>
-                  Last updated: <strong className="text-white font-semibold">{lastUpdated}</strong>
-                </span>
-              </div>
-            )}
           </div>
         </div>
       </section>

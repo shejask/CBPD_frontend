@@ -13,7 +13,6 @@ export default function TermsAndConditionsPage() {
       title="Terms and Conditions"
       subtitle="General terms and contractual conditions governing access to our website, professional qualification frameworks, certification administration, and partner accreditations."
       activeSlug="terms-and-conditions"
-      lastUpdated="23 October 2026"
     >
       <div className="space-y-10 text-slate-700 dark:text-slate-300">
         

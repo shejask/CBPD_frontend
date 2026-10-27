@@ -13,7 +13,6 @@ export default function LegalInformationPage() {
       title="Legal Information"
       subtitle="Statutory corporate identity, governance credentials, regulatory alignment, apostille legalisation, and legal disclosures of the Central Board of Professional Development."
       activeSlug="legal-information"
-      lastUpdated="23 October 2026"
     >
       <div className="space-y-10 text-slate-700 dark:text-slate-300">
         

@@ -13,7 +13,6 @@ export default function ComplaintsAppealsPolicyPage() {
       title="Complaints & Appeals Policy"
       subtitle="A clear, fair, and accessible framework for submitting, investigating, and resolving student appeals, institutional complaints, and administrative reviews."
       activeSlug="complaints-appeals-policy"
-      lastUpdated="23 October 2026"
     >
       <div className="space-y-10 text-slate-700 dark:text-slate-300">
         
