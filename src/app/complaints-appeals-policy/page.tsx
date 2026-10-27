@@ -159,23 +159,23 @@ export default function ComplaintsAppealsPolicyPage() {
           </h2>
           <div className="space-y-3 text-sm sm:text-base">
             <div className="p-3.5 rounded-xl border border-slate-200 dark:border-primary-700/60 bg-slate-50/50 dark:bg-primary-900/20">
-              <strong className="text-slate-900 dark:text-white block mb-1">5.1 Fairness and impartiality</strong>
+              <strong className="text-slate-900 dark:text-white block mb-1">Fairness and impartiality</strong>
               Each matter is considered objectively based on relevant evidence and applicable requirements. The reviewer will not be the sole individual responsible for the original decision.
             </div>
             <div className="p-3.5 rounded-xl border border-slate-200 dark:border-primary-700/60 bg-slate-50/50 dark:bg-primary-900/20">
-              <strong className="text-slate-900 dark:text-white block mb-1">5.2 Accessibility</strong>
+              <strong className="text-slate-900 dark:text-white block mb-1">Accessibility</strong>
               Complaints and appeals may be submitted in writing. Reasonable adjustments are made for individuals requiring assistance.
             </div>
             <div className="p-3.5 rounded-xl border border-slate-200 dark:border-primary-700/60 bg-slate-50/50 dark:bg-primary-900/20">
-              <strong className="text-slate-900 dark:text-white block mb-1">5.3 Confidentiality</strong>
+              <strong className="text-slate-900 dark:text-white block mb-1">Confidentiality</strong>
               Information is restricted to individuals who reasonably need it to investigate, decide, or administer the case.
             </div>
             <div className="p-3.5 rounded-xl border border-slate-200 dark:border-primary-700/60 bg-slate-50/50 dark:bg-primary-900/20">
-              <strong className="text-slate-900 dark:text-white block mb-1">5.4 Timeliness</strong>
+              <strong className="text-slate-900 dark:text-white block mb-1">Timeliness</strong>
               Target timescales are observed for acknowledgement (within 5 working days) and substantive resolution (within 20 working days).
             </div>
             <div className="p-3.5 rounded-xl border border-slate-200 dark:border-primary-700/60 bg-slate-50/50 dark:bg-primary-900/20">
-              <strong className="text-slate-900 dark:text-white block mb-1">5.5 Evidence-based decisions &amp; Protection against retaliation</strong>
+              <strong className="text-slate-900 dark:text-white block mb-1">Evidence-based decisions &amp; Protection against retaliation</strong>
               Decisions are grounded in available records and agreements. No person will be disadvantaged or retaliated against for raising a genuine concern in good faith.
             </div>
           </div>
@@ -304,10 +304,10 @@ export default function ComplaintsAppealsPolicyPage() {
             Centres, Malpractice &amp; Integrity
           </h2>
           <div className="space-y-3 text-sm">
-            <p><strong>13. Accredited Centres:</strong> We review complaints concerning partner institutions regarding misleading claims, improper branding use, or assessment irregularity. Actions may include formal sanctions or termination of accreditation.</p>
-            <p><strong>14. Malpractice &amp; Fraud:</strong> Credible concerns involving certificate forgery, assessment tampering, or fraud trigger immediate escalation to executive compliance and may be reported to competent authorities.</p>
-            <p><strong>15. Anonymous Submissions:</strong> Assessed where sufficient actionable evidence is supplied, though verification and outcome notification may be restricted.</p>
-            <p><strong>16. Abusive or Vexatious Claims:</strong> We protect our staff from threatening or deliberately disruptive communications while ensuring legitimate critical feedback is fairly considered.</p>
+            <p><strong>Accredited Centres:</strong> We review complaints concerning partner institutions regarding misleading claims, improper branding use, or assessment irregularity. Actions may include formal sanctions or termination of accreditation.</p>
+            <p><strong>Malpractice &amp; Fraud:</strong> Credible concerns involving certificate forgery, assessment tampering, or fraud trigger immediate escalation to executive compliance and may be reported to competent authorities.</p>
+            <p><strong>Anonymous Submissions:</strong> Assessed where sufficient actionable evidence is supplied, though verification and outcome notification may be restricted.</p>
+            <p><strong>Abusive or Vexatious Claims:</strong> We protect our staff from threatening or deliberately disruptive communications while ensuring legitimate critical feedback is fairly considered.</p>
           </div>
         </section>
 

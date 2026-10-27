@@ -225,19 +225,19 @@ export default function LegalInformationPage() {
           </h2>
           <div className="space-y-3 text-sm leading-relaxed">
             <p>
-              <strong>10. Website Information:</strong> Website content is provided for general information and should be read together with relevant programme specifications and current policies.
+              <strong>Website Information:</strong> Website content is provided for general information and should be read together with relevant programme specifications and current policies.
             </p>
             <p>
-              <strong>11. Intellectual Property:</strong> Protected under copyright law; unauthorised use of logos, marks, or certificate templates is strictly prohibited. See <a href="/copyright-notice" className="text-brand-red font-medium hover:underline">Copyright Notice</a>.
+              <strong>Intellectual Property:</strong> Protected under copyright law; unauthorised use of logos, marks, or certificate templates is strictly prohibited. See <a href="/copyright-notice" className="text-brand-red font-medium hover:underline">Copyright Notice</a>.
             </p>
             <p>
-              <strong>12. Data Protection:</strong> Personal data is processed under UK GDPR as explained in the <a href="/privacy-policy" className="text-brand-red font-medium hover:underline">Privacy Policy</a> and <a href="/data-protection-notice" className="text-brand-red font-medium hover:underline">Data Protection Notice</a>.
+              <strong>Data Protection:</strong> Personal data is processed under UK GDPR as explained in the <a href="/privacy-policy" className="text-brand-red font-medium hover:underline">Privacy Policy</a> and <a href="/data-protection-notice" className="text-brand-red font-medium hover:underline">Data Protection Notice</a>.
             </p>
             <p>
-              <strong>13. Complaints &amp; Appeals:</strong> Procedural disputes should be directed to the <a href="/complaints-appeals-policy" className="text-brand-red font-medium hover:underline">Complaints &amp; Appeals Policy</a>.
+              <strong>Complaints &amp; Appeals:</strong> Procedural disputes should be directed to the <a href="/complaints-appeals-policy" className="text-brand-red font-medium hover:underline">Complaints &amp; Appeals Policy</a>.
             </p>
             <p>
-              <strong>14. External Websites:</strong> External links are provided for convenience; CBPD UK accepts no responsibility for third-party websites or their content.
+              <strong>External Websites:</strong> External links are provided for convenience; CBPD UK accepts no responsibility for third-party websites or their content.
             </p>
           </div>
         </section>
@@ -249,13 +249,13 @@ export default function LegalInformationPage() {
           </h2>
           <div className="space-y-2 text-sm leading-relaxed">
             <p>
-              <strong>15. Limitation of Information:</strong> Website materials do not constitute individual legal, immigration, educational equivalence, or professional regulatory advice.
+              <strong>Limitation of Information:</strong> Website materials do not constitute individual legal, immigration, educational equivalence, or professional regulatory advice.
             </p>
             <p>
-              <strong>16. Applicable Law:</strong> Contractual services are governed by the laws of England and Wales, subject to mandatory statutory consumer protections.
+              <strong>Applicable Law:</strong> Contractual services are governed by the laws of England and Wales, subject to mandatory statutory consumer protections.
             </p>
             <p>
-              <strong>17. Updates:</strong> CBPD UK may amend this page periodically to reflect organisational, operational, or legal developments.
+              <strong>Updates:</strong> CBPD UK may amend this page periodically to reflect organisational, operational, or legal developments.
             </p>
           </div>
         </section>

@@ -127,10 +127,10 @@ export default function CopyrightNoticePage() {
           </h2>
           <div className="space-y-3 text-sm sm:text-base leading-relaxed">
             <p>
-              <strong>6. Name and Logos:</strong> The CBPD UK name, crest, accreditation marks, and branding may only be used with express written authorization. No party may register confusingly similar domain names or suggest that CBPD UK is a government department or statutory regulator.
+              <strong>Name and Logos:</strong> The CBPD UK name, crest, accreditation marks, and branding may only be used with express written authorization. No party may register confusingly similar domain names or suggest that CBPD UK is a government department or statutory regulator.
             </p>
             <p>
-              <strong>7. Partner Authorisation:</strong> Approved centres and channel partners are granted limited, non-exclusive permission to use designated logos solely within the validity period and scope of their agreement. All use must cease immediately upon agreement termination.
+              <strong>Partner Authorisation:</strong> Approved centres and channel partners are granted limited, non-exclusive permission to use designated logos solely within the validity period and scope of their agreement. All use must cease immediately upon agreement termination.
             </p>
           </div>
         </section>
@@ -142,13 +142,13 @@ export default function CopyrightNoticePage() {
           </h2>
           <div className="space-y-3 text-sm leading-relaxed">
             <p>
-              <strong>8. Digital Downloads:</strong> The availability of downloadable brochures, handbooks, or forms does not grant unrestricted rights to redistribute or modify content.
+              <strong>Digital Downloads:</strong> The availability of downloadable brochures, handbooks, or forms does not grant unrestricted rights to redistribute or modify content.
             </p>
             <p>
-              <strong>9. Third-Party Content:</strong> Any third-party resources referenced retain their respective copyright protections and attribution requirements.
+              <strong>Third-Party Content:</strong> Any third-party resources referenced retain their respective copyright protections and attribution requirements.
             </p>
             <p>
-              <strong>10. Reporting Infringement:</strong> If you believe content on our website infringes your intellectual property, please notify us at <a href="mailto:info@cbpd.co.uk" className="text-brand-red font-medium hover:underline">info@cbpd.co.uk</a> with a description of the copyrighted work and proof of ownership.
+              <strong>Reporting Infringement:</strong> If you believe content on our website infringes your intellectual property, please notify us at <a href="mailto:info@cbpd.co.uk" className="text-brand-red font-medium hover:underline">info@cbpd.co.uk</a> with a description of the copyrighted work and proof of ownership.
             </p>
           </div>
         </section>
@@ -160,13 +160,13 @@ export default function CopyrightNoticePage() {
           </h2>
           <div className="space-y-3 text-sm leading-relaxed">
             <p>
-              <strong>11. Permission Requests:</strong> Inquiries to republish, adapt, or commercially license CBPD UK materials should be addressed to <a href="mailto:info@cbpd.co.uk" className="text-brand-red font-medium hover:underline">info@cbpd.co.uk</a> prior to use.
+              <strong>Permission Requests:</strong> Inquiries to republish, adapt, or commercially license CBPD UK materials should be addressed to <a href="mailto:info@cbpd.co.uk" className="text-brand-red font-medium hover:underline">info@cbpd.co.uk</a> prior to use.
             </p>
             <p>
-              <strong>12. Enforcement:</strong> CBPD UK reserves all statutory and common-law rights to take action against unauthorised use or copyright infringement, including injunctive relief and damages.
+              <strong>Enforcement:</strong> CBPD UK reserves all statutory and common-law rights to take action against unauthorised use or copyright infringement, including injunctive relief and damages.
             </p>
             <p>
-              <strong>13. No Transfer of Rights:</strong> Enrolment, centre approval, or website access does not transfer any proprietary rights or ownership of CBPD UK intellectual property.
+              <strong>No Transfer of Rights:</strong> Enrolment, centre approval, or website access does not transfer any proprietary rights or ownership of CBPD UK intellectual property.
             </p>
           </div>
         </section>

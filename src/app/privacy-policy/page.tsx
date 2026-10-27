@@ -148,10 +148,9 @@ export default function PrivacyPolicyPage() {
           </p>
 
           <div className="space-y-4">
-            {/* 3.1 */}
             <div className="p-4 rounded-xl border border-slate-200 dark:border-primary-700/60 bg-slate-50/50 dark:bg-primary-900/20 space-y-2">
               <h3 className="font-bold text-slate-900 dark:text-white text-base">
-                3.1 Identity and contact information
+                Identity and contact information
               </h3>
               <p className="text-sm">We may collect:</p>
               <ul className="list-disc pl-5 space-y-1 text-sm">
@@ -162,11 +161,9 @@ export default function PrivacyPolicyPage() {
                 <li>Identification information where reasonably required for verification or certification purposes.</li>
               </ul>
             </div>
-
-            {/* 3.2 */}
             <div className="p-4 rounded-xl border border-slate-200 dark:border-primary-700/60 bg-slate-50/50 dark:bg-primary-900/20 space-y-2">
               <h3 className="font-bold text-slate-900 dark:text-white text-base">
-                3.2 Learner, assessment and certification information
+                Learner, assessment and certification information
               </h3>
               <p className="text-sm">Where applicable, we may process:</p>
               <ul className="list-disc pl-5 space-y-1 text-sm">
@@ -181,11 +178,9 @@ export default function PrivacyPolicyPage() {
                 <li>Correspondence concerning assessments, results, complaints or appeals.</li>
               </ul>
             </div>
-
-            {/* 3.3 */}
             <div className="p-4 rounded-xl border border-slate-200 dark:border-primary-700/60 bg-slate-50/50 dark:bg-primary-900/20 space-y-2">
               <h3 className="font-bold text-slate-900 dark:text-white text-base">
-                3.3 Education partner and centre information
+                Education partner and centre information
               </h3>
               <p className="text-sm">For institutions, accredited centres and business partners, we may collect:</p>
               <ul className="list-disc pl-5 space-y-1 text-sm">
@@ -199,11 +194,9 @@ export default function PrivacyPolicyPage() {
                 <li>Information required to investigate complaints, suspected malpractice or breaches of our applicable policies.</li>
               </ul>
             </div>
-
-            {/* 3.4 */}
             <div className="p-4 rounded-xl border border-slate-200 dark:border-primary-700/60 bg-slate-50/50 dark:bg-primary-900/20 space-y-2">
               <h3 className="font-bold text-slate-900 dark:text-white text-base">
-                3.4 Payment and financial information
+                Payment and financial information
               </h3>
               <p className="text-sm leading-relaxed">
                 We may process information relating to certification fees, registration fees, accreditation charges, invoices, receipts, refunds and payment status.
@@ -212,11 +205,9 @@ export default function PrivacyPolicyPage() {
                 Where payments are handled by a third-party payment service provider, payment card details may be collected and processed directly by that provider. CBPD UK does not intend to collect or retain full payment card details unless this is genuinely necessary and appropriately secured.
               </p>
             </div>
-
-            {/* 3.5 */}
             <div className="p-4 rounded-xl border border-slate-200 dark:border-primary-700/60 bg-slate-50/50 dark:bg-primary-900/20 space-y-2">
               <h3 className="font-bold text-slate-900 dark:text-white text-base">
-                3.5 Website and technical information
+                Website and technical information
               </h3>
               <p className="text-sm leading-relaxed">
                 When you visit our website, we or our service providers may collect technical information such as:
@@ -232,21 +223,17 @@ export default function PrivacyPolicyPage() {
                 The information collected will depend on the website technology, analytics services and security tools actually in use.
               </p>
             </div>
-
-            {/* 3.6 */}
             <div className="p-4 rounded-xl border border-slate-200 dark:border-primary-700/60 bg-slate-50/50 dark:bg-primary-900/20 space-y-2">
               <h3 className="font-bold text-slate-900 dark:text-white text-base">
-                3.6 Communications and enquiries
+                Communications and enquiries
               </h3>
               <p className="text-sm leading-relaxed">
                 We may retain messages and supporting information submitted through our website, email, telephone, online meetings or other communication channels. This may include enquiries about programmes, institutional accreditation, partnerships, certification and verification.
               </p>
             </div>
-
-            {/* 3.7 */}
             <div className="p-4 rounded-xl border border-slate-200 dark:border-primary-700/60 bg-slate-50/50 dark:bg-primary-900/20 space-y-2">
               <h3 className="font-bold text-slate-900 dark:text-white text-base">
-                3.7 Sensitive or special category information
+                Sensitive or special category information
               </h3>
               <p className="text-sm leading-relaxed">
                 We do not routinely seek special category personal information, such as health information, religious beliefs or biometric data. If such information is genuinely necessary for a specific purpose, we will only process it where a valid legal basis and any required additional condition apply, and with appropriate safeguards.
@@ -343,31 +330,31 @@ export default function PrivacyPolicyPage() {
           </p>
           <div className="space-y-3">
             <div className="p-4 rounded-xl border border-slate-200 dark:border-primary-700/60 bg-slate-50/50 dark:bg-primary-900/20">
-              <strong className="text-slate-900 dark:text-white block mb-1">6.1 Contract</strong>
+              <strong className="text-slate-900 dark:text-white block mb-1">Contract</strong>
               <p className="text-sm leading-relaxed">
                 Processing may be necessary to take steps requested by you before entering into an agreement or to perform an agreement with you. This may include learner registration, certification administration, partner agreements and payment processing.
               </p>
             </div>
             <div className="p-4 rounded-xl border border-slate-200 dark:border-primary-700/60 bg-slate-50/50 dark:bg-primary-900/20">
-              <strong className="text-slate-900 dark:text-white block mb-1">6.2 Legal obligation</strong>
+              <strong className="text-slate-900 dark:text-white block mb-1">Legal obligation</strong>
               <p className="text-sm leading-relaxed">
                 Processing may be necessary to comply with applicable legal obligations, including relevant financial record-keeping, legal requests or other binding requirements.
               </p>
             </div>
             <div className="p-4 rounded-xl border border-slate-200 dark:border-primary-700/60 bg-slate-50/50 dark:bg-primary-900/20">
-              <strong className="text-slate-900 dark:text-white block mb-1">6.3 Legitimate interests</strong>
+              <strong className="text-slate-900 dark:text-white block mb-1">Legitimate interests</strong>
               <p className="text-sm leading-relaxed">
                 Processing may be necessary for our legitimate interests or those of a relevant third party, provided that these interests are not overridden by your rights and freedoms. These interests may include maintaining reliable learner and certification records, verifying certificates, administering partner relationships, protecting our systems, preventing fraud and responding to disputes.
               </p>
             </div>
             <div className="p-4 rounded-xl border border-slate-200 dark:border-primary-700/60 bg-slate-50/50 dark:bg-primary-900/20">
-              <strong className="text-slate-900 dark:text-white block mb-1">6.4 Consent</strong>
+              <strong className="text-slate-900 dark:text-white block mb-1">Consent</strong>
               <p className="text-sm leading-relaxed">
                 Where required by law, we will ask for your consent before processing personal information for the relevant purpose. You may withdraw consent at any time. Withdrawal does not affect the lawfulness of processing carried out before consent was withdrawn.
               </p>
             </div>
             <div className="p-4 rounded-xl border border-slate-200 dark:border-primary-700/60 bg-slate-50/50 dark:bg-primary-900/20">
-              <strong className="text-slate-900 dark:text-white block mb-1">6.5 Other lawful grounds</strong>
+              <strong className="text-slate-900 dark:text-white block mb-1">Other lawful grounds</strong>
               <p className="text-sm leading-relaxed">
                 Where applicable, we may rely on another lawful basis permitted under data protection legislation, including the establishment, exercise or defence of legal claims. Where special category information is involved, an additional condition for processing will be required where the law provides for this.
               </p>

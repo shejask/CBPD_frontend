@@ -122,7 +122,7 @@ export default function CookiesPolicyPage() {
           <div className="space-y-4 text-sm sm:text-base">
             <div className="p-4 rounded-xl border border-slate-200 dark:border-primary-700/60 bg-slate-50/50 dark:bg-primary-900/20 space-y-1.5">
               <div className="flex items-center justify-between">
-                <strong className="text-slate-900 dark:text-white text-base">4.1 Strictly necessary cookies</strong>
+                <strong className="text-slate-900 dark:text-white text-base">Strictly necessary cookies</strong>
                 <span className="px-2 py-0.5 rounded text-[11px] font-semibold bg-emerald-100 dark:bg-emerald-900/40 text-emerald-700 dark:text-emerald-300">
                   Always Active (Exempt from Consent)
                 </span>
@@ -134,7 +134,7 @@ export default function CookiesPolicyPage() {
 
             <div className="p-4 rounded-xl border border-slate-200 dark:border-primary-700/60 bg-slate-50/50 dark:bg-primary-900/20 space-y-1.5">
               <div className="flex items-center justify-between">
-                <strong className="text-slate-900 dark:text-white text-base">4.2 Functional preference cookies</strong>
+                <strong className="text-slate-900 dark:text-white text-base">Functional preference cookies</strong>
                 <span className="px-2 py-0.5 rounded text-[11px] font-semibold bg-slate-100 dark:bg-primary-700 text-slate-600 dark:text-slate-300">
                   User Opt-in
                 </span>
@@ -146,7 +146,7 @@ export default function CookiesPolicyPage() {
 
             <div className="p-4 rounded-xl border border-slate-200 dark:border-primary-700/60 bg-slate-50/50 dark:bg-primary-900/20 space-y-1.5">
               <div className="flex items-center justify-between">
-                <strong className="text-slate-900 dark:text-white text-base">4.3 Analytics and performance cookies</strong>
+                <strong className="text-slate-900 dark:text-white text-base">Analytics and performance cookies</strong>
                 <span className="px-2 py-0.5 rounded text-[11px] font-semibold bg-slate-100 dark:bg-primary-700 text-slate-600 dark:text-slate-300">
                   User Opt-in
                 </span>
@@ -158,7 +158,7 @@ export default function CookiesPolicyPage() {
 
             <div className="p-4 rounded-xl border border-slate-200 dark:border-primary-700/60 bg-slate-50/50 dark:bg-primary-900/20 space-y-1.5">
               <div className="flex items-center justify-between">
-                <strong className="text-slate-900 dark:text-white text-base">4.4 Marketing and advertising cookies</strong>
+                <strong className="text-slate-900 dark:text-white text-base">Marketing and advertising cookies</strong>
                 <span className="px-2 py-0.5 rounded text-[11px] font-semibold bg-slate-100 dark:bg-primary-700 text-slate-600 dark:text-slate-300">
                   User Opt-in
                 </span>
@@ -169,7 +169,7 @@ export default function CookiesPolicyPage() {
             </div>
 
             <div className="p-4 rounded-xl border border-slate-200 dark:border-primary-700/60 bg-slate-50/50 dark:bg-primary-900/20 space-y-1.5">
-              <strong className="text-slate-900 dark:text-white text-base block">4.5 Security and fraud prevention</strong>
+              <strong className="text-slate-900 dark:text-white text-base block">Security and fraud prevention</strong>
               <p className="leading-relaxed text-sm">
                 Certain technologies help detect suspicious activity, protect forms from automated abuse, maintain website integrity and mitigate unauthorised access.
               </p>
@@ -187,10 +187,10 @@ export default function CookiesPolicyPage() {
           </h2>
           <div className="space-y-3 text-sm sm:text-base leading-relaxed">
             <p>
-              <strong>5.1 First-party cookies:</strong> Set directly by the website being visited (cbpd.co.uk) or by services operating on its behalf, supporting essential site functions and security.
+              <strong>First-party cookies:</strong> Set directly by the website being visited (cbpd.co.uk) or by services operating on its behalf, supporting essential site functions and security.
             </p>
             <p>
-              <strong>5.2 Third-party cookies:</strong> Set by an external service integrated into our website (such as analytics providers, embedded media services, payment gateways, or security tools). Third-party providers process data under their own independent privacy policies. Where required, CBPD UK configures consent controls before allowing non-essential third-party technologies to operate.
+              <strong>Third-party cookies:</strong> Set by an external service integrated into our website (such as analytics providers, embedded media services, payment gateways, or security tools). Third-party providers process data under their own independent privacy policies. Where required, CBPD UK configures consent controls before allowing non-essential third-party technologies to operate.
             </p>
           </div>
         </section>
@@ -253,16 +253,16 @@ export default function CookiesPolicyPage() {
           </h2>
           <div className="space-y-3 text-sm leading-relaxed">
             <p>
-              <strong>8. Personal Information:</strong> Any technical identifiers (IP addresses, device hashes) captured via cookies are handled strictly under our <a href="/privacy-policy" className="text-brand-red font-semibold hover:underline">Privacy Policy</a> and UK GDPR standards.
+              <strong>Personal Information:</strong> Any technical identifiers (IP addresses, device hashes) captured via cookies are handled strictly under our <a href="/privacy-policy" className="text-brand-red font-semibold hover:underline">Privacy Policy</a> and UK GDPR standards.
             </p>
             <p>
-              <strong>9. International Transfers:</strong> Where third-party technology providers process information outside the UK, appropriate transfer safeguards and standard contractual clauses are maintained.
+              <strong>International Transfers:</strong> Where third-party technology providers process information outside the UK, appropriate transfer safeguards and standard contractual clauses are maintained.
             </p>
             <p>
-              <strong>10. Cookie Retention:</strong> Session cookies expire when the browser closes. Persistent cookies remain for defined periods appropriate to their utility or until cleared by the user.
+              <strong>Cookie Retention:</strong> Session cookies expire when the browser closes. Persistent cookies remain for defined periods appropriate to their utility or until cleared by the user.
             </p>
             <p>
-              <strong>11. External Websites:</strong> External links operate under their own independent cookie policies; CBPD UK accepts no responsibility for third-party cookie handling.
+              <strong>External Websites:</strong> External links operate under their own independent cookie policies; CBPD UK accepts no responsibility for third-party cookie handling.
             </p>
           </div>
         </section>

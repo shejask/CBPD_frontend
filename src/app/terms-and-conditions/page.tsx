@@ -211,25 +211,25 @@ export default function TermsAndConditionsPage() {
           </h2>
           <div className="space-y-4 text-sm sm:text-base">
             <div className="p-4 rounded-xl border border-slate-200 dark:border-primary-700/60 bg-slate-50/50 dark:bg-primary-900/20 space-y-1.5">
-              <strong className="text-slate-900 dark:text-white block">6.1 Programme information</strong>
+              <strong className="text-slate-900 dark:text-white block">Programme information</strong>
               <p className="leading-relaxed">
                 Each programme may have its own eligibility criteria, learning requirements, assessment arrangements, completion requirements and certification conditions. Learners and education partners are responsible for reviewing the applicable programme information. Participation does not automatically guarantee successful completion or the award of a certificate.
               </p>
             </div>
             <div className="p-4 rounded-xl border border-slate-200 dark:border-primary-700/60 bg-slate-50/50 dark:bg-primary-900/20 space-y-1.5">
-              <strong className="text-slate-900 dark:text-white block">6.2 Award and issue of certificates</strong>
+              <strong className="text-slate-900 dark:text-white block">Award and issue of certificates</strong>
               <p className="leading-relaxed">
                 A certificate or credential will be issued only where the applicable requirements have been satisfied and relevant approval, assessment, registration, documentation and payment conditions are completed. CBPD UK may request supporting documentation where reasonably necessary to verify eligibility.
               </p>
             </div>
             <div className="p-4 rounded-xl border border-slate-200 dark:border-primary-700/60 bg-slate-50/50 dark:bg-primary-900/20 space-y-1.5">
-              <strong className="text-slate-900 dark:text-white block">6.3 Accuracy of learner information</strong>
+              <strong className="text-slate-900 dark:text-white block">Accuracy of learner information</strong>
               <p className="leading-relaxed">
                 Learners and submitting centres must ensure that information supplied for registration, assessment and certification is accurate, complete and supported by appropriate documentation. Requests to amend certificates may be subject to verification and published administrative fees.
               </p>
             </div>
             <div className="p-4 rounded-xl border border-slate-200 dark:border-primary-700/60 bg-slate-50/50 dark:bg-primary-900/20 space-y-1.5">
-              <strong className="text-slate-900 dark:text-white block">6.4 Certificate authenticity &amp; Fraud Prevention</strong>
+              <strong className="text-slate-900 dark:text-white block">Certificate authenticity &amp; Fraud Prevention</strong>
               <p className="leading-relaxed">
                 A certificate should not be altered, duplicated, reproduced or represented as valid where its authenticity or status has not been established. Where credible evidence of fraud, material error, unauthorised alteration or serious procedural irregularity arises, CBPD UK may investigate and suspend, correct, withdraw or cancel a certificate under its applicable procedures.
               </p>
@@ -266,11 +266,11 @@ export default function TermsAndConditionsPage() {
             Institutional Accreditation and Education Partners
           </h2>
           <div className="space-y-3 text-sm sm:text-base">
-            <p><strong>8.1 Applications and approval:</strong> Institutions seeking accreditation, centre approval, membership or partnership must complete the applicable application process. An application does not guarantee approval.</p>
-            <p><strong>8.2 Scope of approval:</strong> Any accreditation or approval granted is strictly limited to the scope, conditions and validity period specified in the agreement. It does not mean every programme offered by the institution is individually approved.</p>
-            <p><strong>8.3 Use of CBPD UK branding:</strong> Approved centres may use branding and marks only within the scope of their written authorisation. They must not claim unauthorized recognition or alter certificate designs.</p>
-            <p><strong>8.4 Monitoring and quality assurance:</strong> CBPD UK may conduct monitoring, documentation checks and quality assurance reviews. Corrective action or suspension may follow any identified non-compliance.</p>
-            <p><strong>8.5 Partner responsibilities:</strong> Partners are responsible for teaching arrangements, facilities, staff and advertising. Partners must never promise a learner will receive a certificate regardless of assessment criteria.</p>
+            <p><strong>Applications and approval:</strong> Institutions seeking accreditation, centre approval, membership or partnership must complete the applicable application process. An application does not guarantee approval.</p>
+            <p><strong>Scope of approval:</strong> Any accreditation or approval granted is strictly limited to the scope, conditions and validity period specified in the agreement. It does not mean every programme offered by the institution is individually approved.</p>
+            <p><strong>Use of CBPD UK branding:</strong> Approved centres may use branding and marks only within the scope of their written authorisation. They must not claim unauthorized recognition or alter certificate designs.</p>
+            <p><strong>Monitoring and quality assurance:</strong> CBPD UK may conduct monitoring, documentation checks and quality assurance reviews. Corrective action or suspension may follow any identified non-compliance.</p>
+            <p><strong>Partner responsibilities:</strong> Partners are responsible for teaching arrangements, facilities, staff and advertising. Partners must never promise a learner will receive a certificate regardless of assessment criteria.</p>
           </div>
         </section>
 
@@ -426,9 +426,9 @@ export default function TermsAndConditionsPage() {
             Legal Framework, Severability &amp; Jurisdiction
           </h2>
           <div className="space-y-3 text-sm">
-            <p><strong>23. Severability:</strong> If any provision of these Terms is deemed unlawful or unenforceable, that provision will be severed or interpreted to the minimum extent necessary, leaving remaining provisions in full force.</p>
-            <p><strong>24. No Waiver:</strong> Failure or delay by CBPD UK in enforcing any right shall not be construed as a waiver of that or any subsequent right.</p>
-            <p><strong>25. Governing Law:</strong> These Terms and any disputes arising from them are governed exclusively by the laws of England and Wales, and subject to the jurisdiction of the English courts, without prejudice to mandatory statutory consumer protections.</p>
+            <p><strong>Severability:</strong> If any provision of these Terms is deemed unlawful or unenforceable, that provision will be severed or interpreted to the minimum extent necessary, leaving remaining provisions in full force.</p>
+            <p><strong>No Waiver:</strong> Failure or delay by CBPD UK in enforcing any right shall not be construed as a waiver of that or any subsequent right.</p>
+            <p><strong>Governing Law:</strong> These Terms and any disputes arising from them are governed exclusively by the laws of England and Wales, and subject to the jurisdiction of the English courts, without prejudice to mandatory statutory consumer protections.</p>
           </div>
         </section>
 

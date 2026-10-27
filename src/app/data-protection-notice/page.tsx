@@ -88,27 +88,27 @@ export default function DataProtectionNoticePage() {
 
           <div className="space-y-3 text-sm">
             <div className="p-4 rounded-xl border border-slate-200 dark:border-primary-700/60 bg-slate-50/50 dark:bg-primary-900/20 space-y-1">
-              <strong className="text-slate-900 dark:text-white block font-semibold">3.1 Identity and Contact Information</strong>
+              <strong className="text-slate-900 dark:text-white block font-semibold">Identity and Contact Information</strong>
               <p>Full name, title, email address, telephone number, correspondence address, date of birth (for verification/eligibility), and identification records where legitimately required.</p>
             </div>
 
             <div className="p-4 rounded-xl border border-slate-200 dark:border-primary-700/60 bg-slate-50/50 dark:bg-primary-900/20 space-y-1">
-              <strong className="text-slate-900 dark:text-white block font-semibold">3.2 Learner and Certification Records</strong>
+              <strong className="text-slate-900 dark:text-white block font-semibold">Learner and Certification Records</strong>
               <p>Learner registration and reference numbers, course/qualification details, enrolment, attendance, assessment submissions and results, certificate numbers, verification status, and records of replacement or withdrawal actions.</p>
             </div>
 
             <div className="p-4 rounded-xl border border-slate-200 dark:border-primary-700/60 bg-slate-50/50 dark:bg-primary-900/20 space-y-1">
-              <strong className="text-slate-900 dark:text-white block font-semibold">3.3 Institutional and Partner Information</strong>
+              <strong className="text-slate-900 dark:text-white block font-semibold">Institutional and Partner Information</strong>
               <p>Education provider details, names and contact details of authorised representatives, centre approval, quality assurance, compliance records, invoices, and business agreements.</p>
             </div>
 
             <div className="p-4 rounded-xl border border-slate-200 dark:border-primary-700/60 bg-slate-50/50 dark:bg-primary-900/20 space-y-1">
-              <strong className="text-slate-900 dark:text-white block font-semibold">3.4 Technical and Website Information</strong>
+              <strong className="text-slate-900 dark:text-white block font-semibold">Technical and Website Information</strong>
               <p>IP addresses, browser and device data, security logs, access timestamps, cookie preferences, and form submissions.</p>
             </div>
 
             <div className="p-4 rounded-xl border border-slate-200 dark:border-primary-700/60 bg-slate-50/50 dark:bg-primary-900/20 space-y-1">
-              <strong className="text-slate-900 dark:text-white block font-semibold">3.5 Correspondence and Enquiries</strong>
+              <strong className="text-slate-900 dark:text-white block font-semibold">Correspondence and Enquiries</strong>
               <p>Information contained in emails, appeals, complaints, enquiries, and documentary evidence submitted for review.</p>
             </div>
           </div>
@@ -236,13 +236,13 @@ export default function DataProtectionNoticePage() {
           </h2>
           <div className="space-y-3 text-sm leading-relaxed">
             <p>
-              <strong>9. Data Retention:</strong> Records are retained only for as long as necessary. Certification and verification records are maintained for an extended period to enable lifetime credential verification and prevent fraud.
+              <strong>Data Retention:</strong> Records are retained only for as long as necessary. Certification and verification records are maintained for an extended period to enable lifetime credential verification and prevent fraud.
             </p>
             <p>
-              <strong>10. Security &amp; Confidentiality:</strong> Appropriate technical and organizational measures (encryption, role-based access controls, secure backups, staff training) are implemented to protect against accidental loss or unauthorized processing.
+              <strong>Security &amp; Confidentiality:</strong> Appropriate technical and organizational measures (encryption, role-based access controls, secure backups, staff training) are implemented to protect against accidental loss or unauthorized processing.
             </p>
             <p>
-              <strong>11. Personal Data Breaches:</strong> Suspected breaches are contained and investigated promptly. Where required by law, notification will be provided to the Information Commissioner&apos;s Office (ICO) and affected data subjects without undue delay.
+              <strong>Personal Data Breaches:</strong> Suspected breaches are contained and investigated promptly. Where required by law, notification will be provided to the Information Commissioner&apos;s Office (ICO) and affected data subjects without undue delay.
             </p>
           </div>
         </section>
