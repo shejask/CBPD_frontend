@@ -35,7 +35,7 @@ export default function LegalInformationPage() {
         {/* 1. About This Legal Information Page */}
         <section className="space-y-4">
           <h2 className="text-xl sm:text-2xl font-bold text-slate-900 dark:text-white flex items-center gap-2.5 pb-2 border-b border-slate-200 dark:border-primary-700/60">
-            <span className="text-brand-red">1.</span> About This Legal Information Page
+            About This Legal Information Page
           </h2>
           <p className="leading-relaxed">
             This Legal Information page provides important information concerning the identity, activities, website, qualifications, certification services, institutional partnerships and legal notices of the Central Board of Professional Development (CBPD UK).
@@ -51,7 +51,7 @@ export default function LegalInformationPage() {
         {/* 2. Organisation Details Card */}
         <section className="space-y-4">
           <h2 className="text-xl sm:text-2xl font-bold text-slate-900 dark:text-white flex items-center gap-2.5 pb-2 border-b border-slate-200 dark:border-primary-700/60">
-            <span className="text-brand-red">2.</span> Organisation Details
+            Organisation Details
           </h2>
 
           <div className="p-6 rounded-2xl bg-white dark:bg-primary-900/60 border border-slate-200 dark:border-primary-700/60 shadow-sm space-y-4">
@@ -103,7 +103,7 @@ export default function LegalInformationPage() {
         {/* 3. Nature of the Organisation */}
         <section className="space-y-4">
           <h2 className="text-xl sm:text-2xl font-bold text-slate-900 dark:text-white flex items-center gap-2.5 pb-2 border-b border-slate-200 dark:border-primary-700/60">
-            <span className="text-brand-red">3.</span> Nature of the Organisation
+            Nature of the Organisation
           </h2>
           <p className="leading-relaxed">
             CBPD UK operates in the professional development, education, assessment and certification sector. Its activities may include the development and administration of professional courses, certification services, institutional membership, education partner relationships, programme review and quality assurance.
@@ -119,7 +119,7 @@ export default function LegalInformationPage() {
         {/* 4. Qualifications, Ofqual Alignment and the CQF */}
         <section className="space-y-4">
           <h2 className="text-xl sm:text-2xl font-bold text-slate-900 dark:text-white flex items-center gap-2.5 pb-2 border-b border-slate-200 dark:border-primary-700/60">
-            <span className="text-brand-red">4.</span> Qualifications, Ofqual Alignment and the CBPD Qualification Framework
+            Qualifications, Ofqual Alignment and the CBPD Qualification Framework
           </h2>
           <p className="leading-relaxed">
             CBPD UK develops and offers professional development courses and qualifications designed with reference to relevant UK qualification principles, industry expectations and, where applicable, selected aspects of the Ofqual regulatory framework.
@@ -147,7 +147,7 @@ export default function LegalInformationPage() {
         {/* 5. Recognition, Acceptance and Use of Certificates */}
         <section className="space-y-4">
           <h2 className="text-xl sm:text-2xl font-bold text-slate-900 dark:text-white flex items-center gap-2.5 pb-2 border-b border-slate-200 dark:border-primary-700/60">
-            <span className="text-brand-red">5.</span> Recognition, Acceptance and Use of Certificates
+            Recognition, Acceptance and Use of Certificates
           </h2>
           <p className="leading-relaxed">
             The acceptance of a certificate may depend on the requirements of the receiving employer, educational institution, professional body, licensing authority or government agency.
@@ -163,7 +163,7 @@ export default function LegalInformationPage() {
         {/* 6. Institutional Membership and Accreditation */}
         <section className="space-y-4">
           <h2 className="text-xl sm:text-2xl font-bold text-slate-900 dark:text-white flex items-center gap-2.5 pb-2 border-b border-slate-200 dark:border-primary-700/60">
-            <span className="text-brand-red">6.</span> Institutional Membership and Accreditation
+            Institutional Membership and Accreditation
           </h2>
           <p className="leading-relaxed">
             CBPD UK offers institutional membership, education partner arrangements, programme accreditation and institutional approval under its own policies and procedures.
@@ -176,7 +176,7 @@ export default function LegalInformationPage() {
         {/* 7. Channel Partners and Education Partners */}
         <section className="space-y-4">
           <h2 className="text-xl sm:text-2xl font-bold text-slate-900 dark:text-white flex items-center gap-2.5 pb-2 border-b border-slate-200 dark:border-primary-700/60">
-            <span className="text-brand-red">7.</span> Channel Partners and Education Partners
+            Channel Partners and Education Partners
           </h2>
           <p className="leading-relaxed">
             CBPD UK works with authorised channel partners, education providers, and institutional representatives. A partnership does not automatically confer authority to issue certificates, approve qualifications, or represent CBPD UK beyond the scope of the written agreement. Partners must provide accurate information about fees, programme requirements, and certification procedures.
@@ -186,7 +186,7 @@ export default function LegalInformationPage() {
         {/* 8. Certificate Verification and Authenticity */}
         <section className="space-y-4">
           <h2 className="text-xl sm:text-2xl font-bold text-slate-900 dark:text-white flex items-center gap-2.5 pb-2 border-b border-slate-200 dark:border-primary-700/60">
-            <span className="text-brand-red">8.</span> Certificate Verification and Authenticity
+            Certificate Verification and Authenticity
           </h2>
           <p className="leading-relaxed">
             CBPD UK maintains a verification portal (<a href="/verifications" className="text-brand-red font-medium hover:underline">https://www.cbpd.co.uk/verifications</a>) to support checking certificate details and certification status. Users should verify details against official records and contact us if discrepancies arise.
@@ -199,7 +199,7 @@ export default function LegalInformationPage() {
         {/* 9. Apostille and Document Legalisation */}
         <section className="space-y-4">
           <h2 className="text-xl sm:text-2xl font-bold text-slate-900 dark:text-white flex items-center gap-2.5 pb-2 border-b border-slate-200 dark:border-primary-700/60">
-            <span className="text-brand-red">9.</span> Apostille and Document Legalisation
+            Apostille and Document Legalisation
           </h2>
           <div className="p-4 rounded-xl border border-slate-200 dark:border-primary-700/60 bg-white dark:bg-primary-900/30 space-y-2 text-sm leading-relaxed">
             <div className="flex items-center gap-2 font-bold text-slate-900 dark:text-white">
@@ -221,7 +221,7 @@ export default function LegalInformationPage() {
         {/* 10 - 14. Accuracy, IP, Privacy, Disputes & External Links */}
         <section className="space-y-4">
           <h2 className="text-xl sm:text-2xl font-bold text-slate-900 dark:text-white flex items-center gap-2.5 pb-2 border-b border-slate-200 dark:border-primary-700/60">
-            <span className="text-brand-red">10 - 14.</span> Operational &amp; Legal Governance
+            Operational &amp; Legal Governance
           </h2>
           <div className="space-y-3 text-sm leading-relaxed">
             <p>
@@ -245,7 +245,7 @@ export default function LegalInformationPage() {
         {/* 15 - 17. Legal Rights, Applicable Law & Updates */}
         <section className="space-y-4">
           <h2 className="text-xl sm:text-2xl font-bold text-slate-900 dark:text-white flex items-center gap-2.5 pb-2 border-b border-slate-200 dark:border-primary-700/60">
-            <span className="text-brand-red">15 - 17.</span> Limitation of Advice &amp; Governing Law
+            Limitation of Advice &amp; Governing Law
           </h2>
           <div className="space-y-2 text-sm leading-relaxed">
             <p>
@@ -263,7 +263,7 @@ export default function LegalInformationPage() {
         {/* 18. Contact Information & Transparency Statement */}
         <section className="space-y-4">
           <h2 className="text-xl sm:text-2xl font-bold text-slate-900 dark:text-white flex items-center gap-2.5 pb-2 border-b border-slate-200 dark:border-primary-700/60">
-            <span className="text-brand-red">18.</span> Contact Information &amp; Transparency Statement
+            Contact Information &amp; Transparency Statement
           </h2>
           <p className="leading-relaxed">
             For enquiries concerning the legal information published by CBPD UK, please contact:

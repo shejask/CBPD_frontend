@@ -37,7 +37,7 @@ export default function PrivacyPolicyPage() {
         {/* 1. Introduction */}
         <section className="space-y-4">
           <h2 className="text-xl sm:text-2xl font-bold text-slate-900 dark:text-white flex items-center gap-2.5 pb-2 border-b border-slate-200 dark:border-primary-700/60">
-            <span className="text-brand-red">1.</span> Introduction
+            Introduction
           </h2>
           <p className="leading-relaxed">
             Central Board of Professional Development, operating under the name CBPD UK (&ldquo;CBPD&rdquo;, &ldquo;we&rdquo;, &ldquo;our&rdquo; or &ldquo;us&rdquo;), is committed to protecting personal information and handling it responsibly, fairly and transparently.
@@ -89,7 +89,7 @@ export default function PrivacyPolicyPage() {
         {/* 2. Who We Are */}
         <section className="space-y-4">
           <h2 className="text-xl sm:text-2xl font-bold text-slate-900 dark:text-white flex items-center gap-2.5 pb-2 border-b border-slate-200 dark:border-primary-700/60">
-            <span className="text-brand-red">2.</span> Who We Are
+            Who We Are
           </h2>
           <p className="leading-relaxed">
             The organisation responsible for the personal information described in this Privacy Policy is:
@@ -141,7 +141,7 @@ export default function PrivacyPolicyPage() {
         {/* 3. What Personal Information We Collect */}
         <section className="space-y-5">
           <h2 className="text-xl sm:text-2xl font-bold text-slate-900 dark:text-white flex items-center gap-2.5 pb-2 border-b border-slate-200 dark:border-primary-700/60">
-            <span className="text-brand-red">3.</span> What Personal Information We Collect
+            What Personal Information We Collect
           </h2>
           <p className="leading-relaxed">
             The information we collect depends on your relationship with CBPD UK and the services you use.
@@ -261,7 +261,7 @@ export default function PrivacyPolicyPage() {
         {/* 4. How We Collect Personal Information */}
         <section className="space-y-4">
           <h2 className="text-xl sm:text-2xl font-bold text-slate-900 dark:text-white flex items-center gap-2.5 pb-2 border-b border-slate-200 dark:border-primary-700/60">
-            <span className="text-brand-red">4.</span> How We Collect Personal Information
+            How We Collect Personal Information
           </h2>
           <p className="leading-relaxed">We may obtain personal information:</p>
           <ul className="list-disc pl-5 space-y-2 text-sm sm:text-base">
@@ -281,7 +281,7 @@ export default function PrivacyPolicyPage() {
         {/* 5. Why We Use Personal Information */}
         <section className="space-y-4">
           <h2 className="text-xl sm:text-2xl font-bold text-slate-900 dark:text-white flex items-center gap-2.5 pb-2 border-b border-slate-200 dark:border-primary-700/60">
-            <span className="text-brand-red">5.</span> Why We Use Personal Information
+            Why We Use Personal Information
           </h2>
           <p className="leading-relaxed">
             CBPD UK processes personal information for specific and legitimate purposes, including:
@@ -336,7 +336,7 @@ export default function PrivacyPolicyPage() {
         {/* 6. Our Lawful Bases for Processing */}
         <section className="space-y-4">
           <h2 className="text-xl sm:text-2xl font-bold text-slate-900 dark:text-white flex items-center gap-2.5 pb-2 border-b border-slate-200 dark:border-primary-700/60">
-            <span className="text-brand-red">6.</span> Our Lawful Bases for Processing
+            Our Lawful Bases for Processing
           </h2>
           <p className="leading-relaxed">
             Where UK data protection law applies, we will identify and rely on an appropriate lawful basis for each relevant processing activity. Depending on the circumstances, this may include:
@@ -378,7 +378,7 @@ export default function PrivacyPolicyPage() {
         {/* 7. Learner Records and Certificate Verification */}
         <section className="space-y-4">
           <h2 className="text-xl sm:text-2xl font-bold text-slate-900 dark:text-white flex items-center gap-2.5 pb-2 border-b border-slate-200 dark:border-primary-700/60">
-            <span className="text-brand-red">7.</span> Learner Records and Certificate Verification
+            Learner Records and Certificate Verification
           </h2>
           <p className="leading-relaxed">
             As part of our certification and quality assurance activities, CBPD UK may maintain records relating to learner registration, assessment outcomes, qualification details and certificates issued through its applicable processes.
@@ -400,7 +400,7 @@ export default function PrivacyPolicyPage() {
         {/* 8. Sharing Personal Information */}
         <section className="space-y-4">
           <h2 className="text-xl sm:text-2xl font-bold text-slate-900 dark:text-white flex items-center gap-2.5 pb-2 border-b border-slate-200 dark:border-primary-700/60">
-            <span className="text-brand-red">8.</span> Sharing Personal Information
+            Sharing Personal Information
           </h2>
           <p className="leading-relaxed">
             CBPD UK does not make personal information available indiscriminately. We may share information where necessary for the purposes described in this policy, including with:
@@ -426,7 +426,7 @@ export default function PrivacyPolicyPage() {
         {/* 9. International Transfers */}
         <section className="space-y-4">
           <h2 className="text-xl sm:text-2xl font-bold text-slate-900 dark:text-white flex items-center gap-2.5 pb-2 border-b border-slate-200 dark:border-primary-700/60">
-            <span className="text-brand-red">9.</span> International Transfers of Personal Information
+            International Transfers of Personal Information
           </h2>
           <p className="leading-relaxed">
             CBPD UK works with learners, institutions and business partners in different countries. Personal information may therefore be accessed from, or transferred to, countries outside the United Kingdom where this is necessary for our operations.
@@ -442,7 +442,7 @@ export default function PrivacyPolicyPage() {
         {/* 10. How Long We Keep Personal Information */}
         <section className="space-y-4">
           <h2 className="text-xl sm:text-2xl font-bold text-slate-900 dark:text-white flex items-center gap-2.5 pb-2 border-b border-slate-200 dark:border-primary-700/60">
-            <span className="text-brand-red">10.</span> How Long We Keep Personal Information
+            How Long We Keep Personal Information
           </h2>
           <p className="leading-relaxed">
             We retain personal information only for as long as reasonably necessary for the purposes for which it was collected, including relevant certification, quality assurance, contractual, legal, financial and dispute-resolution requirements. Retention periods may differ according to the type of record and the applicable circumstances:
@@ -463,7 +463,7 @@ export default function PrivacyPolicyPage() {
         {/* 11. How We Protect Personal Information */}
         <section className="space-y-4">
           <h2 className="text-xl sm:text-2xl font-bold text-slate-900 dark:text-white flex items-center gap-2.5 pb-2 border-b border-slate-200 dark:border-primary-700/60">
-            <span className="text-brand-red">11.</span> How We Protect Personal Information
+            How We Protect Personal Information
           </h2>
           <p className="leading-relaxed">
             We take reasonable and appropriate technical and organisational measures designed to protect personal information against unauthorised access, loss, alteration, disclosure or destruction.
@@ -484,7 +484,7 @@ export default function PrivacyPolicyPage() {
         {/* 12. Your Data Protection Rights */}
         <section className="space-y-4">
           <h2 className="text-xl sm:text-2xl font-bold text-slate-900 dark:text-white flex items-center gap-2.5 pb-2 border-b border-slate-200 dark:border-primary-700/60">
-            <span className="text-brand-red">12.</span> Your Data Protection Rights
+            Your Data Protection Rights
           </h2>
           <p className="leading-relaxed">
             Subject to applicable law and the circumstances of the request, you may have the right to:
@@ -523,7 +523,7 @@ export default function PrivacyPolicyPage() {
         {/* 13. Complaints to the Information Commissioner's Office */}
         <section className="space-y-4">
           <h2 className="text-xl sm:text-2xl font-bold text-slate-900 dark:text-white flex items-center gap-2.5 pb-2 border-b border-slate-200 dark:border-primary-700/60">
-            <span className="text-brand-red">13.</span> Complaints to the Information Commissioner&apos;s Office (ICO)
+            Complaints to the Information Commissioner&apos;s Office (ICO)
           </h2>
           <p className="leading-relaxed">
             If you are concerned about how CBPD UK has handled your personal information, we encourage you to contact us first so that we can review the matter. You also have the right to raise a complaint with the UK Information Commissioner&apos;s Office (ICO), where applicable.
@@ -541,7 +541,7 @@ export default function PrivacyPolicyPage() {
         {/* 14. Cookies and Similar Technologies */}
         <section className="space-y-4">
           <h2 className="text-xl sm:text-2xl font-bold text-slate-900 dark:text-white flex items-center gap-2.5 pb-2 border-b border-slate-200 dark:border-primary-700/60">
-            <span className="text-brand-red">14.</span> Cookies and Similar Technologies
+            Cookies and Similar Technologies
           </h2>
           <p className="leading-relaxed">
             Our website may use cookies and similar technologies to support essential website functions, remember preferences, improve performance, maintain security and, where enabled, understand website usage.
@@ -557,7 +557,7 @@ export default function PrivacyPolicyPage() {
         {/* 15. Marketing Communications */}
         <section className="space-y-4">
           <h2 className="text-xl sm:text-2xl font-bold text-slate-900 dark:text-white flex items-center gap-2.5 pb-2 border-b border-slate-200 dark:border-primary-700/60">
-            <span className="text-brand-red">15.</span> Marketing Communications
+            Marketing Communications
           </h2>
           <p className="leading-relaxed">
             We may send service-related communications concerning registration, assessment, certification, accreditation, payments, verification or changes affecting an existing relationship.
@@ -573,7 +573,7 @@ export default function PrivacyPolicyPage() {
         {/* 16. Children and Young Learners */}
         <section className="space-y-4">
           <h2 className="text-xl sm:text-2xl font-bold text-slate-900 dark:text-white flex items-center gap-2.5 pb-2 border-b border-slate-200 dark:border-primary-700/60">
-            <span className="text-brand-red">16.</span> Children and Young Learners
+            Children and Young Learners
           </h2>
           <p className="leading-relaxed">
             Some educational programmes or services may involve individuals under the age of 18. Where we process personal information relating to children or young learners, we will take appropriate account of their age, understanding and the nature of the information involved.
@@ -589,7 +589,7 @@ export default function PrivacyPolicyPage() {
         {/* 17. Third-Party Websites and Services */}
         <section className="space-y-4">
           <h2 className="text-xl sm:text-2xl font-bold text-slate-900 dark:text-white flex items-center gap-2.5 pb-2 border-b border-slate-200 dark:border-primary-700/60">
-            <span className="text-brand-red">17.</span> Third-Party Websites and Services
+            Third-Party Websites and Services
           </h2>
           <p className="leading-relaxed">
             Our website may contain links to external websites, verification services, partner websites or other third-party platforms. These services operate under their own privacy policies and terms. CBPD UK does not control the privacy practices of independent third parties and encourages users to review the relevant policies before submitting personal information to them.
@@ -599,7 +599,7 @@ export default function PrivacyPolicyPage() {
         {/* 18. Automated Processing and Decision-Making */}
         <section className="space-y-4">
           <h2 className="text-xl sm:text-2xl font-bold text-slate-900 dark:text-white flex items-center gap-2.5 pb-2 border-b border-slate-200 dark:border-primary-700/60">
-            <span className="text-brand-red">18.</span> Automated Processing and Decision-Making
+            Automated Processing and Decision-Making
           </h2>
           <p className="leading-relaxed">
             CBPD UK may use digital systems to support administrative activities, record management, assessment administration, verification and quality assurance.
@@ -612,7 +612,7 @@ export default function PrivacyPolicyPage() {
         {/* 19. Changes to This Privacy Policy */}
         <section className="space-y-4">
           <h2 className="text-xl sm:text-2xl font-bold text-slate-900 dark:text-white flex items-center gap-2.5 pb-2 border-b border-slate-200 dark:border-primary-700/60">
-            <span className="text-brand-red">19.</span> Changes to This Privacy Policy
+            Changes to This Privacy Policy
           </h2>
           <p className="leading-relaxed">
             We may update this Privacy Policy from time to time to reflect changes in our services, systems, legal obligations or data handling practices. The latest version will always be published on our website. Where a change materially affects how we use personal information, we will provide additional notice where required by law.
@@ -622,7 +622,7 @@ export default function PrivacyPolicyPage() {
         {/* 20. Contact Us */}
         <section className="space-y-4">
           <h2 className="text-xl sm:text-2xl font-bold text-slate-900 dark:text-white flex items-center gap-2.5 pb-2 border-b border-slate-200 dark:border-primary-700/60">
-            <span className="text-brand-red">20.</span> Contact Us
+            Contact Us
           </h2>
           <p className="leading-relaxed">
             For questions about this Privacy Policy, requests concerning personal information, or concerns about how data is handled, please contact:

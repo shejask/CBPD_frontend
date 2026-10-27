@@ -37,7 +37,7 @@ export default function CookiesPolicyPage() {
         {/* 1. Introduction */}
         <section className="space-y-4">
           <h2 className="text-xl sm:text-2xl font-bold text-slate-900 dark:text-white flex items-center gap-2.5 pb-2 border-b border-slate-200 dark:border-primary-700/60">
-            <span className="text-brand-red">1.</span> Introduction
+            Introduction
           </h2>
           <p className="leading-relaxed">
             Central Board of Professional Development (CBPD UK) is committed to providing a reliable, secure and user-friendly online experience.
@@ -56,7 +56,7 @@ export default function CookiesPolicyPage() {
         {/* 2. What Are Cookies? */}
         <section className="space-y-4">
           <h2 className="text-xl sm:text-2xl font-bold text-slate-900 dark:text-white flex items-center gap-2.5 pb-2 border-b border-slate-200 dark:border-primary-700/60">
-            <span className="text-brand-red">2.</span> What Are Cookies?
+            What Are Cookies?
           </h2>
           <p className="leading-relaxed">
             Cookies are small text files that a website may place on your computer, mobile phone, tablet or other device when you visit it.
@@ -82,7 +82,7 @@ export default function CookiesPolicyPage() {
         {/* 3. Similar Technologies */}
         <section className="space-y-4">
           <h2 className="text-xl sm:text-2xl font-bold text-slate-900 dark:text-white flex items-center gap-2.5 pb-2 border-b border-slate-200 dark:border-primary-700/60">
-            <span className="text-brand-red">3.</span> Similar Technologies
+            Similar Technologies
           </h2>
           <p className="leading-relaxed">
             In addition to cookies, websites may use similar technologies, such as:
@@ -113,7 +113,7 @@ export default function CookiesPolicyPage() {
         {/* 4. Why We Use Cookies */}
         <section className="space-y-4">
           <h2 className="text-xl sm:text-2xl font-bold text-slate-900 dark:text-white flex items-center gap-2.5 pb-2 border-b border-slate-200 dark:border-primary-700/60">
-            <span className="text-brand-red">4.</span> Why We Use Cookies
+            Why We Use Cookies
           </h2>
           <p className="leading-relaxed">
             Depending on the features and services enabled on our website, cookies may be used for the following purposes:
@@ -183,7 +183,7 @@ export default function CookiesPolicyPage() {
         {/* 5. First-Party and Third-Party Cookies */}
         <section className="space-y-4">
           <h2 className="text-xl sm:text-2xl font-bold text-slate-900 dark:text-white flex items-center gap-2.5 pb-2 border-b border-slate-200 dark:border-primary-700/60">
-            <span className="text-brand-red">5.</span> First-Party and Third-Party Cookies
+            First-Party and Third-Party Cookies
           </h2>
           <div className="space-y-3 text-sm sm:text-base leading-relaxed">
             <p>
@@ -198,7 +198,7 @@ export default function CookiesPolicyPage() {
         {/* 6. Cookie Consent and Your Preferences */}
         <section className="space-y-4">
           <h2 className="text-xl sm:text-2xl font-bold text-slate-900 dark:text-white flex items-center gap-2.5 pb-2 border-b border-slate-200 dark:border-primary-700/60">
-            <span className="text-brand-red">6.</span> Cookie Consent and Your Preferences
+            Cookie Consent and Your Preferences
           </h2>
           <p className="leading-relaxed">
             Where consent is legally required, CBPD UK seeks consent before placing or accessing non-essential cookies. Our cookie consent mechanism allows visitors to:
@@ -229,7 +229,7 @@ export default function CookiesPolicyPage() {
         {/* 7. How to Manage Cookies Through Your Browser */}
         <section className="space-y-4">
           <h2 className="text-xl sm:text-2xl font-bold text-slate-900 dark:text-white flex items-center gap-2.5 pb-2 border-b border-slate-200 dark:border-primary-700/60">
-            <span className="text-brand-red">7.</span> How to Manage Cookies Through Your Browser
+            How to Manage Cookies Through Your Browser
           </h2>
           <p className="leading-relaxed">
             Most web browsers allow users to view, block, restrict or delete cookies through their application settings. Depending on your browser, you may be able to:
@@ -249,7 +249,7 @@ export default function CookiesPolicyPage() {
         {/* 8 - 11. Personal Information, Transfers, Retention & External Sites */}
         <section className="space-y-4">
           <h2 className="text-xl sm:text-2xl font-bold text-slate-900 dark:text-white flex items-center gap-2.5 pb-2 border-b border-slate-200 dark:border-primary-700/60">
-            <span className="text-brand-red">8 - 11.</span> Data Protection &amp; Cookie Lifespan
+            Data Protection &amp; Cookie Lifespan
           </h2>
           <div className="space-y-3 text-sm leading-relaxed">
             <p>
@@ -270,7 +270,7 @@ export default function CookiesPolicyPage() {
         {/* 12. Changes to This Cookies Policy */}
         <section className="space-y-4">
           <h2 className="text-xl sm:text-2xl font-bold text-slate-900 dark:text-white flex items-center gap-2.5 pb-2 border-b border-slate-200 dark:border-primary-700/60">
-            <span className="text-brand-red">12.</span> Changes to This Cookies Policy
+            Changes to This Cookies Policy
           </h2>
           <p className="leading-relaxed">
             CBPD UK may update this Cookies Policy to reflect changes in applicable legislation, website functionality, technology providers or our cookie practices. The latest version will be published on this page with the updated revision date.
@@ -280,7 +280,7 @@ export default function CookiesPolicyPage() {
         {/* 13. Contact Us */}
         <section className="space-y-4">
           <h2 className="text-xl sm:text-2xl font-bold text-slate-900 dark:text-white flex items-center gap-2.5 pb-2 border-b border-slate-200 dark:border-primary-700/60">
-            <span className="text-brand-red">13.</span> Contact Us
+            Contact Us
           </h2>
           <p className="leading-relaxed">
             If you have questions about this Cookies Policy or how cookies are used on the CBPD UK website, please contact:

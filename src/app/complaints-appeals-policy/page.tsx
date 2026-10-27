@@ -42,7 +42,7 @@ export default function ComplaintsAppealsPolicyPage() {
         {/* 1. Policy Statement */}
         <section className="space-y-4">
           <h2 className="text-xl sm:text-2xl font-bold text-slate-900 dark:text-white flex items-center gap-2.5 pb-2 border-b border-slate-200 dark:border-primary-700/60">
-            <span className="text-brand-red">1.</span> Policy Statement
+            Policy Statement
           </h2>
           <p className="leading-relaxed">
             Central Board of Professional Development (CBPD UK) is committed to maintaining high standards of professionalism, fairness, transparency, accountability and quality assurance across its professional development, assessment, certification, institutional accreditation and partnership activities.
@@ -61,7 +61,7 @@ export default function ComplaintsAppealsPolicyPage() {
         {/* 2. Purpose of This Policy */}
         <section className="space-y-4">
           <h2 className="text-xl sm:text-2xl font-bold text-slate-900 dark:text-white flex items-center gap-2.5 pb-2 border-b border-slate-200 dark:border-primary-700/60">
-            <span className="text-brand-red">2.</span> Purpose of This Policy
+            Purpose of This Policy
           </h2>
           <p className="leading-relaxed">The purpose of this policy is to:</p>
           <ul className="grid grid-cols-1 md:grid-cols-2 gap-2 text-sm">
@@ -103,7 +103,7 @@ export default function ComplaintsAppealsPolicyPage() {
         {/* 3. Scope of This Policy */}
         <section className="space-y-4">
           <h2 className="text-xl sm:text-2xl font-bold text-slate-900 dark:text-white flex items-center gap-2.5 pb-2 border-b border-slate-200 dark:border-primary-700/60">
-            <span className="text-brand-red">3.</span> Scope of This Policy
+            Scope of This Policy
           </h2>
           <p className="leading-relaxed">This policy applies, as relevant, to:</p>
           <ul className="list-disc pl-5 space-y-1.5 text-sm sm:text-base">
@@ -122,7 +122,7 @@ export default function ComplaintsAppealsPolicyPage() {
         {/* 4. Definitions */}
         <section className="space-y-4">
           <h2 className="text-xl sm:text-2xl font-bold text-slate-900 dark:text-white flex items-center gap-2.5 pb-2 border-b border-slate-200 dark:border-primary-700/60">
-            <span className="text-brand-red">4.</span> Definitions
+            Definitions
           </h2>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-3 text-sm">
             <div className="p-3.5 rounded-xl border border-slate-200 dark:border-primary-700/60 bg-white dark:bg-primary-900/30">
@@ -155,7 +155,7 @@ export default function ComplaintsAppealsPolicyPage() {
         {/* 5. Principles of Fair Handling */}
         <section className="space-y-4">
           <h2 className="text-xl sm:text-2xl font-bold text-slate-900 dark:text-white flex items-center gap-2.5 pb-2 border-b border-slate-200 dark:border-primary-700/60">
-            <span className="text-brand-red">5.</span> Principles of Fair Handling
+            Principles of Fair Handling
           </h2>
           <div className="space-y-3 text-sm sm:text-base">
             <div className="p-3.5 rounded-xl border border-slate-200 dark:border-primary-700/60 bg-slate-50/50 dark:bg-primary-900/20">
@@ -184,7 +184,7 @@ export default function ComplaintsAppealsPolicyPage() {
         {/* 6 & 7. What Can Be Complained About & Appealed */}
         <section className="space-y-4">
           <h2 className="text-xl sm:text-2xl font-bold text-slate-900 dark:text-white flex items-center gap-2.5 pb-2 border-b border-slate-200 dark:border-primary-700/60">
-            <span className="text-brand-red">6 &amp; 7.</span> Scope of Complaints and Appeals
+            Scope of Complaints and Appeals
           </h2>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
             <div className="p-4 rounded-xl border border-slate-200 dark:border-primary-700/60 bg-white dark:bg-primary-900/30 space-y-2">
@@ -221,7 +221,7 @@ export default function ComplaintsAppealsPolicyPage() {
         {/* 8. Matters Outside Scope */}
         <section className="space-y-3">
           <h2 className="text-xl sm:text-2xl font-bold text-slate-900 dark:text-white flex items-center gap-2.5 pb-2 border-b border-slate-200 dark:border-primary-700/60">
-            <span className="text-brand-red">8.</span> Matters Outside the Scope of This Policy
+            Matters Outside the Scope of This Policy
           </h2>
           <p className="leading-relaxed text-sm">
             This policy does not replace external awarding bodies&apos; independent appeals processes, regulator formal proceedings, commercial contractual arbitration, or court litigation. Routine service queries and minor administrative corrections should be addressed directly to the operational support desk.
@@ -231,7 +231,7 @@ export default function ComplaintsAppealsPolicyPage() {
         {/* 9 & 10. Complaint Handling Procedure */}
         <section className="space-y-4">
           <h2 className="text-xl sm:text-2xl font-bold text-slate-900 dark:text-white flex items-center gap-2.5 pb-2 border-b border-slate-200 dark:border-primary-700/60">
-            <span className="text-brand-red">9 &amp; 10.</span> How to Submit a Complaint &amp; Handling Procedure
+            How to Submit a Complaint &amp; Handling Procedure
           </h2>
           <p className="leading-relaxed">
             Complaints should be submitted in writing by email to <a href="mailto:info@cbpd.co.uk" className="text-brand-red font-medium hover:underline">info@cbpd.co.uk</a> (or <a href="mailto:assessments@cbpd.co.uk" className="text-brand-red font-medium hover:underline">assessments@cbpd.co.uk</a> for assessment matters) with the subject line <strong>&ldquo;Formal Complaint – CBPD UK&rdquo;</strong>.
@@ -283,7 +283,7 @@ export default function ComplaintsAppealsPolicyPage() {
         {/* 11 & 12. Appeals Procedure & Academic Judgement */}
         <section className="space-y-4">
           <h2 className="text-xl sm:text-2xl font-bold text-slate-900 dark:text-white flex items-center gap-2.5 pb-2 border-b border-slate-200 dark:border-primary-700/60">
-            <span className="text-brand-red">11 &amp; 12.</span> Appeals Procedure &amp; Academic Judgement
+            Appeals Procedure &amp; Academic Judgement
           </h2>
           <div className="p-4 rounded-xl bg-slate-50 dark:bg-primary-900/30 border border-slate-200 dark:border-primary-700/50 space-y-2 text-sm leading-relaxed">
             <p>
@@ -301,7 +301,7 @@ export default function ComplaintsAppealsPolicyPage() {
         {/* 13 - 16. Partner Complaints, Malpractice & Misuse */}
         <section className="space-y-4">
           <h2 className="text-xl sm:text-2xl font-bold text-slate-900 dark:text-white flex items-center gap-2.5 pb-2 border-b border-slate-200 dark:border-primary-700/60">
-            <span className="text-brand-red">13 - 16.</span> Centres, Malpractice &amp; Integrity
+            Centres, Malpractice &amp; Integrity
           </h2>
           <div className="space-y-3 text-sm">
             <p><strong>13. Accredited Centres:</strong> We review complaints concerning partner institutions regarding misleading claims, improper branding use, or assessment irregularity. Actions may include formal sanctions or termination of accreditation.</p>
@@ -314,7 +314,7 @@ export default function ComplaintsAppealsPolicyPage() {
         {/* 17 - 20. Confidentiality, Records, Responsibilities & Amendments */}
         <section className="space-y-4">
           <h2 className="text-xl sm:text-2xl font-bold text-slate-900 dark:text-white flex items-center gap-2.5 pb-2 border-b border-slate-200 dark:border-primary-700/60">
-            <span className="text-brand-red">17 - 20.</span> Governance, Responsibilities &amp; Reviews
+            Governance, Responsibilities &amp; Reviews
           </h2>
           <div className="space-y-2 text-sm leading-relaxed">
             <p><strong>Data Protection:</strong> All records are managed under UK GDPR and retained in our secure quality assurance register to drive systemic operational improvements.</p>
@@ -326,7 +326,7 @@ export default function ComplaintsAppealsPolicyPage() {
         {/* 21. Contact Details */}
         <section className="space-y-4">
           <h2 className="text-xl sm:text-2xl font-bold text-slate-900 dark:text-white flex items-center gap-2.5 pb-2 border-b border-slate-200 dark:border-primary-700/60">
-            <span className="text-brand-red">21.</span> Contact Details
+            Contact Details
           </h2>
           <p className="leading-relaxed">
             For complaints, appeals, or questions regarding this policy, please contact:

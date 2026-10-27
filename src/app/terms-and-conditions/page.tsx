@@ -35,7 +35,7 @@ export default function TermsAndConditionsPage() {
         {/* 1. Introduction */}
         <section className="space-y-4">
           <h2 className="text-xl sm:text-2xl font-bold text-slate-900 dark:text-white flex items-center gap-2.5 pb-2 border-b border-slate-200 dark:border-primary-700/60">
-            <span className="text-brand-red">1.</span> Introduction
+            Introduction
           </h2>
           <p className="leading-relaxed">
             Welcome to the website of the Central Board of Professional Development, operating under the name CBPD UK (&ldquo;CBPD UK&rdquo;, &ldquo;CBPD&rdquo;, &ldquo;we&rdquo;, &ldquo;our&rdquo; or &ldquo;us&rdquo;).
@@ -60,7 +60,7 @@ export default function TermsAndConditionsPage() {
         {/* 2. About CBPD UK */}
         <section className="space-y-4">
           <h2 className="text-xl sm:text-2xl font-bold text-slate-900 dark:text-white flex items-center gap-2.5 pb-2 border-b border-slate-200 dark:border-primary-700/60">
-            <span className="text-brand-red">2.</span> About CBPD UK
+            About CBPD UK
           </h2>
           <p className="leading-relaxed">
             Central Board of Professional Development (CBPD UK) provides professional development, certification-related and institutional support services within the scope of its stated activities and applicable agreements. Our services may include:
@@ -132,7 +132,7 @@ export default function TermsAndConditionsPage() {
         {/* 3. Definitions */}
         <section className="space-y-4">
           <h2 className="text-xl sm:text-2xl font-bold text-slate-900 dark:text-white flex items-center gap-2.5 pb-2 border-b border-slate-200 dark:border-primary-700/60">
-            <span className="text-brand-red">3.</span> Definitions
+            Definitions
           </h2>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-3 text-sm">
             <div className="p-3.5 rounded-xl border border-slate-200 dark:border-primary-700/60 bg-white dark:bg-primary-900/30">
@@ -169,7 +169,7 @@ export default function TermsAndConditionsPage() {
         {/* 4. Use of the Website */}
         <section className="space-y-4">
           <h2 className="text-xl sm:text-2xl font-bold text-slate-900 dark:text-white flex items-center gap-2.5 pb-2 border-b border-slate-200 dark:border-primary-700/60">
-            <span className="text-brand-red">4.</span> Use of the Website
+            Use of the Website
           </h2>
           <p className="leading-relaxed">You may use our website for lawful purposes and in accordance with these Terms. You agree not to:</p>
           <ul className="list-disc pl-5 space-y-1.5 text-sm sm:text-base">
@@ -191,7 +191,7 @@ export default function TermsAndConditionsPage() {
         {/* 5. Information Published on the Website */}
         <section className="space-y-4">
           <h2 className="text-xl sm:text-2xl font-bold text-slate-900 dark:text-white flex items-center gap-2.5 pb-2 border-b border-slate-200 dark:border-primary-700/60">
-            <span className="text-brand-red">5.</span> Information Published on the Website
+            Information Published on the Website
           </h2>
           <p className="leading-relaxed">
             We aim to ensure that the information published on our website is accurate, clear and up to date. However, website content is provided for general information and may be revised to reflect changes in programmes, policies, services, fees, operational arrangements or applicable requirements.
@@ -207,7 +207,7 @@ export default function TermsAndConditionsPage() {
         {/* 6. Qualifications, Programmes and Certification */}
         <section className="space-y-4">
           <h2 className="text-xl sm:text-2xl font-bold text-slate-900 dark:text-white flex items-center gap-2.5 pb-2 border-b border-slate-200 dark:border-primary-700/60">
-            <span className="text-brand-red">6.</span> Qualifications, Programmes and Certification
+            Qualifications, Programmes and Certification
           </h2>
           <div className="space-y-4 text-sm sm:text-base">
             <div className="p-4 rounded-xl border border-slate-200 dark:border-primary-700/60 bg-slate-50/50 dark:bg-primary-900/20 space-y-1.5">
@@ -240,7 +240,7 @@ export default function TermsAndConditionsPage() {
         {/* 7. Recognition and Status of Qualifications */}
         <section className="space-y-4">
           <h2 className="text-xl sm:text-2xl font-bold text-slate-900 dark:text-white flex items-center gap-2.5 pb-2 border-b border-slate-200 dark:border-primary-700/60">
-            <span className="text-brand-red">7.</span> Recognition and Status of Qualifications
+            Recognition and Status of Qualifications
           </h2>
           <p className="leading-relaxed">
             The recognition, acceptance or professional value of a qualification may depend on the qualification itself, the issuing organisation, the receiving institution, the employer, the relevant professional body and the rules of the country or jurisdiction concerned.
@@ -263,7 +263,7 @@ export default function TermsAndConditionsPage() {
         {/* 8. Institutional Accreditation and Education Partners */}
         <section className="space-y-4">
           <h2 className="text-xl sm:text-2xl font-bold text-slate-900 dark:text-white flex items-center gap-2.5 pb-2 border-b border-slate-200 dark:border-primary-700/60">
-            <span className="text-brand-red">8.</span> Institutional Accreditation and Education Partners
+            Institutional Accreditation and Education Partners
           </h2>
           <div className="space-y-3 text-sm sm:text-base">
             <p><strong>8.1 Applications and approval:</strong> Institutions seeking accreditation, centre approval, membership or partnership must complete the applicable application process. An application does not guarantee approval.</p>
@@ -277,7 +277,7 @@ export default function TermsAndConditionsPage() {
         {/* 9. Channel Partners and Representatives */}
         <section className="space-y-4">
           <h2 className="text-xl sm:text-2xl font-bold text-slate-900 dark:text-white flex items-center gap-2.5 pb-2 border-b border-slate-200 dark:border-primary-700/60">
-            <span className="text-brand-red">9.</span> Channel Partners and Representatives
+            Channel Partners and Representatives
           </h2>
           <p className="leading-relaxed">
             A channel partner may promote or support CBPD UK services only within the scope of a valid written authorisation or agreement. Unless expressly authorised in writing, a channel partner may not enter contracts on behalf of CBPD UK, make binding guarantees, modify assessment requirements, or independently issue certificates.
@@ -287,7 +287,7 @@ export default function TermsAndConditionsPage() {
         {/* 10. Learner Responsibilities and Academic Integrity */}
         <section className="space-y-4">
           <h2 className="text-xl sm:text-2xl font-bold text-slate-900 dark:text-white flex items-center gap-2.5 pb-2 border-b border-slate-200 dark:border-primary-700/60">
-            <span className="text-brand-red">10.</span> Learner Responsibilities and Academic Integrity
+            Learner Responsibilities and Academic Integrity
           </h2>
           <p className="leading-relaxed">
             Learners must comply with all programme instructions and avoid plagiarism, impersonation, collusion, falsification, and other forms of academic misconduct. Suspected malpractice or fraud will be investigated under our formal quality assurance procedures.
@@ -297,7 +297,7 @@ export default function TermsAndConditionsPage() {
         {/* 11. Fees, Payments and Invoices */}
         <section className="space-y-4">
           <h2 className="text-xl sm:text-2xl font-bold text-slate-900 dark:text-white flex items-center gap-2.5 pb-2 border-b border-slate-200 dark:border-primary-700/60">
-            <span className="text-brand-red">11.</span> Fees, Payments and Invoices
+            Fees, Payments and Invoices
           </h2>
           <p className="leading-relaxed">
             Applicable fees will be communicated through relevant programme information, fee schedules, invoices or agreements. A payment receipt confirms the recorded financial transaction; it does not, by itself, establish successful assessment or entitlement to a certificate. Certification may be held until outstanding dues are settled.
@@ -307,7 +307,7 @@ export default function TermsAndConditionsPage() {
         {/* 12. Cancellations, Refunds and Consumer Rights */}
         <section className="space-y-4">
           <h2 className="text-xl sm:text-2xl font-bold text-slate-900 dark:text-white flex items-center gap-2.5 pb-2 border-b border-slate-200 dark:border-primary-700/60">
-            <span className="text-brand-red">12.</span> Cancellations, Refunds and Consumer Rights
+            Cancellations, Refunds and Consumer Rights
           </h2>
           <p className="leading-relaxed">
             Cancellation and refund arrangements vary according to the service purchased, work already performed, and applicable contractual conditions. Refund requests must be directed to accounts with the relevant transaction reference.
@@ -320,7 +320,7 @@ export default function TermsAndConditionsPage() {
         {/* 13. Assessment Decisions, Complaints and Appeals */}
         <section className="space-y-4">
           <h2 className="text-xl sm:text-2xl font-bold text-slate-900 dark:text-white flex items-center gap-2.5 pb-2 border-b border-slate-200 dark:border-primary-700/60">
-            <span className="text-brand-red">13.</span> Assessment Decisions, Complaints and Appeals
+            Assessment Decisions, Complaints and Appeals
           </h2>
           <p className="leading-relaxed">
             Where a learner wishes to challenge an assessment outcome, administrative decision or service issue, they should follow our dedicated <a href="/complaints-appeals-policy" className="text-brand-red font-semibold hover:underline">Complaints &amp; Appeals Policy</a>. Submissions must adhere to designated procedures and deadlines.
@@ -330,7 +330,7 @@ export default function TermsAndConditionsPage() {
         {/* 14. Certificate Verification and Public Records */}
         <section className="space-y-4">
           <h2 className="text-xl sm:text-2xl font-bold text-slate-900 dark:text-white flex items-center gap-2.5 pb-2 border-b border-slate-200 dark:border-primary-700/60">
-            <span className="text-brand-red">14.</span> Certificate Verification and Public Records
+            Certificate Verification and Public Records
           </h2>
           <p className="leading-relaxed">
             CBPD UK provides digital verification tools to help employers and institutions confirm the authenticity and status of official certificates. Users must not scrape data, interfere with verification servers, or misrepresent verification results. Suspected fraudulent certificates should be reported immediately to <a href="mailto:assessments@cbpd.co.uk" className="text-brand-red font-medium hover:underline">assessments@cbpd.co.uk</a>.
@@ -340,7 +340,7 @@ export default function TermsAndConditionsPage() {
         {/* 15. Intellectual Property and Branding */}
         <section className="space-y-4">
           <h2 className="text-xl sm:text-2xl font-bold text-slate-900 dark:text-white flex items-center gap-2.5 pb-2 border-b border-slate-200 dark:border-primary-700/60">
-            <span className="text-brand-red">15.</span> Intellectual Property and Branding
+            Intellectual Property and Branding
           </h2>
           <p className="leading-relaxed">
             All text, logos, trademarks, website layout, qualification frameworks, certificates, and branding are the property of CBPD UK. You must not reproduce, modify, distribute, or commercially exploit protected materials without prior written authorization. Permission requests should be sent to <a href="mailto:info@cbpd.co.uk" className="text-brand-red font-medium hover:underline">info@cbpd.co.uk</a>.
@@ -350,7 +350,7 @@ export default function TermsAndConditionsPage() {
         {/* 16. Privacy and Data Protection */}
         <section className="space-y-4">
           <h2 className="text-xl sm:text-2xl font-bold text-slate-900 dark:text-white flex items-center gap-2.5 pb-2 border-b border-slate-200 dark:border-primary-700/60">
-            <span className="text-brand-red">16.</span> Privacy and Data Protection
+            Privacy and Data Protection
           </h2>
           <p className="leading-relaxed">
             Personal data is handled in strict compliance with our <a href="/privacy-policy" className="text-brand-red font-semibold hover:underline">Privacy Policy</a>, <a href="/cookies-policy" className="text-brand-red font-semibold hover:underline">Cookies Policy</a>, and applicable UK GDPR requirements.
@@ -360,7 +360,7 @@ export default function TermsAndConditionsPage() {
         {/* 17. Website Availability and Security */}
         <section className="space-y-4">
           <h2 className="text-xl sm:text-2xl font-bold text-slate-900 dark:text-white flex items-center gap-2.5 pb-2 border-b border-slate-200 dark:border-primary-700/60">
-            <span className="text-brand-red">17.</span> Website Availability and Security
+            Website Availability and Security
           </h2>
           <p className="leading-relaxed">
             While we strive for continuous availability, uninterrupted access cannot be guaranteed. Access may be temporarily suspended for scheduled maintenance, updates, or security reasons. Users are responsible for safeguarding their own login credentials.
@@ -370,7 +370,7 @@ export default function TermsAndConditionsPage() {
         {/* 18. Third-Party Websites and Services */}
         <section className="space-y-4">
           <h2 className="text-xl sm:text-2xl font-bold text-slate-900 dark:text-white flex items-center gap-2.5 pb-2 border-b border-slate-200 dark:border-primary-700/60">
-            <span className="text-brand-red">18.</span> Third-Party Websites and Services
+            Third-Party Websites and Services
           </h2>
           <p className="leading-relaxed">
             External links are provided for convenience only. CBPD UK has no control over third-party sites and accepts no responsibility for their content, privacy policies, or practices.
@@ -380,7 +380,7 @@ export default function TermsAndConditionsPage() {
         {/* 19. Limitation of Liability */}
         <section className="space-y-4">
           <h2 className="text-xl sm:text-2xl font-bold text-slate-900 dark:text-white flex items-center gap-2.5 pb-2 border-b border-slate-200 dark:border-primary-700/60">
-            <span className="text-brand-red">19.</span> Limitation of Liability
+            Limitation of Liability
           </h2>
           <p className="leading-relaxed">
             Nothing in these Terms excludes or limits liability for death or personal injury caused by negligence, fraud, or fraudulent misrepresentation, or any mandatory consumer rights that cannot be excluded under UK law.
@@ -393,7 +393,7 @@ export default function TermsAndConditionsPage() {
         {/* 20. Indemnity and Unauthorised Use */}
         <section className="space-y-4">
           <h2 className="text-xl sm:text-2xl font-bold text-slate-900 dark:text-white flex items-center gap-2.5 pb-2 border-b border-slate-200 dark:border-primary-700/60">
-            <span className="text-brand-red">20.</span> Indemnity and Unauthorised Use
+            Indemnity and Unauthorised Use
           </h2>
           <p className="leading-relaxed">
             To the extent permitted by applicable law, business users, centres, and partners may be responsible for losses directly arising from material breach of agreement, fraud, or unauthorized use of CBPD UK intellectual property.
@@ -403,7 +403,7 @@ export default function TermsAndConditionsPage() {
         {/* 21. Suspension, Termination and Withdrawal of Access */}
         <section className="space-y-4">
           <h2 className="text-xl sm:text-2xl font-bold text-slate-900 dark:text-white flex items-center gap-2.5 pb-2 border-b border-slate-200 dark:border-primary-700/60">
-            <span className="text-brand-red">21.</span> Suspension, Termination and Withdrawal of Access
+            Suspension, Termination and Withdrawal of Access
           </h2>
           <p className="leading-relaxed">
             We reserve the right to restrict or terminate access where necessary to safeguard network security, address suspected fraud, or respond to serious breaches of these Terms.
@@ -413,7 +413,7 @@ export default function TermsAndConditionsPage() {
         {/* 22. Changes to These Terms */}
         <section className="space-y-4">
           <h2 className="text-xl sm:text-2xl font-bold text-slate-900 dark:text-white flex items-center gap-2.5 pb-2 border-b border-slate-200 dark:border-primary-700/60">
-            <span className="text-brand-red">22.</span> Changes to These Terms
+            Changes to These Terms
           </h2>
           <p className="leading-relaxed">
             We may revise these Terms from time to time. The latest version will be published on this page with an updated revision date. Continued use of the website following published revisions constitutes acceptance of the modified Terms.
@@ -423,7 +423,7 @@ export default function TermsAndConditionsPage() {
         {/* 23 - 25. Legal Mechanics */}
         <section className="space-y-4">
           <h2 className="text-xl sm:text-2xl font-bold text-slate-900 dark:text-white flex items-center gap-2.5 pb-2 border-b border-slate-200 dark:border-primary-700/60">
-            <span className="text-brand-red">23 - 25.</span> Legal Framework, Severability &amp; Jurisdiction
+            Legal Framework, Severability &amp; Jurisdiction
           </h2>
           <div className="space-y-3 text-sm">
             <p><strong>23. Severability:</strong> If any provision of these Terms is deemed unlawful or unenforceable, that provision will be severed or interpreted to the minimum extent necessary, leaving remaining provisions in full force.</p>
@@ -435,7 +435,7 @@ export default function TermsAndConditionsPage() {
         {/* 26. Contact Information */}
         <section className="space-y-4">
           <h2 className="text-xl sm:text-2xl font-bold text-slate-900 dark:text-white flex items-center gap-2.5 pb-2 border-b border-slate-200 dark:border-primary-700/60">
-            <span className="text-brand-red">26.</span> Contact Information
+            Contact Information
           </h2>
           <p className="leading-relaxed">
             For questions about these Terms and Conditions, website use, certification services, or institutional partnerships, please contact:

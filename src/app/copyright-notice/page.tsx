@@ -37,7 +37,7 @@ export default function CopyrightNoticePage() {
         {/* 1. Copyright Statement */}
         <section className="space-y-4">
           <h2 className="text-xl sm:text-2xl font-bold text-slate-900 dark:text-white flex items-center gap-2.5 pb-2 border-b border-slate-200 dark:border-primary-700/60">
-            <span className="text-brand-red">1.</span> Copyright Statement
+            Copyright Statement
           </h2>
           <p className="leading-relaxed">
             Unless otherwise stated, the content published on the CBPD UK website and in materials produced by the Central Board of Professional Development (CBPD UK) is protected by applicable copyright, intellectual property and related laws.
@@ -53,7 +53,7 @@ export default function CopyrightNoticePage() {
         {/* 2. Ownership of Intellectual Property */}
         <section className="space-y-4">
           <h2 className="text-xl sm:text-2xl font-bold text-slate-900 dark:text-white flex items-center gap-2.5 pb-2 border-b border-slate-200 dark:border-primary-700/60">
-            <span className="text-brand-red">2.</span> Ownership of Intellectual Property
+            Ownership of Intellectual Property
           </h2>
           <p className="leading-relaxed">
             Unless expressly stated otherwise, intellectual property rights in original materials created by or for CBPD UK are owned by CBPD UK or used under an appropriate licence.
@@ -69,7 +69,7 @@ export default function CopyrightNoticePage() {
         {/* 3. Permitted Use of Website Content */}
         <section className="space-y-4">
           <h2 className="text-xl sm:text-2xl font-bold text-slate-900 dark:text-white flex items-center gap-2.5 pb-2 border-b border-slate-200 dark:border-primary-700/60">
-            <span className="text-brand-red">3.</span> Permitted Use of Website Content
+            Permitted Use of Website Content
           </h2>
           <p className="leading-relaxed">
             Visitors may access and view the CBPD UK website for personal, educational, institutional or professional information purposes. Unless otherwise authorised by law or by CBPD UK in writing, visitors must not:
@@ -87,7 +87,7 @@ export default function CopyrightNoticePage() {
         {/* 4. Qualification and Assessment Materials */}
         <section className="space-y-4">
           <h2 className="text-xl sm:text-2xl font-bold text-slate-900 dark:text-white flex items-center gap-2.5 pb-2 border-b border-slate-200 dark:border-primary-700/60">
-            <span className="text-brand-red">4.</span> Qualification and Assessment Materials
+            Qualification and Assessment Materials
           </h2>
           <p className="leading-relaxed">
             CBPD UK develops, commissions, publishes and distributes qualification specifications, programme outlines, assessment guidance, learner resources, quality assurance documents and educational rubrics.
@@ -100,7 +100,7 @@ export default function CopyrightNoticePage() {
         {/* 5. Certificates and Certification Documents */}
         <section className="space-y-4">
           <h2 className="text-xl sm:text-2xl font-bold text-slate-900 dark:text-white flex items-center gap-2.5 pb-2 border-b border-slate-200 dark:border-primary-700/60">
-            <span className="text-brand-red">5.</span> Certificates and Certification Documents
+            Certificates and Certification Documents
           </h2>
           <p className="leading-relaxed">
             CBPD UK certificates, digital credentials, accreditation certificates, verification records, certificate templates, layouts, and seals are issued for authorised purposes only.
@@ -123,7 +123,7 @@ export default function CopyrightNoticePage() {
         {/* 6 & 7. Brand Protection & Partner Use */}
         <section className="space-y-4">
           <h2 className="text-xl sm:text-2xl font-bold text-slate-900 dark:text-white flex items-center gap-2.5 pb-2 border-b border-slate-200 dark:border-primary-700/60">
-            <span className="text-brand-red">6 &amp; 7.</span> CBPD UK Logos, Seals &amp; Partner Usage
+            CBPD UK Logos, Seals &amp; Partner Usage
           </h2>
           <div className="space-y-3 text-sm sm:text-base leading-relaxed">
             <p>
@@ -138,7 +138,7 @@ export default function CopyrightNoticePage() {
         {/* 8 - 10. Downloads, Third-Party Content & Reporting Infringement */}
         <section className="space-y-4">
           <h2 className="text-xl sm:text-2xl font-bold text-slate-900 dark:text-white flex items-center gap-2.5 pb-2 border-b border-slate-200 dark:border-primary-700/60">
-            <span className="text-brand-red">8 - 10.</span> Digital Content, Downloads &amp; Infringement
+            Digital Content, Downloads &amp; Infringement
           </h2>
           <div className="space-y-3 text-sm leading-relaxed">
             <p>
@@ -156,7 +156,7 @@ export default function CopyrightNoticePage() {
         {/* 11 - 13. Permissions, Enforcement & No Transfer */}
         <section className="space-y-4">
           <h2 className="text-xl sm:text-2xl font-bold text-slate-900 dark:text-white flex items-center gap-2.5 pb-2 border-b border-slate-200 dark:border-primary-700/60">
-            <span className="text-brand-red">11 - 13.</span> Licensing Requests &amp; Legal Enforcement
+            Licensing Requests &amp; Legal Enforcement
           </h2>
           <div className="space-y-3 text-sm leading-relaxed">
             <p>
@@ -174,7 +174,7 @@ export default function CopyrightNoticePage() {
         {/* 14 & 15. Changes & Contact Information */}
         <section className="space-y-4">
           <h2 className="text-xl sm:text-2xl font-bold text-slate-900 dark:text-white flex items-center gap-2.5 pb-2 border-b border-slate-200 dark:border-primary-700/60">
-            <span className="text-brand-red">14 &amp; 15.</span> Contact Information &amp; Statement
+            Contact Information &amp; Statement
           </h2>
           <p className="leading-relaxed">
             For copyright enquiries, licensing permissions, or reports of suspected intellectual property infringement, please contact:

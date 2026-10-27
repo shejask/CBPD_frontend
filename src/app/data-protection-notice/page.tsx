@@ -37,7 +37,7 @@ export default function DataProtectionNoticePage() {
         {/* 1. Introduction */}
         <section className="space-y-4">
           <h2 className="text-xl sm:text-2xl font-bold text-slate-900 dark:text-white flex items-center gap-2.5 pb-2 border-b border-slate-200 dark:border-primary-700/60">
-            <span className="text-brand-red">1.</span> Introduction
+            Introduction
           </h2>
           <p className="leading-relaxed">
             The Central Board of Professional Development (CBPD UK) is committed to protecting personal data and maintaining appropriate standards of confidentiality, integrity, accountability and information security across its awarding, certification, assessment, institutional accreditation and professional development activities.
@@ -56,7 +56,7 @@ export default function DataProtectionNoticePage() {
         {/* 2. Our Data Protection Responsibilities */}
         <section className="space-y-4">
           <h2 className="text-xl sm:text-2xl font-bold text-slate-900 dark:text-white flex items-center gap-2.5 pb-2 border-b border-slate-200 dark:border-primary-700/60">
-            <span className="text-brand-red">2.</span> Our Data Protection Responsibilities
+            Our Data Protection Responsibilities
           </h2>
           <p className="leading-relaxed">
             CBPD UK recognises that personal data must be handled responsibly throughout its lifecycle, from initial collection to secure disposal.
@@ -80,7 +80,7 @@ export default function DataProtectionNoticePage() {
         {/* 3. Categories of Personal Data */}
         <section className="space-y-4">
           <h2 className="text-xl sm:text-2xl font-bold text-slate-900 dark:text-white flex items-center gap-2.5 pb-2 border-b border-slate-200 dark:border-primary-700/60">
-            <span className="text-brand-red">3.</span> Categories of Personal Data
+            Categories of Personal Data
           </h2>
           <p className="leading-relaxed">
             Depending on the relationship with the individual and the services provided, CBPD UK may process the following categories of personal data:
@@ -120,7 +120,7 @@ export default function DataProtectionNoticePage() {
         {/* 4. Purposes of Processing */}
         <section className="space-y-4">
           <h2 className="text-xl sm:text-2xl font-bold text-slate-900 dark:text-white flex items-center gap-2.5 pb-2 border-b border-slate-200 dark:border-primary-700/60">
-            <span className="text-brand-red">4.</span> Purposes of Processing
+            Purposes of Processing
           </h2>
           <p className="leading-relaxed">CBPD UK may process personal data for the following purposes:</p>
           <ul className="grid grid-cols-1 md:grid-cols-2 gap-2 text-sm">
@@ -170,7 +170,7 @@ export default function DataProtectionNoticePage() {
         {/* 5. Lawful Bases for Processing */}
         <section className="space-y-4">
           <h2 className="text-xl sm:text-2xl font-bold text-slate-900 dark:text-white flex items-center gap-2.5 pb-2 border-b border-slate-200 dark:border-primary-700/60">
-            <span className="text-brand-red">5.</span> Lawful Bases for Processing
+            Lawful Bases for Processing
           </h2>
           <p className="leading-relaxed">
             Where required by applicable law, CBPD UK will identify an appropriate lawful basis for processing personal data:
@@ -198,7 +198,7 @@ export default function DataProtectionNoticePage() {
         {/* 6. Learner Records and Certificate Verification */}
         <section className="space-y-4">
           <h2 className="text-xl sm:text-2xl font-bold text-slate-900 dark:text-white flex items-center gap-2.5 pb-2 border-b border-slate-200 dark:border-primary-700/60">
-            <span className="text-brand-red">6.</span> Learner Records and Certificate Verification
+            Learner Records and Certificate Verification
           </h2>
           <p className="leading-relaxed">
             CBPD UK maintains records necessary to administer its certification and quality assurance activities. To support the authenticity and verification of certificates, certain information may be made available through the CBPD UK verification portal (<a href="/verifications" className="text-brand-red font-medium hover:underline">/verifications</a>) or in response to a legitimate verification request.
@@ -216,7 +216,7 @@ export default function DataProtectionNoticePage() {
         {/* 7 & 8. Sharing, Disclosures & International Transfers */}
         <section className="space-y-4">
           <h2 className="text-xl sm:text-2xl font-bold text-slate-900 dark:text-white flex items-center gap-2.5 pb-2 border-b border-slate-200 dark:border-primary-700/60">
-            <span className="text-brand-red">7 &amp; 8.</span> Sharing, Disclosures &amp; International Transfers
+            Sharing, Disclosures &amp; International Transfers
           </h2>
           <p className="leading-relaxed text-sm sm:text-base">
             Personal data may be shared where lawful with authorised education partners, external moderators, IT hosting providers, legal advisers, and public or regulatory bodies where required by law.
@@ -232,7 +232,7 @@ export default function DataProtectionNoticePage() {
         {/* 9 - 11. Data Retention, Security & Breach Handling */}
         <section className="space-y-4">
           <h2 className="text-xl sm:text-2xl font-bold text-slate-900 dark:text-white flex items-center gap-2.5 pb-2 border-b border-slate-200 dark:border-primary-700/60">
-            <span className="text-brand-red">9 - 11.</span> Retention, Security &amp; Data Breaches
+            Retention, Security &amp; Data Breaches
           </h2>
           <div className="space-y-3 text-sm leading-relaxed">
             <p>
@@ -250,7 +250,7 @@ export default function DataProtectionNoticePage() {
         {/* 12. Individual Data Protection Rights */}
         <section className="space-y-4">
           <h2 className="text-xl sm:text-2xl font-bold text-slate-900 dark:text-white flex items-center gap-2.5 pb-2 border-b border-slate-200 dark:border-primary-700/60">
-            <span className="text-brand-red">12.</span> Individual Data Protection Rights
+            Individual Data Protection Rights
           </h2>
           <p className="leading-relaxed">
             Subject to statutory conditions, individuals have the right to request access to, correction of, erasure of, or restriction of their personal data, as well as the right to object to processing and request data portability.
@@ -263,7 +263,7 @@ export default function DataProtectionNoticePage() {
         {/* 13. Responsibilities of Education Partners */}
         <section className="space-y-4">
           <h2 className="text-xl sm:text-2xl font-bold text-slate-900 dark:text-white flex items-center gap-2.5 pb-2 border-b border-slate-200 dark:border-primary-700/60">
-            <span className="text-brand-red">13.</span> Responsibilities of Education Partners &amp; Channel Partners
+            Responsibilities of Education Partners &amp; Channel Partners
           </h2>
           <p className="leading-relaxed">
             Approved training centres and channel partners must ensure accurate collection of learner information, provide required privacy notices, maintain strict document security, and promptly report any suspected data breaches or unauthorized disclosures to CBPD UK.
@@ -273,7 +273,7 @@ export default function DataProtectionNoticePage() {
         {/* 14 - 16. Marketing, Children & External Links */}
         <section className="space-y-4">
           <h2 className="text-xl sm:text-2xl font-bold text-slate-900 dark:text-white flex items-center gap-2.5 pb-2 border-b border-slate-200 dark:border-primary-700/60">
-            <span className="text-brand-red">14 - 16.</span> Communications, Young Learners &amp; Third Parties
+            Communications, Young Learners &amp; Third Parties
           </h2>
           <div className="space-y-2 text-sm leading-relaxed">
             <p><strong>Marketing:</strong> Opt-outs are respected at all times; essential administrative notifications continue unaffected.</p>
@@ -285,7 +285,7 @@ export default function DataProtectionNoticePage() {
         {/* 17 & 18. Enquiries & Right to Complain */}
         <section className="space-y-4">
           <h2 className="text-xl sm:text-2xl font-bold text-slate-900 dark:text-white flex items-center gap-2.5 pb-2 border-b border-slate-200 dark:border-primary-700/60">
-            <span className="text-brand-red">17 &amp; 18.</span> Enquiries &amp; Right to Complain to the ICO
+            Enquiries &amp; Right to Complain to the ICO
           </h2>
           <p className="leading-relaxed">
             If you have concerns about our data protection practices, you have the right to lodge a complaint with the UK Information Commissioner&apos;s Office (ICO):
@@ -300,7 +300,7 @@ export default function DataProtectionNoticePage() {
         {/* 19 & 20. Contact Information & Closing Commitment */}
         <section className="space-y-4">
           <h2 className="text-xl sm:text-2xl font-bold text-slate-900 dark:text-white flex items-center gap-2.5 pb-2 border-b border-slate-200 dark:border-primary-700/60">
-            <span className="text-brand-red">19 &amp; 20.</span> Contact Information &amp; Institutional Commitment
+            Contact Information &amp; Institutional Commitment
           </h2>
           <p className="leading-relaxed">
             For questions or concerns relating to this Data Protection Notice, please contact:
