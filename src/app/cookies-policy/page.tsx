@@ -17,16 +17,20 @@ export default function CookiesPolicyPage() {
     >
       <div className="space-y-10 text-slate-700 dark:text-slate-300">
         
-        {/* Effective Date Card */}
-        <div className="p-5 rounded-xl bg-slate-50 dark:bg-primary-900/40 border border-slate-200 dark:border-primary-700/60 flex flex-wrap items-center justify-between gap-4 text-xs sm:text-sm">
-          <div>
-            <span className="text-slate-500 dark:text-slate-400">Effective Date: </span>
-            <strong className="text-slate-900 dark:text-white font-semibold">23 October 2026</strong>
-          </div>
-          <div>
-            <span className="text-slate-500 dark:text-slate-400">Website: </span>
+        {/* Document Reference Card */}
+        <div className="p-4 rounded-xl bg-slate-50 dark:bg-primary-900/40 border border-slate-200 dark:border-primary-700/60 flex flex-wrap items-center justify-between gap-4 text-xs sm:text-sm">
+          <div className="flex items-center gap-2">
+            <Globe className="w-4 h-4 text-brand-red" />
+            <span className="text-slate-500 dark:text-slate-400">Official Website: </span>
             <a href="https://www.cbpd.co.uk" target="_blank" rel="noopener noreferrer" className="text-brand-red font-semibold hover:underline">
               https://www.cbpd.co.uk
+            </a>
+          </div>
+          <div className="flex items-center gap-2">
+            <Mail className="w-4 h-4 text-brand-red" />
+            <span className="text-slate-500 dark:text-slate-400">Privacy &amp; Cookie Enquiries: </span>
+            <a href="mailto:info@cbpd.co.uk" className="text-brand-red font-semibold hover:underline">
+              info@cbpd.co.uk
             </a>
           </div>
         </div>
