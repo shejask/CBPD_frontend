@@ -159,18 +159,7 @@ export default function CoursesPopup() {
             />
 
             {/* Subtle Luxury Sheen Sweep on Hover */}
-            <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/20 to-transparent -translate-x-full group-hover:translate-x-full transition-transform duration-1000 ease-in-out pointer-events-none" />
-
-            {/* Interactive Pulse Ring over the EXPLORE COURSES button zone on desktop/tablet */}
-            <div
-              className="absolute hidden sm:block pointer-events-none rounded-full border-2 border-teal-400/80 opacity-0 group-hover:opacity-100 transition-opacity duration-300 shadow-[0_0_14px_rgba(45,212,191,0.7)] animate-pulse"
-              style={{
-                left: "4%",
-                top: "67%",
-                width: "19%",
-                height: "12%",
-              }}
-            />
+            <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/15 to-transparent -translate-x-full group-hover:translate-x-full transition-transform duration-1000 ease-in-out pointer-events-none" />
           </div>
         </Link>
 
