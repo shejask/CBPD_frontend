@@ -154,6 +154,7 @@ export default function CoursesPopup() {
               alt="CBPD UK - Explore Our Ofqual-Aligned Courses. Gain recognised qualifications. Build your skills. Unlock global opportunities."
               fill
               priority
+              unoptimized
               sizes="(max-width: 640px) 95vw, (max-width: 1024px) 90vw, 960px"
               className="object-cover transition-transform duration-500 ease-out group-hover:scale-[1.012]"
             />
