@@ -1,35 +1,26 @@
 "use client";
 
 import { useEffect, useState, useRef, useCallback } from "react";
-import Image from "next/image";
 import Link from "next/link";
-import { X, ArrowRight } from "lucide-react";
 
-const STORAGE_KEY = "cbpdCoursesPopupSeen";
+const STORAGE_KEY = "cbpdWidePopupSeen";
 
 export default function CoursesPopup() {
   const [isOpen, setIsOpen] = useState(false);
-  const [isClosing, setIsClosing] = useState(false);
-  const [hasMounted, setHasMounted] = useState(false);
   const popupRef = useRef<HTMLDivElement>(null);
   const closeBtnRef = useRef<HTMLButtonElement>(null);
   const lastActiveElementRef = useRef<HTMLElement | null>(null);
 
   const handleClose = useCallback(() => {
-    setIsClosing(true);
+    setIsOpen(false);
     try {
       sessionStorage.setItem(STORAGE_KEY, "1");
     } catch {
-      // Ignore storage errors in private/restricted mode
+      // Ignore private mode storage restrictions
     }
-
-    setTimeout(() => {
-      setIsOpen(false);
-      setIsClosing(false);
-      if (lastActiveElementRef.current && typeof lastActiveElementRef.current.focus === "function") {
-        lastActiveElementRef.current.focus();
-      }
-    }, 320);
+    if (lastActiveElementRef.current && typeof lastActiveElementRef.current.focus === "function") {
+      lastActiveElementRef.current.focus();
+    }
   }, []);
 
   const handleOpen = useCallback(() => {
@@ -37,15 +28,12 @@ export default function CoursesPopup() {
       lastActiveElementRef.current = document.activeElement as HTMLElement | null;
     }
     setIsOpen(true);
-    setIsClosing(false);
     setTimeout(() => {
       closeBtnRef.current?.focus();
     }, 150);
   }, []);
 
   useEffect(() => {
-    setHasMounted(true);
-
     let seen = false;
     try {
       seen = sessionStorage.getItem(STORAGE_KEY) === "1";
@@ -55,18 +43,17 @@ export default function CoursesPopup() {
 
     let timer: NodeJS.Timeout | null = null;
     if (!seen) {
-      // Open after a smooth delay so the page loads first
       timer = setTimeout(() => {
         handleOpen();
-      }, 900);
+      }, 800);
     }
 
-    // Allow re-opening anytime via custom event (e.g. from banner or test button)
+    // Allow re-opening anytime via custom event (e.g. from banner, footer or test action)
     const handleCustomOpen = () => handleOpen();
     window.addEventListener("openCoursesPopup", handleCustomOpen);
 
     const handleKeyDown = (e: KeyboardEvent) => {
-      if (e.key === "Escape" && isOpen && !isClosing) {
+      if (e.key === "Escape" && isOpen) {
         handleClose();
       }
     };
@@ -77,9 +64,9 @@ export default function CoursesPopup() {
       window.removeEventListener("openCoursesPopup", handleCustomOpen);
       window.removeEventListener("keydown", handleKeyDown);
     };
-  }, [handleOpen, handleClose, isOpen, isClosing]);
+  }, [handleOpen, handleClose, isOpen]);
 
-  // Lock body scroll when modal is open
+  // Lock body scroll while modal is open
   useEffect(() => {
     if (isOpen) {
       document.body.style.overflow = "hidden";
@@ -91,93 +78,166 @@ export default function CoursesPopup() {
     };
   }, [isOpen]);
 
-  if (!hasMounted || !isOpen) return null;
-
   return (
     <div
-      className={`fixed inset-0 z-[99999] flex items-center justify-center p-3 sm:p-5 md:p-8 transition-all duration-300 ${
-        isClosing
-          ? "opacity-0 backdrop-blur-none"
-          : "opacity-100 backdrop-blur-md bg-slate-950/75"
-      }`}
+      ref={popupRef}
+      id="cbwPopup"
+      className={`cbw-popup ${isOpen ? "is-open" : ""}`}
       role="dialog"
       aria-modal="true"
-      aria-labelledby="cbpdCoursePopupTitle"
+      aria-labelledby="cbwTitle"
+      aria-hidden={!isOpen}
       onClick={(e) => {
         if (e.target === e.currentTarget) handleClose();
       }}
     >
-      {/* Pop-up Card Container */}
-      <div
-        ref={popupRef}
-        className={`relative w-full max-w-[960px] overflow-hidden rounded-2xl sm:rounded-3xl border border-white/20 bg-white text-slate-900 shadow-[0_25px_80px_rgba(0,0,0,0.7),0_0_60px_rgba(0,168,143,0.35)] transition-all duration-350 transform ${
-          isClosing
-            ? "scale-95 translate-y-3 opacity-0"
-            : "scale-100 translate-y-0 opacity-100 animate-in fade-in zoom-in-95"
-        }`}
-      >
-        {/* Screen Reader Title */}
-        <h2 id="cbpdCoursePopupTitle" className="sr-only">
-          Explore Our Ofqual-Aligned Courses - Central Board of Professional Development (CBPD UK)
-        </h2>
-
-        {/* Animated Background Ambient Orbs */}
-        <div
-          className="absolute -top-24 -right-24 w-80 h-80 rounded-full bg-gradient-to-br from-[#00A88F]/50 via-[#0A2A5E]/40 to-transparent blur-3xl pointer-events-none animate-popup-shade-1"
-          aria-hidden="true"
-        />
-        <div
-          className="absolute -bottom-24 -left-24 w-80 h-80 rounded-full bg-gradient-to-tr from-[#1747A3]/45 via-[#00A88F]/30 to-transparent blur-3xl pointer-events-none animate-popup-shade-2"
-          aria-hidden="true"
-        />
-
-        {/* Close Button */}
+      <div className="cbw-card">
         <button
           ref={closeBtnRef}
-          onClick={handleClose}
+          className="cbw-close"
+          id="cbwClose"
           aria-label="Close pop-up"
-          className="group absolute top-3 right-3 sm:top-4 sm:right-4 z-40 w-8 h-8 sm:w-10 sm:h-10 rounded-full bg-slate-950/70 hover:bg-slate-950/90 active:scale-90 text-white flex items-center justify-center transition-all duration-300 border border-white/25 backdrop-blur-md shadow-xl focus:outline-none focus-visible:ring-2 focus-visible:ring-teal-400"
+          onClick={handleClose}
         >
-          <X className="w-4 h-4 sm:w-5 sm:h-5 transition-transform duration-300 group-hover:rotate-90" />
+          &times;
         </button>
 
-        {/* Banner Graphic wrapped in interactive Link */}
-        <Link
-          href="/coming-soon"
-          onClick={handleClose}
-          className="block relative group cursor-pointer overflow-hidden focus:outline-none focus-visible:ring-4 focus-visible:ring-teal-500"
-          aria-label="Explore Our Ofqual-Aligned Courses"
-        >
-          <div className="relative w-full aspect-[1024/409] bg-slate-100">
-            <Image
-              src="/images/cbpd-ofqual-popup-banner.jpg"
-              alt="CBPD UK - Explore Our Ofqual-Aligned Courses. Gain recognised qualifications. Build your skills. Unlock global opportunities."
-              fill
-              priority
-              unoptimized
-              sizes="(max-width: 640px) 95vw, (max-width: 1024px) 90vw, 960px"
-              className="object-cover transition-transform duration-500 ease-out group-hover:scale-[1.012]"
-            />
-
-            {/* Subtle Luxury Sheen Sweep on Hover */}
-            <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/15 to-transparent -translate-x-full group-hover:translate-x-full transition-transform duration-1000 ease-in-out pointer-events-none" />
+        <div className="cbw-row">
+          {/* Brand Panel */}
+          <div className="cbw-brand">
+            <div className="cbw-ring" aria-hidden="true">
+              <svg
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                strokeWidth="1.5"
+                strokeLinecap="round"
+                strokeLinejoin="round"
+              >
+                <path d="M2 9l10-5 10 5-10 5L2 9z" />
+                <path d="M6 11.5V16c0 1.4 2.7 3 6 3s6-1.6 6-3v-4.5" />
+                <path d="M22 9v6" />
+              </svg>
+            </div>
+            <div>
+              <div className="cbw-word">
+                CBPD<span>UK</span>
+              </div>
+              <small>
+                Central Board of<br />Professional Development
+              </small>
+            </div>
           </div>
-        </Link>
 
-        {/* Mobile Quick Action Strip (< 640px) */}
-        <div className="sm:hidden px-4 py-3 bg-[#071C3D] text-white flex items-center justify-between gap-3 border-t border-teal-500/30">
-          <div className="text-[11px] leading-tight text-slate-200">
-            <span className="font-semibold text-white block">Ofqual-Aligned Qualifications</span>
-            <span className="text-teal-300 text-[10px]">Build skills &bull; Global reach</span>
+          {/* Main Body */}
+          <div className="cbw-body">
+            <p className="cbw-eyebrow rv" style={{ "--i": 0 } as React.CSSProperties}>
+              CBPD UK &middot; New Course Offerings
+            </p>
+            <h2 className="cbw-title rv" id="cbwTitle" style={{ "--i": 1 } as React.CSSProperties}>
+              <span className="l1">Explore our</span>{" "}
+              <span className="cbw-band">Ofqual-Aligned</span>{" "}
+              <span className="l3">Courses</span>
+            </h2>
+            <p className="cbw-text rv" style={{ "--i": 2 } as React.CSSProperties}>
+              Discover professional courses across a range of industries, designed to support skills development and professional growth.
+            </p>
+            <div className="cbw-cta rv" style={{ "--i": 3 } as React.CSSProperties}>
+              <Link
+                className="cbw-btn"
+                href="/programs"
+                id="cbwCta"
+                onClick={handleClose}
+              >
+                View All Courses
+                <svg
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  strokeWidth="2.2"
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                >
+                  <path d="M5 12h14M13 6l6 6-6 6" />
+                </svg>
+              </Link>
+              <span className="cbw-note">
+                Explore our available courses and programme details.
+              </span>
+            </div>
           </div>
-          <Link
-            href="/coming-soon"
-            onClick={handleClose}
-            className="px-4 py-2 rounded-full bg-gradient-to-r from-[#00A88F] to-[#008B74] hover:from-[#008B74] hover:to-[#007461] text-white text-xs font-bold tracking-wider uppercase shadow-md flex items-center gap-1.5 active:scale-95 transition-transform"
-          >
-            <span>Explore</span>
-            <ArrowRight className="w-3.5 h-3.5" />
-          </Link>
+
+          {/* Features Grid */}
+          <div className="cbw-feats">
+            <div className="cbw-feat" style={{ "--i": 0 } as React.CSSProperties}>
+              <svg
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                strokeWidth="1.5"
+                strokeLinecap="round"
+                strokeLinejoin="round"
+              >
+                <circle cx="12" cy="9" r="6" />
+                <path d="M8.5 14l-1.5 8 5-3 5 3-1.5-8" />
+              </svg>
+              <span>Ofqual-aligned courses</span>
+            </div>
+
+            <div className="cbw-feat" style={{ "--i": 1 } as React.CSSProperties}>
+              <svg
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                strokeWidth="1.5"
+                strokeLinecap="round"
+                strokeLinejoin="round"
+              >
+                <path d="M2 9l10-5 10 5-10 5L2 9z" />
+                <path d="M6 11.5V16c0 1.4 2.7 3 6 3s6-1.6 6-3v-4.5" />
+              </svg>
+              <span>Practical learning for real-world success</span>
+            </div>
+
+            <div className="cbw-feat" style={{ "--i": 2 } as React.CSSProperties}>
+              <svg
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                strokeWidth="1.5"
+                strokeLinecap="round"
+                strokeLinejoin="round"
+              >
+                <path d="M3 17l6-6 4 4 8-8" />
+                <path d="M15 7h6v6" />
+              </svg>
+              <span>Professional growth and career progression</span>
+            </div>
+
+            <div className="cbw-feat" style={{ "--i": 3 } as React.CSSProperties}>
+              <svg
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                strokeWidth="1.5"
+                strokeLinecap="round"
+                strokeLinejoin="round"
+              >
+                <circle cx="12" cy="12" r="10" />
+                <path d="M2 12h20" />
+                <path d="M12 2c3 3 4.5 6.5 4.5 10S15 19 12 22c-3-3-4.5-6.5-4.5-10S9 5 12 2z" />
+              </svg>
+              <span>Global opportunities and international reach</span>
+            </div>
+          </div>
+        </div>
+
+        {/* Bottom Motto Bar */}
+        <div className="cbw-bar">
+          <b>
+            Gain recognised qualifications &middot; Build your skills &middot; Unlock global opportunities
+          </b>
+          <span className="cbw-motto">Your Future, Our Focus</span>
         </div>
       </div>
     </div>
