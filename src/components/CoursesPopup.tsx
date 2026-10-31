@@ -107,15 +107,8 @@ export default function CoursesPopup() {
         <div className="cbc-main">
           {/* Left Column: Course Offering Content */}
           <div className="cbc-left">
-            {/* Brand Header with Ofqual Lockup */}
+            {/* Brand Header: Ofqual Lockup */}
             <div className="cbc-brand rv" style={{ "--i": 0 } as React.CSSProperties}>
-              <div>
-                <div className="cbc-word">
-                  CBPD<span>UK</span>
-                </div>
-                <small>Central Board of Professional Development</small>
-              </div>
-              <div className="cbc-vline" />
               <div className="cbc-ofqual-lockup" aria-label="Ofqual Aligned Courses">
                 <span className="cbc-ofqual-word">ofqual</span>
                 <span className="cbc-ofqual-bar" />
