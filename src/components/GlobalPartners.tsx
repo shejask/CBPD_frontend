@@ -181,7 +181,7 @@ export default function GlobalPartners() {
               {row1Logos.map((partner, index) => (
                 <div
                   key={`r1-${index}`}
-                  className="group/card mx-2.5 sm:mx-3 flex items-center justify-center bg-white dark:bg-slate-50/95 rounded-2xl px-3.5 py-2 sm:px-4 sm:py-2.5 md:px-5 md:py-3 shadow-[0_4px_16px_rgba(0,0,0,0.06)] hover:shadow-[0_12px_28px_rgba(30,64,175,0.18)] hover:-translate-y-1.5 border border-slate-100 dark:border-white/20 transition-all duration-300 w-[180px] sm:w-[220px] md:w-[240px] h-[90px] sm:h-[100px] md:h-[108px] shrink-0 cursor-pointer overflow-hidden"
+                  className="group/card mx-2.5 sm:mx-3 flex items-center justify-center bg-white dark:bg-white rounded-2xl px-3.5 py-2 sm:px-4 sm:py-2.5 md:px-5 md:py-3 shadow-[0_4px_16px_rgba(0,0,0,0.06)] hover:shadow-[0_12px_28px_rgba(30,64,175,0.18)] hover:-translate-y-1.5 border border-slate-100 dark:border-slate-200/50 transition-all duration-300 w-[180px] sm:w-[220px] md:w-[240px] h-[90px] sm:h-[100px] md:h-[108px] shrink-0 cursor-pointer overflow-hidden"
                   title={partner.name}
                 >
                   <div className="w-full h-full flex items-center justify-center">
@@ -208,7 +208,7 @@ export default function GlobalPartners() {
               {row2Logos.map((partner, index) => (
                 <div
                   key={`r2-${index}`}
-                  className="group/card mx-2.5 sm:mx-3 flex items-center justify-center bg-white dark:bg-slate-50/95 rounded-2xl px-3.5 py-2 sm:px-4 sm:py-2.5 md:px-5 md:py-3 shadow-[0_4px_16px_rgba(0,0,0,0.06)] hover:shadow-[0_12px_28px_rgba(215,38,61,0.18)] hover:-translate-y-1.5 border border-slate-100 dark:border-white/20 transition-all duration-300 w-[180px] sm:w-[220px] md:w-[240px] h-[90px] sm:h-[100px] md:h-[108px] shrink-0 cursor-pointer overflow-hidden"
+                  className="group/card mx-2.5 sm:mx-3 flex items-center justify-center bg-white dark:bg-white rounded-2xl px-3.5 py-2 sm:px-4 sm:py-2.5 md:px-5 md:py-3 shadow-[0_4px_16px_rgba(0,0,0,0.06)] hover:shadow-[0_12px_28px_rgba(215,38,61,0.18)] hover:-translate-y-1.5 border border-slate-100 dark:border-slate-200/50 transition-all duration-300 w-[180px] sm:w-[220px] md:w-[240px] h-[90px] sm:h-[100px] md:h-[108px] shrink-0 cursor-pointer overflow-hidden"
                   title={partner.name}
                 >
                   <div className="w-full h-full flex items-center justify-center">
@@ -235,7 +235,7 @@ export default function GlobalPartners() {
             {allPartners.map((partner, index) => (
               <div
                 key={`grid-${index}`}
-                className="group/grid flex items-center justify-center bg-white dark:bg-slate-50/95 rounded-2xl px-3.5 py-2.5 sm:px-4 sm:py-3 shadow-[0_4px_16px_rgba(0,0,0,0.06)] hover:shadow-[0_12px_28px_rgba(30,64,175,0.16)] hover:-translate-y-1.5 border border-slate-100 dark:border-white/20 transition-all duration-300 h-[90px] sm:h-[105px] overflow-hidden"
+                className="group/grid flex items-center justify-center bg-white dark:bg-white rounded-2xl px-3.5 py-2.5 sm:px-4 sm:py-3 shadow-[0_4px_16px_rgba(0,0,0,0.06)] hover:shadow-[0_12px_28px_rgba(30,64,175,0.16)] hover:-translate-y-1.5 border border-slate-100 dark:border-slate-200/50 transition-all duration-300 h-[90px] sm:h-[105px] overflow-hidden"
                 title={partner.name}
               >
                 <div className="w-full h-full flex items-center justify-center">
