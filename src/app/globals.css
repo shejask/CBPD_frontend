@@ -228,7 +228,7 @@ body {
   --cbpd-text-soft: #4B5C78;
   --cbpd-font: var(--font-outfit), 'Outfit', system-ui, sans-serif;
   --cbpd-script: 'Caveat', cursive;
-  --cbpd-photo: url('/images/cbpd-campus-students.webp');
+  --cbpd-photo: url('/images/cbpd-london-bigben.webp');
 }
 
 /* Overlay & Card */
@@ -339,6 +339,44 @@ body {
   width: 1px;
   height: 34px;
   background: #c9d5e6;
+}
+
+/* Ofqual Lockup (matches official Ofqual branding) */
+.cbc-ofqual-lockup {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  line-height: 1;
+}
+
+.cbc-ofqual-word {
+  font-family: var(--font-outfit), 'Outfit', system-ui, -apple-system, sans-serif;
+  font-size: 32px;
+  font-weight: 800;
+  letter-spacing: -0.03em;
+  color: #3b4351;
+  line-height: 0.95;
+  text-transform: lowercase;
+}
+
+.cbc-ofqual-bar {
+  display: block;
+  width: 100%;
+  height: 4.5px;
+  background: #54B848;
+  margin-top: 3px;
+  margin-bottom: 3.5px;
+  border-radius: 1px;
+}
+
+.cbc-ofqual-sub {
+  font-family: var(--font-outfit), 'Outfit', system-ui, sans-serif;
+  font-size: 9.5px;
+  font-weight: 700;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: #556275;
+  line-height: 1;
 }
 
 .cbc-badge {

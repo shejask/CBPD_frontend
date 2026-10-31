@@ -4,7 +4,7 @@ import { useEffect, useState, useRef, useCallback } from "react";
 import Image from "next/image";
 import Link from "next/link";
 
-const STORAGE_KEY = "cbpdCampusPopupSeen";
+const STORAGE_KEY = "cbpdLondonPopupSeen";
 
 export default function CoursesPopup() {
   const [isOpen, setIsOpen] = useState(false);
@@ -107,7 +107,7 @@ export default function CoursesPopup() {
         <div className="cbc-main">
           {/* Left Column: Course Offering Content */}
           <div className="cbc-left">
-            {/* Brand Header */}
+            {/* Brand Header with Ofqual Lockup */}
             <div className="cbc-brand rv" style={{ "--i": 0 } as React.CSSProperties}>
               <div>
                 <div className="cbc-word">
@@ -116,15 +116,17 @@ export default function CoursesPopup() {
                 <small>Central Board of Professional Development</small>
               </div>
               <div className="cbc-vline" />
-              <div className="cbc-badge">
-                Ofqual-aligned<br />courses
+              <div className="cbc-ofqual-lockup" aria-label="Ofqual Aligned Courses">
+                <span className="cbc-ofqual-word">ofqual</span>
+                <span className="cbc-ofqual-bar" />
+                <span className="cbc-ofqual-sub">ALIGNED COURSES</span>
               </div>
             </div>
 
             {/* Eyebrow */}
             <p className="cbc-eyebrow rv" style={{ "--i": 1 } as React.CSSProperties}>
               <span className="cbc-new">New</span>
-              CBPD UK &middot; Course Offerings
+              Ofqual-Aligned &middot; Course Offerings
             </p>
 
             {/* Title */}
@@ -165,14 +167,14 @@ export default function CoursesPopup() {
             </div>
           </div>
 
-          {/* Right Column: Dynamic Diagonal Campus Scene with Photo */}
+          {/* Right Column: Dynamic Diagonal Scene with Big Ben London Photo */}
           <div className="cbc-right" aria-hidden="true">
             <div className="cbc-scene">
-              {/* Campus Students Photo */}
+              {/* Big Ben London Landmark Photo */}
               <div className="absolute inset-0 z-0">
                 <Image
-                  src="/images/cbpd-campus-students.webp"
-                  alt="CBPD Students on campus"
+                  src="/images/cbpd-london-bigben.webp"
+                  alt="CBPD UK - Big Ben London"
                   fill
                   priority
                   unoptimized
